@@ -1,0 +1,23 @@
+<%= form_tag({controller: "mapping", action: "mapKorRelationInnerNode"}, method: "post") do %>
+<table>
+	<tr>
+		<td>Actual Relation</td>
+		<td><%= @actualRelation.relation.name %>: from <%= @actualRelation.domain.name %> to <%= @actualRelation.range.name %></td>
+	</tr>
+	<tr>
+		<td>CRM Property</td>
+		<td><%= @actualRelation.chainLinks[@actualRelation.chainLinks.length-2].label %></td>		
+	</tr>
+	<tr>
+		<td><%= label_tag(:crmc, "Most specific range class") %></td>
+		<td>
+			<%= select_tag :crmc, options_from_collection_for_select(@fittingCRMClasses, :number, :label) %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= submit_tag("OK") %>
+		</td>
+	</tr>
+</table>
+<% end %>
