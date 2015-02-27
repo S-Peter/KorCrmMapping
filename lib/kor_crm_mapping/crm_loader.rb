@@ -17,18 +17,25 @@ module KorCrmMapping::CRMLoader
     @@graph = RDF::Graph.load("http://erlangen-crm.org/140617/")
     loadCRMClasses #TODO load primitives!!!
     loadCRMProperties #TODO load primitives!!!
-    serializeClassesInJason
-    serialzeRelationsInJason
-    deserializeClassesInJason
-    deserialzeRelationsInJason
-    #TODO reestablish object links through serialized/deserialzed uri attributes!!!
+    
+    KorCrmMapping::CrmSerializerDeserializer.serializeClassesInJason @@crmClasses
+    KorCrmMapping::CrmSerializerDeserializer.serializeRelationsInJason @@crmProperties
+    @@crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason 
+    @@crmProperties = KorCrmMapping::CrmSerializerDeserializer.deserializeRelationsInJason
+    
+    for crmClass in @@crmClasses
+      crmClass.reestablishLinks @@crmClasses
+    end
+    
+    for crmProperty in @@crmProperties
+      crmProperty.reestablishLinks @@crmProperties, @@crmClasses
+    end
     puts"CRM loaded"
     return #do not return @@graph!!!
   end
    
   private 
   def self.loadCRMClasses
-    puts "OK"
     statements = @@graph.query([nil, @@rdfTypeURI, @@owlClassURI])
     @@crmClasses = Array.new
     statements.each_subject do |subject|
@@ -54,12 +61,10 @@ module KorCrmMapping::CRMLoader
         end
       end         
      @@crmClasses.push crmClass
-     puts crmClass.uri
     end
    
     #Add Super & Sub Classes
     @@crmClasses.each do |crmClass|
-      puts "CRMClass: #{crmClass.label}"
       statements = @@graph.query([crmClass.uri, @@rdfsSubClassOfURI, nil])
       statements.each_object do |object|
         if object.uri?
@@ -67,17 +72,13 @@ module KorCrmMapping::CRMLoader
             superClass = getClassOfUri object
             crmClass.addSuperClass superClass
             superClass.addSubClass crmClass
-            puts "Superclass:#{superClass.label}"
           end
         end 
       end
     end
     
-    puts "After computation of superclasses"
-    
     #order Array
     @@crmClasses = @@crmClasses.sort_by {|x| x.number}
-    #printCRMClasses
   end
   
   private
@@ -135,8 +136,6 @@ module KorCrmMapping::CRMLoader
     
     #order Array
     @@crmProperties = @@crmProperties.sort_by {|x| x.number}
-    
-    #printCRMProperties
   end
   
  #Add Super-, Sub- and InverseProperties
@@ -230,165 +229,5 @@ module KorCrmMapping::CRMLoader
    end
    return existingCrmProperty
  end
- 
- private
- def self.printCRMClasses
-    file = File.new("crmClasses", "w")
-    @@crmClasses.each do |crmClass|
-      file.write crmClass.uri.inspect
-      file.write "\n" 
-      file.write "Label: #{crmClass.label}"
-      file.write "\n"
-      file.write "Comment: #{crmClass.comment}"
-      file.write "\n" 
-      file.write "Notation: #{crmClass.notation}"
-      file.write "\n"
-      file.write "SuperClasses"
-      file.write "\n"
-      if crmClass.superClasses != nil
-        crmClass.superClasses.each do |superClass|
-          file.write superClass.uri.inspect
-          file.write "\n"
-        end
-      end
-      file.write "SubClasses"
-      file.write "\n"
-      if crmClass.subClasses != nil
-        crmClass.subClasses.each do |subClass|
-         file.write subClass.uri.inspect
-         file.write "\n"
-        end
-      end  
-      file.write "-----------------------------------------------"
-      file.write "\n"
-      file.write "\n"
-    end
-    file.close
-  end
- 
- private
- def self.printCRMProperties
-    file = File.new("crmProperties", "w")
-    @@crmProperties.each do |crmProperty|
-      file.write crmProperty.uri.inspect
-      file.write "\n" 
-      file.write "Label: #{crmProperty.label}"
-      file.write "\n"
-      file.write "Comment: #{crmProperty.comment}"
-      file.write "\n" 
-      file.write "Notation: #{crmProperty.notation}"
-      file.write "\n"
-      file.write "Domain: "
-      if crmProperty.domain != nil
-        file.write crmProperty.domain.uri.inspect
-      end
-      file.write "\n"
-      file.write "Range: "
-      if crmProperty.range != nil
-        file.write crmProperty.range.uri.inspect
-      end
-      file.write "\n"
-      file.write "SuperProperties"
-      file.write "\n"
-      if crmProperty.superProperties != nil
-        crmProperty.superProperties.each do |superProperty|
-          file.write superProperty.uri.inspect
-          file.write "\n"
-        end
-      end
-      file.write "SubProperties"
-      file.write "\n"
-      if crmProperty.subProperties != nil
-        crmProperty.subProperties.each do |subProperty|
-         file.write subProperty.uri.inspect
-         file.write "\n"
-        end
-      end  
-      file.write "InverseOf"
-      file.write "\n"
-      if crmProperty.inverseOf !=nil
-        file.write crmProperty.inverseOf.uri.inspect
-        file.write "\n"
-      end 
-      file.write "-----------------------------------------------"
-      file.write "\n"
-      file.write "\n"
-    end
-    file.close
-  end
-  
-  private
-  def self.serializeClassesInJason
-    classesFile = File.new("crmClasses", "w")
-    numberOfClasses = @@crmClasses.size
-    i = 0
-    while i < numberOfClasses
-      classesFile.write @@crmClasses[i].to_json
-      i += 1
-      if i < numberOfClasses
-        classesFile.write "\n"
-      end
-    end
-    classesFile.close
-  end
-  
-  private
-  def self.serialzeRelationsInJason
-    propertiesFile = File.new("crmProperties", "w")
-    numberOfProperties = @@crmProperties.size
-    i = 0
-    while i < numberOfProperties
-      propertiesFile.write @@crmProperties[i].to_json
-      i += 1
-      if i < numberOfProperties
-        propertiesFile.write "\n"
-      end
-    end
-    propertiesFile.close    
-  end
-  
-  private
-  def self.deserializeClassesInJason
-    @@crmClasses = Array.new
-    classesFile = File.open("crmClasses")
-    
-    until classesFile.eof()
-      serializedClass = classesFile.readline()
-      @@crmClasses.push CrmClass.json_create serializedClass
-    end
-
-    classesFile.close 
-    
-    for crmClass in @@crmClasses
-      puts crmClass.uri
-      puts "SuperClassUris:"
-      for superClassUri in crmClass.superClassUris
-        puts superClassUri
-      end
-      puts "------------------------"
-    end
-  end
-  
-  private
-  def self.deserialzeRelationsInJason
-    @@crmProperties = Array.new
-    propertiesFile = File.open("crmProperties")
-    
-    until propertiesFile.eof()
-      serializedProperty = propertiesFile.readline()
-      @@crmProperties.push CrmProperty.json_create serializedProperty
-    end
-
-    propertiesFile.close 
-    
-    for crmProperty in @@crmProperties
-      puts crmProperty.uri
-      puts "SuperPropertyUris:"
-      for superPropertyUri in crmProperty.superPropertyUris
-        puts superPropertyUri
-      end
-      puts "------------------------"
-    end
-  end
   
 end

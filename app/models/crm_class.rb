@@ -2,28 +2,23 @@ require 'json'
 
 class CrmClass < CrmRessource
 
-  @superClasses = Array.new
-  @subClasses = Array.new
-
-  attr_accessor :uri, :comment, :label, :superClasses, :subClasses, :superClassUris, :subClassUris
-  attr_reader :notation
+  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris
   
-   def notation=(notation)
+  def initialize
+    @superClasses = Array.new
+    @subClasses = Array.new
+  end
+  
+  def notation=(notation)
     @notation = notation
     @number = notation.byteslice(1,notation.length).to_i
   end
   
   def addSuperClass superClass
-    if @superClasses == nil
-      @superClasses = Array.new
-    end
     @superClasses.push superClass
   end
   
   def addSubClass subClass
-    if @subClasses == nil
-      @subClasses = Array.new
-    end
     @subClasses.push subClass
   end
   
@@ -34,8 +29,6 @@ class CrmClass < CrmRessource
         directOrIndirectSubClasses = directOrIndirectSubClasses.push subClass
         directOrIndirectSubClasses = directOrIndirectSubClasses.concat subClass.getDirectOrIndirectSubClasses
       end
-    else
-      puts "No subclasses for #{self.label}"
     end
     return directOrIndirectSubClasses
   end
@@ -66,6 +59,20 @@ class CrmClass < CrmRessource
       end
     end
     return isA
+  end
+  
+  def reestablishLinks crmClasses
+    #puts "Reestablishing Links for #{self.label}"
+    for crmClass in crmClasses
+      if superClassUris.include? crmClass.uri
+        @superClasses.push crmClass
+        #puts "SuperClass: #{crmClass.label}"
+      end
+      if subClassUris.include? crmClass.uri
+        @subClasses.push crmClass
+        #puts "SubClass: #{crmClass.label}"
+      end
+    end
   end
  
   def as_json(*a)

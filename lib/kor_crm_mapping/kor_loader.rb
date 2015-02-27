@@ -2,21 +2,6 @@ require 'json'
 
 module KorCrmMapping::KorLoader
   
-  @@maxKindID
-  @@maxRelationID
-  
-  @@lastFieldKindID
-  @@lastFieldRelationID
-  
-  def self.loadOriginalKindsAndRelation
-    @@kinds = Kind.all
-    @@relations = Relation.all
-    deriveActualRelationsFromRelationships
-    
-    serializeKindsAndRelationsInJason
-    deserializeKindsAndRelationsInJason
-  end
-  
   def self.loadKor
     #puts ActiveRecord::Base.connection.current_database
     @@kinds = Kind.all
@@ -48,8 +33,10 @@ module KorCrmMapping::KorLoader
     addAdditionalKindsAndRelationsFromNameFields
     addAdditionalKindsAndRelationsFromDateFields
     #addAdditionalKindsAndRelationsFromDynamicFields #TODO
-    serializeKindsAndRelationsInJason
-    deserializeKindsAndRelationsInJason
+    KorCrmMapping::KorSerializerDeserializer.serializeKindsInJason @@kinds
+    KorCrmMapping::KorSerializerDeserializer.serializeRelationsInJason @@relations
+    @@kinds = KorCrmMapping::KorSerializerDeserializer.deserializeKindsInJason
+    @@relations = KorCrmMapping::KorSerializerDeserializer.deserializeRelationsInJason
   end
   
   private
@@ -188,9 +175,9 @@ module KorCrmMapping::KorLoader
   def self.addAdditionalKindsAndRelationsFromDynamicFields
     
   end 
-  
+=begin  
   private
-  def self.serializeKindsAndRelationsInJason
+  def self.serializeKindsInJason
     kindsFile = File.new("korKinds", "w")
     numberOfKinds = @@kinds.size
     i = 0
@@ -202,7 +189,10 @@ module KorCrmMapping::KorLoader
       end
     end
     kindsFile.close
-    
+  end
+  
+  private
+  def self.serializeRelationsInJason
     relationsFile = File.new("korRelations", "w")
     numberOfRelations = @@relations.size
     i = 0
@@ -217,7 +207,7 @@ module KorCrmMapping::KorLoader
   end
   
   private
-  def self.deserializeKindsAndRelationsInJason
+  def self.deserializeKindsInJason
     @@kinds = Array.new
     kindsFile = File.open("korKinds")
     
@@ -227,8 +217,11 @@ module KorCrmMapping::KorLoader
       @@kinds.push Kind.json_create serializedKind
     end
 
-    kindsFile.close 
-    
+    kindsFile.close      
+  end
+  
+  private
+  def self.deserializeRelationsInJason
     @@relations = Array.new
     relationsFile = File.open("korRelations")
     
@@ -240,5 +233,5 @@ module KorCrmMapping::KorLoader
 
     relationsFile.close       
   end
-  
+=end  
 end

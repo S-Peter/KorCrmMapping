@@ -1,23 +1,15 @@
-class Relation < ActiveRecord::Base
+require 'json'
+
+class Relation < ActiveRecord::Base #Relation
 	has_many :relationships
-
-	@id
-	@name
-	@reverse_name
-	@description
 	
-	@actualRelations
+	attr_accessor :actualRelations #:id, :name, :reverse_name, :description implicit!
 	
-	#attr_accessor :id, :name, :reverse_name, :description, :actualRelations
-	
-	def actualRelations
-		return @actualRelations
+	def reestablishLinks (kinds, crmClasses, crmPrperties)
+	  for actualRelation in actualRelations
+	    actualRelation.reestablishLinks kinds, crmClasses, crmPrperties
+	  end
 	end
-	
-	def actualRelations=(actualRelations)
-		@actualRelations = actualRelations
-	end
-
 
 	def as_json(*a)
     {
@@ -28,7 +20,7 @@ class Relation < ActiveRecord::Base
  
   def self.json_create(serializedObject)
     relationData = JSON.parse(serializedObject)["data"]
-    relation = new()
+    relation = new
     relation.id = relationData["id"]
     relation.name = relationData["name"]
     relation.reverse_name = relationData["reverse_name"]
@@ -37,10 +29,11 @@ class Relation < ActiveRecord::Base
     relation.actualRelations = Array.new
     actualRelationHashs = relationData["actualRelations"]
     for actualRelationHash in actualRelationHashs
-      actualRelation = ActualRelation.create actualRelationHash
+      actualRelation = ActualRelation.createFromHash actualRelationHash
       actualRelation.relation = relation
       relation.actualRelations.push actualRelation
     end   
+    
     relation
   end
 	

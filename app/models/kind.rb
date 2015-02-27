@@ -3,18 +3,25 @@ require 'json'
 class Kind < ActiveRecord::Base #Entitaetstyp
 	has_many :entities
 	
-	@id
-	@name
-	@description
+	attr_accessor :crmClass, :crmClassUri #:id, :name, :description implicit!!!
 	
-	@crmClass
-	
-	attr_accessor :crmClass #:id, :name, :description implicit!!!
+	def reestablishLinks crmClassesToLink
+    for crmClassToLink in crmClassesToLink
+      if crmClassUri.eql? crmClassToLink.uri
+        crmClass = crmClassToLink
+      end
+    end
+  end
  
   def as_json(*a)
+    if crmClass != nil
+      crmClassUri = crmClass.uri
+    else 
+      crmClassUri= nil
+    end   
     {
       "json_class"   => self.class.name,
-      "data"         => {"id" => id, "name" => name, "description" => description, "crmClass" => crmClass }
+      "data"         => {"id" => id, "name" => name, "description" => description, "crmClassUri" => crmClassUri }
     }.as_json(*a)
   end
  
@@ -22,15 +29,5 @@ class Kind < ActiveRecord::Base #Entitaetstyp
     kind = new(JSON.parse(serializedObject)["data"])
     kind  
   end
-  
-  def self.create(objectHash)
-    kindData = objectHash["data"]
-    kind = new
-    kind.id = kindData["id"]
-    kind.name = kindData["name"]
-    kind.description = kindData["description"]
-    #kind.crmClass = #TODO
-    kind
-  end
-	
+
 end

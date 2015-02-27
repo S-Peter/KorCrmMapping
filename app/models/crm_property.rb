@@ -1,7 +1,11 @@
 class CrmProperty < CrmRessource
   
-  attr_accessor :uri, :comment, :label, :domain, :range, :inverseOf, :superProperties, :subProperties, :domainUri, :rangeUri, :inverseOfUri, :superPropertyUris, :subPropertyUris
-  attr_reader :notation
+  attr_accessor :domain, :range, :inverseOf, :superProperties, :subProperties, :domainUri, :rangeUri, :inverseOfUri, :superPropertyUris, :subPropertyUris
+  
+  def initialize
+    @superProperties = Array.new
+    @subProperties = Array.new
+  end
   
    def notation=(notation)
     @notation = notation
@@ -27,17 +31,40 @@ class CrmProperty < CrmRessource
   end
   
   def addSuperProperty superProperty
-    if @superProperties == nil
-      @superProperties = Array.new
-    end
     @superProperties.push superProperty
   end
   
   def addSubProperty subProperty
-    if @subProperties == nil
-      @subProperties = Array.new
-    end
     @subProperties.push subProperty
+  end
+  
+  def reestablishLinks (crmProperties, crmClasses)
+    #puts "Reestablishing Links for #{self.label}"
+    for crmProperty in crmProperties
+      if superPropertyUris.include? crmProperty.uri
+        @superProperties.push crmProperty
+        #puts "SuperProperty: #{crmProperty.label}"
+      end
+      if subPropertyUris.include? crmProperty.uri
+        @subProperties.push crmProperty
+        #puts "SubProperty: #{crmProperty.label}"
+      end
+      if inverseOfUri.eql? crmProperty.uri
+        inverseOf =  crmProperty
+        #puts "Inverse of: #{crmProperty.label}"
+      end
+    end
+    
+    for crmClass in crmClasses
+      if domainUri.eql? crmClass.uri
+        domain =  crmClass
+        #puts "Domain: #{crmClass.label}"
+      end
+      if rangeUri.eql? crmClass.uri
+        range =  crmClass
+        #puts "Range: #{crmClass.label}"
+      end
+    end
   end
   
   def as_json(*a) 

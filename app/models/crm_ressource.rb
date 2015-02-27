@@ -1,9 +1,7 @@
 class CrmRessource
-  @number
   
-  def number
-    @number
-  end
+  attr_accessor :uri, :comment, :label, :number
+  attr_reader :notation
   
   def self.createUri uriHash
     if uriHash!= nil
