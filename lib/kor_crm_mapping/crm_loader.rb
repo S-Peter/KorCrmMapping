@@ -15,13 +15,13 @@ module KorCrmMapping::CRMLoader
   
   def self.loadCRM
     @@graph = RDF::Graph.load("http://erlangen-crm.org/140617/")
-    loadCRMClasses #TODO load primitives!!!
-    loadCRMProperties #TODO load primitives!!!
+    loadCRMClasses
+    loadCRMProperties
     
     KorCrmMapping::CrmSerializerDeserializer.serializeClassesInJason @@crmClasses
-    KorCrmMapping::CrmSerializerDeserializer.serializeRelationsInJason @@crmProperties
+    KorCrmMapping::CrmSerializerDeserializer.serializePropertiesInJason @@crmProperties
     @@crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason 
-    @@crmProperties = KorCrmMapping::CrmSerializerDeserializer.deserializeRelationsInJason
+    @@crmProperties = KorCrmMapping::CrmSerializerDeserializer.deserializePropertiesInJason
     
     for crmClass in @@crmClasses
       crmClass.reestablishLinks @@crmClasses

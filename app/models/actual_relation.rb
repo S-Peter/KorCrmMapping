@@ -25,10 +25,10 @@ class ActualRelation
   def reestablishLinks (kinds, crmClasses, crmProperties)
     for kind in kinds
       if domainId.eql? kind.id
-        domain = kind
+        self.domain = kind
       end
       if rangeId.eql? kind.id
-        range = kind
+        self.range = kind
       end
     end
     
@@ -77,7 +77,19 @@ class ActualRelation
     actualRelation.domainId = actualRelationData["domainId"]
     actualRelation.rangeId =  actualRelationData["rangeId"]
     actualRelation.chainLinkUris = actualRelationData["chainLinkUris"]
-    
+    if actualRelation.chainLinkUris != nil
+      uris = Array.new
+      for chainLinkUri in actualRelation.chainLinkUris
+        uri = RDF::URI.new({
+        :scheme => kind.crmClassUri["scheme"],
+        :host   => kind.crmClassUri["host"],
+        :path   => kind.crmClassUri["path"]
+        }) 
+        uris.push uri 
+      end
+          
+      actualRelation.chainLinkUris = uris
+    end
     actualRelation
   end
   

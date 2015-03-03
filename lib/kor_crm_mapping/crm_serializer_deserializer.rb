@@ -16,7 +16,7 @@ module KorCrmMapping::CrmSerializerDeserializer
   end
   
   private
-  def self.serializeRelationsInJason crmProperties
+  def self.serializePropertiesInJason crmProperties
     propertiesFile = File.new("crmProperties", "w")
     numberOfProperties = crmProperties.size
     i = 0
@@ -45,7 +45,7 @@ module KorCrmMapping::CrmSerializerDeserializer
   end
   
   private
-  def self.deserializeRelationsInJason
+  def self.deserializePropertiesInJason
     crmProperties = Array.new
     propertiesFile = File.open("crmProperties")
     

@@ -360,7 +360,7 @@ class MappingController < ApplicationController
       if subject.uri?
         if subject.starts_with? @@ecrmNamespace
           crmClass = CrmClass.new
-          crmClass.uri = subject
+          crmClass.uri = subject.scheme + subject.host + subject.path
           
           statements = @graph.query([subject, @@rdfsLabelURI, nil])
           statements.each_object do |object|

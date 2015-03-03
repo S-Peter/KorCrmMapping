@@ -1,0 +1,24 @@
+<h1>Relation Index</h1>
+
+<table>
+  <tr>
+    <th>Relation</th>
+    <th>Domain</th>
+    <th>Range</th>
+    <th>Entsprechender CRM-Eigenschafts-Pfad</th>
+    <th></th>
+  </tr>
+ 
+  <% @relations.each do |relation| %>
+  	<% relation.actualRelations.each do |actualRelation| %>
+	    <tr>
+	      <td><%= relation.name %></td>
+	      <td><%= actualRelation.domain.name %></td>
+	      <td><%= actualRelation.range.name %></td>
+	      <td><% if actualRelation.chainLinks != nil %><% end %></td>
+	      <td><%= link_to "Edit", :controller => "relations", :action => "edit", :relationId => actualRelation.relation.id, :domainId => actualRelation.domain.id, :rangeId => actualRelation.range.id %></td>
+	    </tr>
+	<% end %>
+  <% end %>
+</table>
+<p><%= link_to 'Map Relations', kinds_path %></p>

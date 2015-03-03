@@ -1,0 +1,18 @@
+<h1>Index</h1>
+ 
+<table>
+  <tr>
+    <th>Entitaetstyp</th>
+    <th>Entsprechende CRM-Klasse</th>
+    <th></th>
+  </tr>
+ 
+  <% @kinds.each do |kind| %>
+    <tr>
+      <td><%= kind.name %></td>
+      <td><% if kind.crmClass != nil %><%= kind.crmClass.label %><% end %></td>
+      <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
+    </tr>
+  <% end %>
+</table>
+<p><%= link_to 'Map Relations', relations_path %></p>

@@ -1,0 +1,21 @@
+<h1>Edit</h1>
+ 
+<%= form_for :kind, url: kind_path(@kind), method: :put do |f| %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= @kind.name %>
+  </p>
+ 
+  <p>
+    <%= label_tag(:crmc, "CRM class:") %><br>
+	<%= select_tag :crmc, options_from_collection_for_select(@crmClasses, :number, :label) %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+
+<%= link_to 'Back', kinds_path %>

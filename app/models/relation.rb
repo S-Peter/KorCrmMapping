@@ -5,9 +5,9 @@ class Relation < ActiveRecord::Base #Relation
 	
 	attr_accessor :actualRelations #:id, :name, :reverse_name, :description implicit!
 	
-	def reestablishLinks (kinds, crmClasses, crmPrperties)
+	def reestablishLinks (kinds, crmClasses, crmProperties)
 	  for actualRelation in actualRelations
-	    actualRelation.reestablishLinks kinds, crmClasses, crmPrperties
+	    actualRelation.reestablishLinks kinds, crmClasses, crmProperties
 	  end
 	end
 

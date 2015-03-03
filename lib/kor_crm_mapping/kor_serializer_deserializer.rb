@@ -16,6 +16,11 @@ module KorCrmMapping::KorSerializerDeserializer
   end
   
   private
+  def self.serializeKindInJason kind 
+    File.write(f = "korKinds", File.read(f).gsub(/^{"json_class":"Kind","data":{"id":#{kind.id},.*$/,kind.to_json))
+  end
+  
+  private
   def self.serializeRelationsInJason relations
     relationsFile = File.new("korRelations", "w")
     numberOfRelations = relations.size
@@ -31,13 +36,17 @@ module KorCrmMapping::KorSerializerDeserializer
   end
   
   private
+  def self.serializeReationInJason relation 
+    File.write(f = "korRelations", File.read(f).gsub(/^{"json_class":"Relation","data":{"id":#{relation.id},.*$/,relation.to_json))
+  end
+  
+  private
   def self.deserializeKindsInJason
     kinds = Array.new
     kindsFile = File.open("korKinds")
     
     until kindsFile.eof()
       serializedKind = kindsFile.readline()
-      puts serializedKind
       kinds.push Kind.json_create serializedKind
     end
 
@@ -52,7 +61,6 @@ module KorCrmMapping::KorSerializerDeserializer
     
     until relationsFile.eof()
       serializedRelation = relationsFile.readline()
-      puts serializedRelation
       relations.push Relation.json_create serializedRelation
     end
 

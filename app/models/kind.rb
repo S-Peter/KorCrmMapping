@@ -6,11 +6,13 @@ class Kind < ActiveRecord::Base #Entitaetstyp
 	attr_accessor :crmClass, :crmClassUri #:id, :name, :description implicit!!!
 	
 	def reestablishLinks crmClassesToLink
-    for crmClassToLink in crmClassesToLink
-      if crmClassUri.eql? crmClassToLink.uri
-        crmClass = crmClassToLink
+	  if crmClassUri != nil
+      for crmClassToLink in crmClassesToLink  
+        if crmClassUri.eql? crmClassToLink.uri
+          self.crmClass = crmClassToLink
+        end
       end
-    end
+    end    
   end
  
   def as_json(*a)
@@ -27,7 +29,16 @@ class Kind < ActiveRecord::Base #Entitaetstyp
  
   def self.json_create(serializedObject)
     kind = new(JSON.parse(serializedObject)["data"])
-    kind  
+    if kind.crmClassUri != nil
+      
+      uri = RDF::URI.new({
+        :scheme => kind.crmClassUri["scheme"],
+        :host   => kind.crmClassUri["host"],
+        :path   => kind.crmClassUri["path"]
+        })   
+      kind.crmClassUri= uri
+    end 
+    kind
   end
 
 end

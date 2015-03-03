@@ -1,21 +1,26 @@
 Rails.application.routes.draw do
 
-  get 'mapping/startMapping', to: 'mapping#startMapping'
-  get 'mapping/mapKorKindForm', to: 'mapping#mapKorKindForm'
-  post 'mapping/mapKorKind', to: 'mapping#mapKorKind'
-  get 'mapping/mapKorRelationRangeForm', to: 'mapping#mapKorRelationRangeForm'
-  post 'mapping/mapKorRelationRange', to: 'mapping#mapKorRelationRange'
-  get 'mapping/mapKorRelationPropertyForm', to: 'mapping#mapKorRelationPropertyForm'
-  post 'mapping/mapKorRelationProperty', to: 'mapping#mapKorRelationProperty' 
-  get 'mapping/mapKorRelationInnerNodeForm', to: 'mapping#mapKorRelationInnerNodeForm'
-  post 'mapping/mapKorRelationInnerNode', to: 'mapping#mapKorRelationInnerNode' 
-  get 'mapping/displayMapping', to: 'mapping#displayMapping'
+  resources :kinds, only: [:index, :edit, :update]
+  resources :relations, only: [:index, :edit, :update]
+  
+  get 'relations/edit', to: 'relations#edit'
+  
+  #get 'mapping/startMapping', to: 'mapping#startMapping'
+  #get 'mapping/mapKorKindForm', to: 'mapping#mapKorKindForm'
+  #post 'mapping/mapKorKind', to: 'mapping#mapKorKind'
+  #get 'mapping/mapKorRelationRangeForm', to: 'mapping#mapKorRelationRangeForm'
+  #post 'mapping/mapKorRelationRange', to: 'mapping#mapKorRelationRange'
+  #get 'mapping/mapKorRelationPropertyForm', to: 'mapping#mapKorRelationPropertyForm'
+  #post 'mapping/mapKorRelationProperty', to: 'mapping#mapKorRelationProperty' 
+  #get 'mapping/mapKorRelationInnerNodeForm', to: 'mapping#mapKorRelationInnerNodeForm'
+  #post 'mapping/mapKorRelationInnerNode', to: 'mapping#mapKorRelationInnerNode' 
+  #get 'mapping/displayMapping', to: 'mapping#displayMapping'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'mapping#startMapping'
+  root 'kinds#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
