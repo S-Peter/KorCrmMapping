@@ -1,15 +1,15 @@
-<h1>Edit</h1>
+<h1>Kor-Entitaetstyp/CRM-Klasse-Mapping</h1>
  
 <%= form_for :kind, url: kind_path(@kind), method: :put do |f| %>
  
   <p>
-    <%= f.label :name %><br>
+    <%= f.label :entitaetstyp %><br>
     <%= @kind.name %>
   </p>
  
   <p>
-    <%= label_tag(:crmc, "CRM class:") %><br>
-	<%= select_tag :crmc, options_from_collection_for_select(@crmClasses, :number, :label) %>
+    <%= label_tag(:class, "CRM class:") %><br>
+	<%= select_tag :class, options_from_collection_for_select(@crmClasses, :number, :label) %>
   </p>
  
   <p>

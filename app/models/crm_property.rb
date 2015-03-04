@@ -50,18 +50,18 @@ class CrmProperty < CrmRessource
         #puts "SubProperty: #{crmProperty.label}"
       end
       if inverseOfUri.eql? crmProperty.uri
-        inverseOf =  crmProperty
+        @inverseOf =  crmProperty
         #puts "Inverse of: #{crmProperty.label}"
       end
     end
     
     for crmClass in crmClasses
       if domainUri.eql? crmClass.uri
-        domain =  crmClass
+        @domain = crmClass
         #puts "Domain: #{crmClass.label}"
       end
       if rangeUri.eql? crmClass.uri
-        range =  crmClass
+        @range =  crmClass
         #puts "Range: #{crmClass.label}"
       end
     end

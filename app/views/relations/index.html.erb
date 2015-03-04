@@ -1,4 +1,4 @@
-<h1>Relation Index</h1>
+<h1>Relationen</h1>
 
 <table>
   <tr>
@@ -15,10 +15,20 @@
 	      <td><%= relation.name %></td>
 	      <td><%= actualRelation.domain.name %></td>
 	      <td><%= actualRelation.range.name %></td>
-	      <td><% if actualRelation.chainLinks != nil %><% end %></td>
+	      <td><% if actualRelation.chainLinks != nil %>
+	      		<% i = 0 %>
+				<% while i < (actualRelation.chainLinks.size) %>
+					<%= actualRelation.chainLinks[i].label%>
+					<% i += 1 %>
+					<% if i < (actualRelation.chainLinks.size) %>
+						<%= " : " %>
+					<% end %>
+				<% end %>
+	      	  <% end %>
+	      </td>
 	      <td><%= link_to "Edit", :controller => "relations", :action => "edit", :relationId => actualRelation.relation.id, :domainId => actualRelation.domain.id, :rangeId => actualRelation.range.id %></td>
 	    </tr>
 	<% end %>
   <% end %>
 </table>
-<p><%= link_to 'Map Relations', kinds_path %></p>
+<p><%= link_to 'Map Entitaetstypen', kinds_path %></p>

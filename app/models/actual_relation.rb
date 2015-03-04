@@ -5,22 +5,14 @@ class ActualRelation
 	def initialize
 	  @chainLinks = Array.new
 	end
-
-	def addChainLink resources #used?
-    @chainLinks.push resource
-  end
   
-  def addChainLinkProperty crmProperty #2 different methods?
-    @chainLinks = @chainLinks.insert(-2, crmProperty)
-  end
+  #def addLinkToChain crmResource
+  #  @chainLinks = @chainLinks.insert(-2, crmResource)
+  #end
   
-  def addChainLinkInnerNode crmClass #2 different methods?
-    @chainLinks = @chainLinks.insert(-2, crmClass)
-  end
-  
-  def getLastDomainClassInChainLinks
-    return @chainLinks[@chainLinks.length-2]
-  end
+  #def getLastDomainClassInChainLinks
+  #  return @chainLinks[@chainLinks.length-2]
+  #end
   
   def reestablishLinks (kinds, crmClasses, crmProperties)
     for kind in kinds
@@ -35,19 +27,21 @@ class ActualRelation
     for chainLinkUri in chainLinkUris
       crmRessourceFound = false
 
-      int i = 0
+      i = 0
       while i < crmClasses.size && !crmRessourceFound
-        if crmClasses[i].uri.eql? chainLinkUri
+        if crmClasses[i].uri.to_s.eql? chainLinkUri.to_s
           chainLinks.push crmClasses[i]
           crmRessourceFound = true
         end
+        i += 1
       end
-      int j = 0
+      j = 0
       while j < crmProperties.size && !crmRessourceFound
-        if crmProperties[j].uri.eql? chainLinkUri
+        if crmProperties[j].uri.to_s.eql? chainLinkUri.to_s
           chainLinks.push crmProperties[j]
           crmRessourceFound = true
         end
+        j += 1
       end
     end
   end
@@ -76,20 +70,18 @@ class ActualRelation
     actualRelation = new
     actualRelation.domainId = actualRelationData["domainId"]
     actualRelation.rangeId =  actualRelationData["rangeId"]
-    actualRelation.chainLinkUris = actualRelationData["chainLinkUris"]
-    if actualRelation.chainLinkUris != nil
-      uris = Array.new
-      for chainLinkUri in actualRelation.chainLinkUris
-        uri = RDF::URI.new({
-        :scheme => kind.crmClassUri["scheme"],
-        :host   => kind.crmClassUri["host"],
-        :path   => kind.crmClassUri["path"]
-        }) 
-        uris.push uri 
-      end
-          
-      actualRelation.chainLinkUris = uris
-    end
+    
+    chainLinkUris = actualRelationData["chainLinkUris"]
+    uris = Array.new
+    for chainLinkUri in chainLinkUris
+      uri = RDF::URI.new({
+      :scheme => chainLinkUri["scheme"],
+      :host   => chainLinkUri["host"],
+      :path   => chainLinkUri["path"]
+      }) 
+      uris.push uri 
+    end   
+    actualRelation.chainLinkUris = uris
     actualRelation
   end
   

@@ -36,7 +36,7 @@ module KorCrmMapping::KorSerializerDeserializer
   end
   
   private
-  def self.serializeReationInJason relation 
+  def self.serializeRelationInJason relation 
     File.write(f = "korRelations", File.read(f).gsub(/^{"json_class":"Relation","data":{"id":#{relation.id},.*$/,relation.to_json))
   end
   

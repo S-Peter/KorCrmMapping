@@ -1,0 +1,26 @@
+<h1>Map Range</h1>
+<%= form_tag({controller: "relations", action: "updateDomainOrRange"}, method: "post") do %>
+<%= hidden_field_tag "id", @kind.id %>
+<%= hidden_field_tag :relationId, @relationId %>
+<%= hidden_field_tag :domainId, @domainId %>
+<%= hidden_field_tag :rangeId, @rangeId %>
+<table>
+	<tr>
+		<td>Kor Kind:</td>
+		<td><%= @kind.name %></td>
+	</tr>
+	<tr>
+		<td><%= label_tag(:crmc, "CRM class:") %></td>
+		<td>
+			<%= select_tag :crmc, options_from_collection_for_select(@crmClasses, :number, :label) %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= submit_tag("OK") %>
+		</td>
+	</tr>
+</table>
+<% end %>
+
+<%= link_to 'Back', relations_path %>

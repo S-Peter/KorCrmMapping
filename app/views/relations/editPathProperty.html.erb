@@ -1,0 +1,54 @@
+<%= form_tag({controller: "relations", action: "updatePathProperty"}, method: "post") do %>
+<%= hidden_field_tag :relationId, @relationId %>
+<%= hidden_field_tag :domainId, @domainId %>
+<%= hidden_field_tag :rangeId, @rangeId %>
+<table>
+	<tr>
+		<th></th>
+		<th>Gemappte CRM-Klassen</th>
+	</tr>
+	<tr>
+		<td>Relation: <%= @actualRelation.relation.name %></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Domain: <%= @actualRelation.domain.name %></td>
+		<td><%= @actualRelation.domain.crmClass.label %></td>
+	</tr>
+	<tr>
+		<td>Range: <%= @actualRelation.range.name %></td>
+		<td><%= @actualRelation.range.crmClass.label %></td>
+	</tr>
+</table>
+<br />
+<br />
+<table>
+	<tr>
+		<td>Bisher gemappter Pfad</td>
+		<td><% i = 0 %>
+			<% while i < (@sessionChainLinks.size - 1) %>
+				<%= @sessionChainLinks[i].label%>
+				<% i += 1 %>
+				<% if i < (@sessionChainLinks.size - 1) %>
+					<%= " : " %>
+				<% end %>
+			<% end %>
+		</td>		
+	</tr>
+	<tr>
+		<td>Domain der naechsten Property</td>
+		<td><%= @sessionChainLinks[@sessionChainLinks.length-2].label %></td>
+	</tr>
+	<tr>
+		<td><%= label_tag(:property, "Naechste Property") %></td>
+		<td><%= select_tag :property, options_from_collection_for_select(@fittingCRMProperties, :number, :label) %></td>
+	</tr>
+	<tr>
+		<td>
+			<%= submit_tag("OK") %>
+		</td>
+	</tr>
+</table>
+<% end %>
+
+<%= link_to 'Abbruch', relations_path %>

@@ -4,6 +4,15 @@ Rails.application.routes.draw do
   resources :relations, only: [:index, :edit, :update]
   
   get 'relations/edit', to: 'relations#edit'
+  get 'relations/editDomain', to: 'relations#editDomain'
+  get 'relations/editRange', to: 'relations#editRange'
+  post 'relations/updateDomainOrRange', to: 'relations#updateDomainOrRange'
+  
+  get 'relations/editPathProperty', to: 'relations#editPathProperty'
+  post 'relations/updatePathProperty', to: 'relations#updatePathProperty'
+  
+  get 'relations/editPathClass', to: 'relations#editPathClass'
+  post 'relations/updatePathClass', to: 'relations#updatePathClass'
   
   #get 'mapping/startMapping', to: 'mapping#startMapping'
   #get 'mapping/mapKorKindForm', to: 'mapping#mapKorKindForm'

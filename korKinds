@@ -1,10 +1,10 @@
 {"json_class":"Kind","data":{"id":1,"name":"Medium","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E36_Visual_Item","query":null,"fragment":null}}}
 {"json_class":"Kind","data":{"id":2,"name":"Ort","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E53_Place","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":3,"name":"Institution","description":"","crmClassUri":null}}
-{"json_class":"Kind","data":{"id":4,"name":"Person","description":"","crmClassUri":null}}
-{"json_class":"Kind","data":{"id":5,"name":"Literatur","description":"","crmClassUri":null}}
-{"json_class":"Kind","data":{"id":6,"name":"Werk","description":"","crmClassUri":null}}
-{"json_class":"Kind","data":{"id":7,"name":"Text","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":3,"name":"Institution","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E40_Legal_Body","query":null,"fragment":null}}}
+{"json_class":"Kind","data":{"id":4,"name":"Person","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E39_Actor","query":null,"fragment":null}}}
+{"json_class":"Kind","data":{"id":5,"name":"Literatur","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E84_Information_Carrier","query":null,"fragment":null}}}
+{"json_class":"Kind","data":{"id":6,"name":"Werk","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E24_Physical_Man-Made_Thing","query":null,"fragment":null}}}
+{"json_class":"Kind","data":{"id":7,"name":"Text","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/140617/E73_Information_Object","query":null,"fragment":null}}}
 {"json_class":"Kind","data":{"id":8,"name":"Personengruppe","description":"","crmClassUri":null}}
 {"json_class":"Kind","data":{"id":9,"name":"Ausstellung","description":"","crmClassUri":null}}
 {"json_class":"Kind","data":{"id":10,"name":"Embedded Medium","description":"","crmClassUri":null}}
