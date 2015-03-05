@@ -14,18 +14,19 @@ class RelationsController < ApplicationController
     @actualRelation = findActualRelation @relations, relationId, domainId, rangeId    
     if @actualRelation.domain.crmClass == nil
       redirect_to :action => "editDomain", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
+    else
+      if @actualRelation.range.crmClass == nil
+        redirect_to :action => "editRange", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
+      else
+        #add domain and range to chainLinks(session [i.e. not yet persisted])
+        sessionChainLinks = Array.new
+        sessionChainLinks.push @actualRelation.domain.crmClass
+        sessionChainLinks.push @actualRelation.range.crmClass
+        session[:chainLinks] = sessionChainLinks
+        
+        redirect_to :action => "editPathProperty", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
+      end
     end
-    if @actualRelation.range.crmClass == nil
-      redirect_to :action => "editRange", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
-    end
-    
-    #add domain and range to chainLinks(session [i.e. not yet persisted])
-    sessionChainLinks = Array.new
-    sessionChainLinks.push @actualRelation.domain.crmClass
-    sessionChainLinks.push @actualRelation.range.crmClass
-    session[:chainLinks] = sessionChainLinks
-    
-    redirect_to :action => "editPathProperty", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
   end
   
   def update

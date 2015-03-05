@@ -43,3 +43,6 @@ gem 'rdf'
 gem 'rdf-rdfxml'
 
 gem 'activerecord-session_store'
+
+#string edit distance algorithms
+gem 'damerau-levenshtein', '~> 1.0.3'

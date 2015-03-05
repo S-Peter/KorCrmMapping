@@ -45,6 +45,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
+    damerau-levenshtein (1.0.3)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -144,6 +145,7 @@ DEPENDENCIES
   activerecord-session_store
   byebug
   coffee-rails (~> 4.0.0)
+  damerau-levenshtein (~> 1.0.3)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
