@@ -1,5 +1,6 @@
 module KorCrmMapping::CRMLoader
-  @@ecrmNamespace = "http://erlangen-crm.org/140617/"
+  #@@ecrmNamespace = "http://erlangen-crm.org/140617/"
+  @@ecrmNamespace = "http://erlangen-crm.org/120111/"
   @@owlClassURI = RDF::URI.new("http://www.w3.org/2002/07/owl#Class")
   @@rdfTypeURI = RDF::URI.new("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
   @@owlObjectPropertyURI = RDF::URI.new("http://www.w3.org/2002/07/owl#ObjectProperty")
@@ -7,14 +8,16 @@ module KorCrmMapping::CRMLoader
   @@rdfsSubClassOfURI = RDF::URI.new("http://www.w3.org/2000/01/rdf-schema#subClassOf")
   @@rdfsCommentURI = RDF::URI.new("http://www.w3.org/2000/01/rdf-schema#comment")
   @@rdfsLabelURI = RDF::URI.new("http://www.w3.org/2000/01/rdf-schema#label")
-  @@skosNotationURI = RDF::URI.new("http://www.w3.org/2004/02/skos/core#notation")
+  #@@skosNotationURI = RDF::URI.new("http://www.w3.org/2004/02/skos/core#notation")
   @@rdfsRange = RDF::URI.new("http://www.w3.org/2000/01/rdf-schema#range")
   @@rdfsDomain = RDF::URI.new("http://www.w3.org/2000/01/rdf-schema#domain")
   @@owlInverseOf = RDF::URI.new("http://www.w3.org/2002/07/owl#inverseOf")
   @@rdfsSubPropertyOfURI = RDF::URI.new("http://www.w3.org/2000/01/rdf-schema#subPropertyOf")
   
   def self.loadCRM
-    @@graph = RDF::Graph.load("http://erlangen-crm.org/140617/")
+    #@@graph = RDF::Graph.load("http://erlangen-crm.org/140617/")
+    #@@graph = RDF::Graph.load("C:/Users/Sven/ECRM/ecrm_120111-dt.owl.rdf") # based on CIDOC CRM Version 5.1.2 (draft)
+    @@graph = RDF::Graph.load("ecrm_120111-dt.owl.rdf")
     loadCRMClasses
     loadCRMProperties
     
@@ -43,6 +46,7 @@ module KorCrmMapping::CRMLoader
         if subject.starts_with? @@ecrmNamespace
           crmClass = CrmClass.new
           crmClass.uri = subject
+          crmClass.notation = subject.path[/E[0-9]+/]
             
           statements = @@graph.query([subject, @@rdfsLabelURI, nil])
           statements.each_object do |object|
@@ -54,10 +58,10 @@ module KorCrmMapping::CRMLoader
             crmClass.comment = object.value
           end
             
-          statements = @@graph.query([subject, @@skosNotationURI, nil])
-          statements.each_object do |object|
-            crmClass.notation = object.value
-          end
+          #statements = @@graph.query([subject, @@skosNotationURI, nil])
+          #statements.each_object do |object|
+          #  crmClass.notation = object.value
+          #end
         end
       end         
      @@crmClasses.push crmClass
@@ -90,6 +94,7 @@ module KorCrmMapping::CRMLoader
         if subject.starts_with? @@ecrmNamespace
           crmProperty = CrmProperty.new
           crmProperty.uri = subject
+          crmProperty.notation = subject.path[/P[0-9]+i?/] 
           
           statements = @@graph.query([subject, @@rdfsLabelURI, nil])
           statements.each_object do |object|
@@ -101,10 +106,10 @@ module KorCrmMapping::CRMLoader
             crmProperty.comment = object.value
           end
         
-          statements = @@graph.query([subject, @@skosNotationURI, nil])
-          statements.each_object do |object|
-            crmProperty.notation = object.value
-          end
+          #statements = @@graph.query([subject, @@skosNotationURI, nil])
+          #statements.each_object do |object|
+          #  crmProperty.notation = object.value
+          #end
           
           #domain
           statements = @@graph.query([subject, @@rdfsDomain, nil])

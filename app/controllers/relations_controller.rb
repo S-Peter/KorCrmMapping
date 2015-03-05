@@ -29,7 +29,7 @@ class RelationsController < ApplicationController
   end
   
   def update
-    #TODO done in updatePathProperty
+    #TODO done in updatePathProperty; method never called
     redirect_to relations_path
   end
   
@@ -143,6 +143,19 @@ class RelationsController < ApplicationController
     end  
     
     redirect_to :action => "editPathProperty", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
+  end
+  
+  def destroy
+    loadMappingObjects
+    relationId = params[:relationId]
+    domainId = params[:domainId]
+    rangeId = params[:rangeId]
+    
+    actualRelation = findActualRelation @relations, relationId, domainId, rangeId
+    actualRelation.chainLinks = Array.new
+    KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
+
+    redirect_to relations_path
   end
   
 end

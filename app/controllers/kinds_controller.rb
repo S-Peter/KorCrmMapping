@@ -21,13 +21,9 @@ class KindsController < ApplicationController
     impactedActualRelations = Array.new
     for relation in @relations
       for actualRelation in relation.actualRelations
-        if actualRelation.domain.id.to_i.eql? kind.id.to_i
-        end
         if (actualRelation.domain.id.to_i.eql? kind.id.to_i) && (!crmClass.isA? actualRelation.domain.crmClass)
           impactedActualRelations.push actualRelation          
         else  
-          if actualRelation.range.id.to_i.eql? kind.id.to_i
-          end
           if (actualRelation.range.id.to_i.eql? kind.id.to_i) && (!crmClass.isA? actualRelation.range.crmClass)
             impactedActualRelations.push actualRelation
           end
@@ -41,6 +37,35 @@ class KindsController < ApplicationController
     
     kind.crmClass = crmClass
     KorCrmMapping::KorSerializerDeserializer.serializeKindInJason kind
+    redirect_to kinds_path
+  end
+  
+  def destroy
+    loadMappingObjects
+    korKindId = params[:id]
+    kind = findKind korKindId, @kinds
+    
+    # check if already mapped relations impacted
+    impactedActualRelations = Array.new
+    for relation in @relations
+      for actualRelation in relation.actualRelations
+        if (actualRelation.domain.id.to_i.eql? kind.id.to_i)
+          impactedActualRelations.push actualRelation          
+        else  
+          if (actualRelation.range.id.to_i.eql? kind.id.to_i)
+            impactedActualRelations.push actualRelation
+          end
+        end
+      end
+    end
+    for impactedActualRelation in impactedActualRelations
+      impactedActualRelation.chainLinks = Array.new
+      KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason impactedActualRelation.relation
+    end
+    
+    kind.crmClass = nil
+    KorCrmMapping::KorSerializerDeserializer.serializeKindInJason kind
+
     redirect_to kinds_path
   end
  

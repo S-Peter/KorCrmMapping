@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :kinds, only: [:index, :edit, :update]
-  resources :relations, only: [:index, :edit, :update]
+  resources :kinds, only: [:index, :edit, :update, :destroy]
+  resources :relations, only: [:index, :edit, :update, :destroy]
   
   get 'relations/edit', to: 'relations#edit'
   get 'relations/editDomain', to: 'relations#editDomain'
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   get 'relations/editPathClass', to: 'relations#editPathClass'
   post 'relations/updatePathClass', to: 'relations#updatePathClass'
+  
+  get 'relations/destroy', to: 'relations#destroy' # delete not working! why?
   
   #get 'mapping/startMapping', to: 'mapping#startMapping'
   #get 'mapping/mapKorKindForm', to: 'mapping#mapKorKindForm'

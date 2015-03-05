@@ -11,8 +11,11 @@
     <tr>
       <td><%= kind.name %></td>
       <td><% if kind.crmClass != nil %><%= kind.crmClass.label %><% end %></td>
-      <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
-    </tr>
+      <td>
+      	<%= link_to 'Edit', edit_kind_path(kind) %>
+      	<%= link_to 'Destroy', kind_path(kind), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>	
+   	</tr>
   <% end %>
 </table>
 <p><%= link_to 'Map Relations', relations_path %></p>
