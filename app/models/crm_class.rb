@@ -46,7 +46,7 @@ class CrmClass < CrmRessource
   
   def isA? crmClass
     isA = false
-    if crmClass.number == number
+    if crmClass.number.to_i == number.to_i
       isA = true
     else
       if @superClasses != nil
@@ -62,15 +62,12 @@ class CrmClass < CrmRessource
   end
   
   def reestablishLinks crmClasses
-    #puts "Reestablishing Links for #{self.label}"
     for crmClass in crmClasses
       if superClassUris.include? crmClass.uri
         @superClasses.push crmClass
-        #puts "SuperClass: #{crmClass.label}"
       end
       if subClassUris.include? crmClass.uri
         @subClasses.push crmClass
-        #puts "SubClass: #{crmClass.label}"
       end
     end
   end

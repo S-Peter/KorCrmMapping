@@ -6,14 +6,6 @@ class ActualRelation
 	  @chainLinks = Array.new
 	end
   
-  #def addLinkToChain crmResource
-  #  @chainLinks = @chainLinks.insert(-2, crmResource)
-  #end
-  
-  #def getLastDomainClassInChainLinks
-  #  return @chainLinks[@chainLinks.length-2]
-  #end
-  
   def reestablishLinks (kinds, crmClasses, crmProperties)
     for kind in kinds
       if domainId.eql? kind.id
