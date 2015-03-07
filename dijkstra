@@ -1,0 +1,59 @@
+Property: Path: /120111/P1_is_identified_by, Label: wird bezeichnet als, Domain: Person, Range: Benennung
+Property: Path: /120111/P2_has_type, Label: hat den Typus, Domain: Person, Range: Typus
+Property: Path: /120111/P8i_witnessed, Label: bezeugte, Domain: Person, Range: Phase
+Property: Path: /120111/P11i_participated_in, Label: nahm Teil an, Domain: Person, Range: Ereignis
+Property: Path: /120111/P13i_was_destroyed_by, Label: wurde zerstört durch, Domain: Person, Range: Zerstörung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: Person, Range: Handlung
+Property: Path: /120111/P22i_acquired_title_through, Label: erwarb Besitztitel durch, Domain: Person, Range: Erwerb
+Property: Path: /120111/P25i_moved_by, Label: wurde bewegt durch, Domain: Person, Range: Objektbewegung
+Property: Path: /120111/P28i_surrendered_custody_through, Label: wurde Gewahrsam übergeben durch, Domain: Person, Range: Übertragung des Gewahrsams
+Property: Path: /120111/P34i_was_assessed_by, Label: wurde beurteilt durch, Domain: Person, Range: Zustandsfeststellung
+Property: Path: /120111/P39i_was_measured_by, Label: wurde vermessen durch, Domain: Person, Range: Messung
+Property: Path: /120111/P41i_was_classified_by, Label: wurde klassifiziert durch, Domain: Person, Range: Typuszuweisung
+Property: Path: /120111/P43_has_dimension, Label: hat Dimension, Domain: Person, Range: Maß
+Property: Path: /120111/P44_has_condition, Label: hat Zustand, Domain: Person, Range: Zustandsphase
+Property: Path: /120111/P45_consists_of, Label: besteht aus, Domain: Person, Range: Material
+Property: Path: /120111/P46_is_composed_of, Label: ist zusammengesetzt aus, Domain: Person, Range: Materielles
+Property: Path: /120111/P48_has_preferred_identifier, Label: hat bevorzugtes Kennzeichen, Domain: Person, Range: Kennung
+Property: Path: /120111/P49_has_former_or_current_keeper, Label: hat früheren oder derzeitigen Betreuer, Domain: Person, Range: Akteur
+Property: Path: /120111/P53_has_former_or_current_location, Label: hat früheren oder derzeitigen Standort, Domain: Person, Range: Ort
+Property: Path: /120111/P56_bears_feature, Label: trägt Merkmal, Domain: Person, Range: Materielles Merkmal
+Property: Path: /120111/P58_has_section_definition, Label: hat Abschittsdefinition, Domain: Person, Range: Abschnittsdefinition
+Property: Path: /120111/P62i_is_depicted_by, Label: wird abgebildet durch, Domain: Person, Range: Hergestelltes
+Property: Path: /120111/P67i_is_referred_to_by, Label: wird angeführt von, Domain: Person, Range: Aussagenobjekt
+Property: Path: /120111/P70i_is_documented_in, Label: wird belegt in, Domain: Person, Range: Dokument
+Property: Path: /120111/P71i_is_listed_in, Label: wird aufgelistet in, Domain: Person, Range: Referenzdokument
+Property: Path: /120111/P75_possesses, Label: besitzt, Domain: Person, Range: Recht
+Property: Path: /120111/P76_has_contact_point, Label: hat Kontaktpunkt, Domain: Person, Range: Kontaktpunkt
+Property: Path: /120111/P92i_was_brought_into_existence_by, Label: wurde in Existenz gebracht durch, Domain: Person, Range: Daseinsbeginn
+Property: Path: /120111/P93i_was_taken_out_of_existence_by, Label: wurde seiner Existenz beraubt durch, Domain: Person, Range: Daseinsende
+Property: Path: /120111/P96i_gave_birth, Label: gebar, Domain: Person, Range: Geburt
+Property: Path: /120111/P100i_died_in, Label: starb in, Domain: Person, Range: Tod
+Property: Path: /120111/P105i_has_right_on, Label: hat Rechte an, Domain: Person, Range: Rechtsobjekt
+Property: Path: /120111/P107i_is_current_or_former_member_of, Label: ist derzeitiges oder früheres Mitglied von, Domain: Person, Range: Menschliche Gruppe
+Property: Path: /120111/P109i_is_current_or_former_curator_of, Label: ist derzeitiger oder früherer Kurator von, Domain: Person, Range: Sammlung
+Property: Path: /120111/P111i_was_added_by, Label: wurde hinzugefügt durch, Domain: Person, Range: Teilhinzufügung
+Property: Path: /120111/P113i_was_removed_by, Label: wurde entfernt durch, Domain: Person, Range: Teilentfernung
+Property: Path: /120111/P123i_resulted_from, Label: ergab sich aus, Domain: Person, Range: Umwandlung
+Property: Path: /120111/P130_shows_features_of, Label: zeigt Merkmale von, Domain: Person, Range: Sache
+Property: Path: /120111/P131_is_identified_by, Label: wird identifziert durch, Domain: Person, Range: Akteurbenennung
+Property: Path: /120111/P136i_supported_type_creation, Label: belegte, Domain: Person, Range: Typuserfindung
+Property: Path: /120111/P138i_has_representation, Label: wird dargestellt durch, Domain: Person, Range: Bildliches
+Property: Path: /120111/P140i_was_attributed_by, Label: bekam Merkmal zugewiesen durch, Domain: Person, Range: Merkmalszuweisung
+Property: Path: /120111/P143i_was_joined_by, Label: wurde verbunden durch, Domain: Person, Range: Beitritt
+Property: Path: /120111/P145i_left_by, Label: wurde entlassen durch, Domain: Person, Range: Austritt
+Property: Path: /120111/P1i_identifies, Label: bezeichnet, Domain: Benennung, Range: CRM Entität
+Property: Path: /120111/P94i_was_created_by, Label: wurde erschaffen durch, Domain: Benennung, Range: Begriffliche Schöpfung
+Property: Path: /120111/P102_has_title, Label: trägt den Titel, Domain: Benennung, Range: Titel
+Property: Path: /120111/P106_is_composed_of, Label: ist zusammengesetzt aus, Domain: Benennung, Range: Symbolisches Objekt
+Property: Path: /120111/P142i_was_used_in, Label: wurde benutzt in, Domain: Benennung, Range: Kennzeichenzuweisung
+Property: Path: /120111/P149_is_identified_by, Label: wird identifiziert durch, Domain: Benennung, Range: Begriff- oder Konzeptbenennung 
+Property: Path: /120111/P103i_was_intention_of, Label: war Bestimmung von, Domain: Typus, Range: Künstliches
+Property: Path: /120111/P4_has_time-span, Label: hat Zeitspanne, Domain: Phase, Range: Zeitspanne
+Property: Path: /120111/P8_took_place_on_or_within, Label: fand statt auf oder innerhalb von , Domain: Phase, Range: Materieller Gegenstand
+Property: Path: /120111/P114_is_equal_in_time_to, Label: zeitgleich zu, Domain: Phase, Range: Geschehendes
+Property: Path: /120111/P12_occurred_in_the_presence_of, Label: fand statt im Beisein von, Domain: Ereignis, Range: Seiendes
+Property: Path: /120111/P33_used_specific_technique, Label: benutzte das bestimmte Verfahren, Domain: Handlung, Range: Entwurf oder Verfahren
+Property: Path: /120111/P91_has_unit, Label: hat Einheit, Domain: Maß, Range: Maßeinheit
+Property: Path: /120111/P126i_was_employed_in, Label: wurde verwendet bei, Domain: Material, Range: Bearbeitung
+Property: Path: /120111/P87_is_identified_by, Label: wird bezeichnet als, Domain: Ort, Range: Ortsbenennung

@@ -1,11 +1,6 @@
 module KorCrmMapping::ShortestPathCalculator
   
-  def self.calculateShortestPath (actualRelationship, crmProperties)
-    #innerNodes most specific for which path shortest
-    
-  end
-  
-  def self.shTest
+  def self.shortestPathTest
     loadMappingObjects
     for crmClass in @@crmClasses
       if crmClass.uri.path.eql? '/120111/E21_Person'
@@ -18,98 +13,144 @@ module KorCrmMapping::ShortestPathCalculator
     
     puts sourceClass.label
     puts targetClass.label
-    #bfs @@crmProperties, sourceClass, targetClass
-    bfs2 sourceClass, targetClass
-    return # nothing, else memory allocation error!!!!!!!!!!!!!!!
-  end
-  
-  def self.bfs (crmProperties, sourceClass, targetClass)
-    @@crmProperties = crmProperties
-    @@targetClass = targetClass
     
-    visited= Array.new
-    visited.push sourceClass
-    
-    @@i=0
-    @@pathHash = Hash.new Array.new
-    
-    pathArray = Array.new
-    leavingProperties= getLeavingProperties sourceClass
-    calculatePathToTargetForPropertiesWithDomainClass leavingProperties, pathArray
-
-    puts @@pathHash.inspect
-
-  end
-  
-  private #Tiefendurchlauf!!!
-  def self.calculatePathToTargetForPropertiesWithDomainClass (propertiesWithDomainClass, startPathArray)
-    puts @@pathHash.size
-    @@i+=1
-    for propertyWithDomainClass in propertiesWithDomainClass  
-      pathArray = startPathArray.dup #shallow copy -> only array copied, not elements of array
-      pathArray.push propertyWithDomainClass
-      if @@targetClass.isA? propertyWithDomainClass.range #-> found, exit condition
-        puts "--------------------yes----------------------"
-        pathArray.push propertyWithDomainClass
-        @@pathHash[@@i] = pathArray
-        break #shortest path from sourceClass to targetClass found, eventuelle mehrere properties mit shortest path!!!
-      else 
-        #leavingProperties = getLeavingProperties propertyWithDomainClass.range
-        #calculatePathToTargetForPropertiesWithDomainClass leavingProperties, pathArray
-      end
-    end
-  end
-  
-  private
-  def self.getLeavingProperties (crmClass) #should return all properties of crmClass or its subClasses; class specification of inner node possible!!!
-    crmClassSubAndSuperClasses = Array.new
-    crmClassSubAndSuperClasses.push crmClass
-    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSubClasses
-    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSuperClasses
-    propertiesWithDomainClass = Array.new
-    for crmProperty in @@crmProperties
-      for crmClass in crmClassSubAndSuperClasses
-        if crmClass.isA? crmProperty.domain
-          if !propertiesWithDomainClass.include? crmProperty
-            propertiesWithDomainClass.push crmProperty
-          end
-        end
-      end
-    end
-    propertiesWithDomainClass
-  end
-  
-  def self.loadMappingObjects
-    @@crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason
-    for crmClass in @@crmClasses
-      crmClass.reestablishLinks @@crmClasses
-    end
-    @@crmProperties = KorCrmMapping::CrmSerializerDeserializer.deserializePropertiesInJason
-    for crmProperty in @@crmProperties
-      crmProperty.reestablishLinks @@crmProperties, @@crmClasses
-    end
-    @@kinds = KorCrmMapping::KorSerializerDeserializer.deserializeKindsInJason
-    for kind in @@kinds
-      kind.reestablishLinks @@crmClasses
-    end
-    @@relations = KorCrmMapping::KorSerializerDeserializer.deserializeRelationsInJason
-    for relation in @@relations
-      relation.reestablishLinks @@kinds, @@crmClasses, @@crmProperties
-    end
-  end
-  
-  def self.bfs2 (sourceClass, targetClass)
-    sourcePropertiesWithDomain = getLeavingProperties sourceClass
+    sourcePropertiesWithDomain = getPropertiesOfClass sourceClass
     for sourcePropertyWithDomain in sourcePropertiesWithDomain
       domain = sourcePropertyWithDomain.range
       puts "ShortestPath via #{sourcePropertyWithDomain.label}"
-      pathLength = realBfs domain, targetClass
+      pathLength = bfs domain, targetClass
       puts pathLength
     end
-    
+    return # nothing, else memory allocation error!!!!!!!!!!!!!!!
   end
   
-  def self.realBfs sourceClass, targetClass
+  def self.dijkstraTest
+    loadMappingObjects
+    for crmProperty in @@crmProperties
+      crmProperty.similarity = 1
+    end
+    
+    for crmClass in @@crmClasses
+      if crmClass.uri.path.eql? '/120111/E21_Person'
+        sourceClass = crmClass
+      end
+      if crmClass.uri.path.eql? '/120111/E24_Physical_Man-Made_Thing'
+        targetClass = crmClass
+      end
+    end
+    
+    puts sourceClass.label
+    puts targetClass.label
+    
+    puts "---------------------Dijkstra------------------"
+    shortestPathProperties = dijkstra sourceClass, targetClass
+    dFile = File.new("dijkstra", "w")
+    for property in shortestPathProperties
+      dFile.write "Property: Path: #{property.path}, Label: #{property.label}, Domain: #{property.domain.label}, Range: #{property.range.label}"
+      dFile.write "\n"
+    end
+    dFile.close
+
+    return # nothing, else memory allocation error!!!!!!!!!!!!!!!
+  end
+
+  def self.dijkstra sourceClass, targetClass #without specialisation!!!
+    green = Array.new
+    yellow= Array.new
+    red = Array.new
+    dist = Hash.new
+    
+    #initialization
+    yellow.push sourceClass  
+    dist[sourceClass] = 0
+    
+    #sonderfall shortest path to same node!!!
+    
+    while !yellow.empty?
+         
+      #select seen node with least distance to startNode
+      nodeWithMinDistance = findNodeWithMinDist yellow, dist
+      green.push nodeWithMinDistance
+      yellow.delete nodeWithMinDistance
+      
+      if nodeWithMinDistance == targetClass
+        puts"Already visited nodes with discovered shortest path"
+        for g in green
+          puts g.label
+        end
+        break
+      end
+
+      propertiesOfClass = getPropertiesOfClass nodeWithMinDistance
+      for propertyOfClass in propertiesOfClass
+        if !(yellow.include? propertyOfClass.range or green.include? propertyOfClass.range) #node grey
+          helpProperty = HelpProperty.new      
+          helpProperty.label = propertyOfClass.label
+          helpProperty.path = propertyOfClass.uri.path
+          helpProperty.domain = nodeWithMinDistance
+          helpProperty.range = propertyOfClass.range
+          red.push helpProperty
+          
+          yellow.push propertyOfClass.range
+          dist[propertyOfClass.range] = dist[nodeWithMinDistance] + propertyOfClass.similarity
+        else
+          if yellow.include? propertyOfClass.range #node yellow
+            if dist[propertyOfClass.range] > dist[nodeWithMinDistance] + propertyOfClass.similarity #never true since similarity always 1!!!
+              helpProperty = HelpProperty.new      
+              helpProperty.label = propertyOfClass.label
+              helpProperty.path = propertyOfClass.uri.path
+              helpProperty.domain = nodeWithMinDistance
+              helpProperty.range = propertyOfClass.range
+              red.push helpProperty
+              
+              for property in red
+                if property.range.eql? propertyOfClass.range
+                  red.delete property
+                end
+              end   
+                        
+              dist[propertyOfClass.range] = dist[nodeWithMinDistance] + propertyOfClass.similarity            
+            end
+          else #node green
+          end
+        end
+      end  
+    end
+    return red
+  end
+  
+  def self.findNodeWithMinDist yellow, dist
+    i = 0
+    minDist = dist[yellow[i]]
+    nodeWithMinDistance = yellow[i]
+    while i < yellow.size - 1
+      i += 1
+       if dist[yellow[i]] < minDist
+        minDist = dist[yellow[i]]
+        nodeWithMinDistance = yellow[i]
+      end
+    end
+    nodeWithMinDistance
+  end
+  
+  def self.findPathFromTargetToSource (properties, source, target)
+    propertiesToNode = Array.new
+    for property in properties
+      if property.range == target
+        propertiesToNode.push property
+      end
+    end
+    puts "Number of properties to node(must be 1!!!): #{propertiesToNode.size}"
+    puts propertiesToNode.last.domain.label
+    puts source.label
+    if propertiesToNode.last.domain != source
+      puts "if"
+      propertiesToNode.concat findPathFromTargetToSource properties, source, propertiesToNode.last.domain
+    end  
+    return propertiesToNode
+  end
+  
+  def self.bfs sourceClass, targetClass
     #initialization
     pathLength = 0
     queue = Array.new
@@ -137,11 +178,10 @@ module KorCrmMapping::ShortestPathCalculator
       if crmClass.isA? targetClass
         #shortestPath found!!!
         pathLength = level + 1
-        #puts "Path Length: #{level + 1}"
         break
       end 
   
-      propertiesWithDomain = getLeavingProperties crmClass
+      propertiesWithDomain = getPropertiesOfClassAndSubclasses crmClass
       for propertyWithDomain in propertiesWithDomain
         range = propertyWithDomain.range
         if !visited.include? range
@@ -154,6 +194,63 @@ module KorCrmMapping::ShortestPathCalculator
     
     ## 0 -> infinite!
     return pathLength
+  end
+  
+  private
+  def self.getPropertiesOfClass (crmClass) #returns all properties of crmClass and those inherited from its superclasses
+    crmClassSubAndSuperClasses = Array.new
+    crmClassSubAndSuperClasses.push crmClass
+    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSuperClasses
+    propertiesWithDomainClass = Array.new
+    for crmProperty in @@crmProperties
+      for crmClass in crmClassSubAndSuperClasses
+        if crmClass.isA? crmProperty.domain
+          if !propertiesWithDomainClass.include? crmProperty
+            propertiesWithDomainClass.push crmProperty
+          end
+        end
+      end
+    end
+    propertiesWithDomainClass
+  end
+  
+  private
+  def self.getPropertiesOfClassAndSubclasses (crmClass) #returns all properties of crmClass and those inherited from its superclasses + those of its subClasses since class specification of inner node is possible!!!
+    crmClassSubAndSuperClasses = Array.new
+    crmClassSubAndSuperClasses.push crmClass
+    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSubClasses
+    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSuperClasses
+    propertiesWithDomainClass = Array.new
+    for crmProperty in @@crmProperties
+      for crmClass in crmClassSubAndSuperClasses
+        if crmClass.isA? crmProperty.domain
+          if !propertiesWithDomainClass.include? crmProperty
+            propertiesWithDomainClass.push crmProperty
+          end
+        end
+      end
+    end
+    propertiesWithDomainClass
+  end
+  
+  private
+  def self.loadMappingObjects
+    @@crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason
+    for crmClass in @@crmClasses
+      crmClass.reestablishLinks @@crmClasses
+    end
+    @@crmProperties = KorCrmMapping::CrmSerializerDeserializer.deserializePropertiesInJason
+    for crmProperty in @@crmProperties
+      crmProperty.reestablishLinks @@crmProperties, @@crmClasses
+    end
+    @@kinds = KorCrmMapping::KorSerializerDeserializer.deserializeKindsInJason
+    for kind in @@kinds
+      kind.reestablishLinks @@crmClasses
+    end
+    @@relations = KorCrmMapping::KorSerializerDeserializer.deserializeRelationsInJason
+    for relation in @@relations
+      relation.reestablishLinks @@kinds, @@crmClasses, @@crmProperties
+    end
   end
   
 end
