@@ -1,0 +1,2220 @@
+Label: Medium
+Head: Medium
+Modifier: []
+---------------------------
+Label: Ort
+Head: Ort
+Modifier: []
+---------------------------
+Label: Institution
+Head: Institution
+Modifier: []
+---------------------------
+Label: Person
+Head: Person
+Modifier: []
+---------------------------
+Label: Literatur
+Head: Literatur
+Modifier: []
+---------------------------
+Label: Werk
+Head: Werk
+Modifier: []
+---------------------------
+Label: Text
+Head: Text
+Modifier: []
+---------------------------
+Label: Personengruppe
+Head: Personengruppe
+Modifier: []
+---------------------------
+Label: Ausstellung
+Head: Ausstellung
+Modifier: []
+---------------------------
+Label: Embedded Medium
+Head: Medium
+Modifier: ["Embedded"]
+---------------------------
+Label: Name
+Head: Name
+Modifier: []
+---------------------------
+Label: Eindeutiger Name
+Head: Name
+Modifier: ["Eindeutiger"]
+---------------------------
+Label: Datierung
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Modellierung der Gibelfiguren
+Head: Modellierung
+Modifier: ["Gibelfiguren"]
+---------------------------
+Label: Ausführung
+Head: Ausführung
+Modifier: []
+---------------------------
+Label: Baujahr
+Head: Baujahr
+Modifier: []
+---------------------------
+Label: Bauzeit
+Head: Bauzeit
+Modifier: []
+---------------------------
+Label: Grundsteinlegung
+Head: Grundsteinlegung
+Modifier: []
+---------------------------
+Label: Lebensdaten
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: nachweislich tätig zwischen
+Head: 
+Modifier: []
+---------------------------
+Label: Baubeginn
+Head: Baubeginn
+Modifier: []
+---------------------------
+Label: Datierung Theater
+Head: Theater
+Modifier: ["Datierung"]
+---------------------------
+Label: Geburtsdatum
+Head: Geburtsdatum
+Modifier: []
+---------------------------
+Label: Geburtsjahr
+Head: Geburtsjahr
+Modifier: []
+---------------------------
+Label: Datierung Umbau
+Head: Umbau
+Modifier: ["Datierung"]
+---------------------------
+Label: Kunsthistorikerin seit
+Head: Kunsthistorikerin
+Modifier: []
+---------------------------
+Label: Erste Auflage
+Head: Auflage
+Modifier: ["Erste"]
+---------------------------
+Label: Erweiterung
+Head: Erweiterung
+Modifier: []
+---------------------------
+Label: Überarbeitung
+Head: Überarbeitung
+Modifier: []
+---------------------------
+Label: Neugestaltung Innenraum
+Head: Innenraum
+Modifier: ["Neugestaltung"]
+---------------------------
+Label: Umbaumaßnahmen
+Head: Umbaumaßnahmen
+Modifier: []
+---------------------------
+Label: Datierung vor
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung um Christi Geburt
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Bau der Villa durch Palladio
+Head: Bau
+Modifier: ["Villa"]
+---------------------------
+Label: Datierung - Decke
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Schaffenszeit
+Head: Schaffenszeit
+Modifier: []
+---------------------------
+Label: Zürich
+Head: Zürich
+Modifier: []
+---------------------------
+Label: Gründung
+Head: Gründung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: verstorben
+Head: 
+Modifier: []
+---------------------------
+Label: zerstört
+Head: 
+Modifier: []
+---------------------------
+Label: Gartengestaltung
+Head: Gartengestaltung
+Modifier: []
+---------------------------
+Label: Dauer
+Head: Dauer
+Modifier: []
+---------------------------
+Label: Beginn
+Head: Beginn
+Modifier: []
+---------------------------
+Label: Zeitraum
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Vollendet
+Head: Vollendet
+Modifier: []
+---------------------------
+Label: Beginn der Tätigkeit
+Head: Beginn
+Modifier: ["Tätigkeit"]
+---------------------------
+Label: Umbau
+Head: Umbau
+Modifier: []
+---------------------------
+Label: Neugestaltung
+Head: Neugestaltung
+Modifier: []
+---------------------------
+Label: Gründungsdatum
+Head: Gründungsdatum
+Modifier: []
+---------------------------
+Label: Erste Bauperiode
+Head: Bauperiode
+Modifier: ["Erste"]
+---------------------------
+Label: Zweite Bauperiode
+Head: Bauperiode
+Modifier: ["Zweite"]
+---------------------------
+Label: Todesjahr
+Head: Todesjahr
+Modifier: []
+---------------------------
+Label: Neubau
+Head: Neubau
+Modifier: []
+---------------------------
+Label: Wirkungsdaten
+Head: Wirkungsdaten
+Modifier: []
+---------------------------
+Label: gegründet
+Head: 
+Modifier: []
+---------------------------
+Label: Aktiv zwischen
+Head: Aktiv
+Modifier: []
+---------------------------
+Label: Tätig zwischen
+Head: Tätig
+Modifier: []
+---------------------------
+Label: Aktiv
+Head: Aktiv
+Modifier: []
+---------------------------
+Label: Erste Erwähnung
+Head: Erwähnung
+Modifier: ["Erste"]
+---------------------------
+Label: Umbau und Erweiterung
+Head: Umbau
+Modifier: []
+---------------------------
+Label: Umbau und Erweiterung
+Head: Erweiterung
+Modifier: []
+---------------------------
+Label: Augsburg
+Head: Augsburg
+Modifier: []
+---------------------------
+Label: Fayencemanufaktur Ansbach
+Head: Ansbach
+Modifier: ["Fayencemanufaktur"]
+---------------------------
+Label: Geburtstag
+Head: Geburtstag
+Modifier: []
+---------------------------
+Label: Ausmalung durch Melozza da Forli zwischen
+Head: Ausmalung
+Modifier: []
+---------------------------
+Label: Ausmalung durch Luca Signorelli
+Head: Ausmalung
+Modifier: []
+---------------------------
+Label: Ausmalung durch Il Poredenone zwischen
+Head: Ausmalung
+Modifier: []
+---------------------------
+Label: Ausmalung durch Baldassarre Peruzzi, Sebastiano del Piombo, Raffaello Santi , Sodoma zwischen
+Head: Ausmalung
+Modifier: []
+---------------------------
+Label: Ausmalung durch Baldassare Peruzzi zwischen
+Head: Ausmalung
+Modifier: []
+---------------------------
+Label: Ausmalung durch Sodoma
+Head: Ausmalung
+Modifier: []
+---------------------------
+Label: Datierung des Baukomplexes
+Head: Datierung
+Modifier: ["Baukomplexes"]
+---------------------------
+Label: Entwurf
+Head: Entwurf
+Modifier: []
+---------------------------
+Label: Ausführung des abgeänderten Entwurfs
+Head: Ausführung
+Modifier: ["Entwurfs"]
+---------------------------
+Label: Bildhauerlehre in Teplitz-Schönau
+Head: Bildhauerlehre
+Modifier: []
+---------------------------
+Label: Wirkungszeit
+Head: Wirkungszeit
+Modifier: []
+---------------------------
+Label: Aufnahme
+Head: Aufnahme
+Modifier: []
+---------------------------
+Label: lLebensdaten
+Head: 
+Modifier: []
+---------------------------
+Label: Altarweihe
+Head: Altarweihe
+Modifier: []
+---------------------------
+Label: Datierung - Original
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung - Kopie
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Fertigstellung
+Head: Fertigstellung
+Modifier: []
+---------------------------
+Label: formiert sich
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung des jetzt sichtbaren Baus 
+Head: Datierung
+Modifier: ["Baus"]
+---------------------------
+Label: Datierung der engültigen Fassade von Pietro Patriarca
+Head: Datierung
+Modifier: ["Fassade"]
+---------------------------
+Label: Datierung Fassade von Longhi
+Head: Fassade
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Fassade
+Head: Fassade
+Modifier: ["Datierung"]
+---------------------------
+Label: Fassade
+Head: Fassade
+Modifier: []
+---------------------------
+Label: Datierung der Fassade 
+Head: Datierung
+Modifier: ["Fassade"]
+---------------------------
+Label: Restaurierung des Vorgängerbaus
+Head: Restaurierung
+Modifier: ["Vorgängerbaus"]
+---------------------------
+Label: fertiggestellt
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung Chor und chorseitiger Teil des Langhauses
+Head: Chor
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Chor und chorseitiger Teil des Langhauses
+Head: Teil
+Modifier: ["chorseitiger", "Langhauses"]
+---------------------------
+Label: Datierung des braocken Neubaus 
+Head: Datierung
+Modifier: ["Neubaus"]
+---------------------------
+Label: #2
+Head: 
+Modifier: []
+---------------------------
+Label: Ausbau und Erweiterung der Büro- und Laborbauten
+Head: Ausbau
+Modifier: []
+---------------------------
+Label: Ausbau und Erweiterung der Büro- und Laborbauten
+Head: Erweiterung
+Modifier: ["Büro-"]
+---------------------------
+Label: Ausbau und Erweiterung der Büro- und Laborbauten
+Head: Laborbauten
+Modifier: []
+---------------------------
+Label: Datierung Rest des Langhauses und Fassade
+Head: Rest
+Modifier: ["Datierung", "Langhauses"]
+---------------------------
+Label: Datierung Rest des Langhauses und Fassade
+Head: Fassade
+Modifier: []
+---------------------------
+Label: Anbau
+Head: Anbau
+Modifier: []
+---------------------------
+Label: Datierung - Entwurf
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung - Rekonstruktion
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Bauleitung Domenico Fontana und anschließend Carlo Maderno
+Head: Fontana
+Modifier: ["Bauleitung", "Domenico"]
+---------------------------
+Label: Bauleitung Domenico Fontana und anschließend Carlo Maderno
+Head: Maderno
+Modifier: ["anschließend", "Carlo"]
+---------------------------
+Label: Datierung Tympanon
+Head: Tympanon
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Portal
+Head: Portal
+Modifier: ["Datierung"]
+---------------------------
+Label: Erweiterung der Kirche mit diesem Bau
+Head: Erweiterung
+Modifier: ["Kirche"]
+---------------------------
+Label: gestorben vor
+Head: 
+Modifier: []
+---------------------------
+Label: tätig nach
+Head: 
+Modifier: []
+---------------------------
+Label: Figurenbuch I
+Head: I
+Modifier: ["Figurenbuch"]
+---------------------------
+Label: Figurenbuch II
+Head: II
+Modifier: ["Figurenbuch"]
+---------------------------
+Label: Datierung - ehemalige Aufstellung am Ort
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung - Wiederaufstellung
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Gründung von HPP
+Head: Gründung
+Modifier: []
+---------------------------
+Label: Datierung - Ausgestellt
+Head: Datierung
+Modifier: []
+---------------------------
+Label: 1. Restaurierung
+Head: Restaurierung
+Modifier: ["1."]
+---------------------------
+Label: 2. Restaurierung
+Head: Restaurierung
+Modifier: ["2."]
+---------------------------
+Label: Weihe 
+Head: Weihe
+Modifier: []
+---------------------------
+Label: Datierung nach Renate Trnek
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Bauphase 1
+Head: Bauphase
+Modifier: []
+---------------------------
+Label: Bauphase 2
+Head: Bauphase
+Modifier: []
+---------------------------
+Label: Zerstörung
+Head: Zerstörung
+Modifier: []
+---------------------------
+Label: Wiederaufbau
+Head: Wiederaufbau
+Modifier: []
+---------------------------
+Label: Brand 
+Head: Brand
+Modifier: []
+---------------------------
+Label: Datierung - Anfang
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: errichtet
+Head: 
+Modifier: []
+---------------------------
+Label: Einweihung
+Head: Einweihung
+Modifier: []
+---------------------------
+Label: Kartusche
+Head: Kartusche
+Modifier: []
+---------------------------
+Label: Datierung der Ausstattung 
+Head: Datierung
+Modifier: ["Ausstattung"]
+---------------------------
+Label: Flußgötter
+Head: Flußgötter
+Modifier: []
+---------------------------
+Label: Datierung/Ausstellung
+Head: Datierung/Ausstellung
+Modifier: []
+---------------------------
+Label: Restaurierung
+Head: Restaurierung
+Modifier: []
+---------------------------
+Label: Datierung Körper
+Head: Körper
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Kopf
+Head: Kopf
+Modifier: ["Datierung"]
+---------------------------
+Label: Lebensjahr
+Head: Lebensjahr
+Modifier: []
+---------------------------
+Label: Enstehung
+Head: Enstehung
+Modifier: []
+---------------------------
+Label: Entstehung
+Head: Entstehung
+Modifier: []
+---------------------------
+Label: geboren
+Head: 
+Modifier: []
+---------------------------
+Label: Glockenturm
+Head: Glockenturm
+Modifier: []
+---------------------------
+Label: Fertigstellung des Kirchenbaus
+Head: Fertigstellung
+Modifier: ["Kirchenbaus"]
+---------------------------
+Label: Aufstellung
+Head: Aufstellung
+Modifier: []
+---------------------------
+Label: Aktiv um
+Head: Aktiv
+Modifier: []
+---------------------------
+Label: Fresken
+Head: Fresken
+Modifier: []
+---------------------------
+Label: Auftrag
+Head: Auftrag
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Gründungsjahr
+Head: Gründungsjahr
+Modifier: []
+---------------------------
+Label: Eröffnungsfeier zum 100. Geburtstag Adornos
+Head: Eröffnungsfeier
+Modifier: []
+---------------------------
+Label: Datierung nach
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Zeitraum München - erste Ausstellung und Konzeption
+Head: München
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum München - erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Regierungszeit
+Head: Regierungszeit
+Modifier: []
+---------------------------
+Label: Guss
+Head: Guss
+Modifier: []
+---------------------------
+Label: Römischer Kaiser seit
+Head: Kaiser
+Modifier: ["Römischer"]
+---------------------------
+Label: Rekonstruktion
+Head: Rekonstruktion
+Modifier: []
+---------------------------
+Label: und
+Head: 
+Modifier: []
+---------------------------
+Label: und
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung der Kamee
+Head: Datierung
+Modifier: ["Kamee"]
+---------------------------
+Label: Datierung der langobardischen  Brosche 
+Head: Datierung
+Modifier: ["Brosche"]
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Zeitraum München - erste Ausstellung und Konzeption:
+Head: München
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum München - erste Ausstellung und Konzeption:
+Head: Konzeption:
+Modifier: []
+---------------------------
+Label: Aufstellungsdatum
+Head: Aufstellungsdatum
+Modifier: []
+---------------------------
+Label: Tätig
+Head: Tätig
+Modifier: []
+---------------------------
+Label: Zeitraum  Paris - erste Ausstellung und Konzeption
+Head: Paris
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum  Paris - erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum - London
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Datum
+Head: Datum
+Modifier: []
+---------------------------
+Label: Zeitraum- Berlin
+Head: Berlin
+Modifier: ["Zeitraum-"]
+---------------------------
+Label: Zeitraum - Brüssel
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Den Haag
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Modell
+Head: Modell
+Modifier: []
+---------------------------
+Label: Datierung, nach
+Head: Datierung,
+Modifier: []
+---------------------------
+Label: Datierung, Fotografie
+Head: Fotografie
+Modifier: ["Datierung,"]
+---------------------------
+Label: Datierung, Decke
+Head: Decke
+Modifier: ["Datierung,"]
+---------------------------
+Label: Datierung, Aufstellung
+Head: Aufstellung
+Modifier: ["Datierung,"]
+---------------------------
+Label: erbaut
+Head: 
+Modifier: []
+---------------------------
+Label: Zeitraum - erste Ausstellung und Konzeption,  New York
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - erste Ausstellung und Konzeption,  New York
+Head: York
+Modifier: ["Konzeption,", "New"]
+---------------------------
+Label: Zeitraum - Chicago
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Boston
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: besteht seit
+Head: 
+Modifier: []
+---------------------------
+Label: geweiht
+Head: 
+Modifier: []
+---------------------------
+Label: Zeitraum - Berlin
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Amsterdam, Herbst
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum  Stuttgart-  erste Ausstellung und Konzeption
+Head: Stuttgart-
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum  Stuttgart-  erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum - Filmprogramm, Stuttgart
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Zürich
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Gdansk, Zagreb, München, Tokyo, Osaka
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Wien
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum New York- Ausstellung und Konzeption
+Head: Ausstellung
+Modifier: ["Zeitraum", "New", "York-"]
+---------------------------
+Label: Zeitraum New York- Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum - San Francisco
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Cincinnati
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Minneapolis
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Cleveland
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Baltimore
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Providence
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Grand Rapis
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Eröffnung
+Head: Eröffnung
+Modifier: []
+---------------------------
+Label: Datierung Hauptaltar
+Head: Hauptaltar
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Hauptaltarblatt
+Head: Hauptaltarblatt
+Modifier: ["Datierung"]
+---------------------------
+Label: Todesdatum
+Head: Todesdatum
+Modifier: []
+---------------------------
+Label: Schmuckband
+Head: Schmuckband
+Modifier: []
+---------------------------
+Label: bekannt
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung - Museum im Gebäude ab
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung - Abzug
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Bischof von Würzburg 
+Head: Bischof
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Zeitraum New York  - erste Ausstellung und Konzeption
+Head: York
+Modifier: ["Zeitraum", "New"]
+---------------------------
+Label: Zeitraum New York  - erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Wirkungssdaten
+Head: Wirkungssdaten
+Modifier: []
+---------------------------
+Label: Zeitraum - Basel
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Mailand
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Madrid
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Amsterdam
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Paris
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Wirkunkungsdaten
+Head: Wirkunkungsdaten
+Modifier: []
+---------------------------
+Label: letztmals erwähnt
+Head: 
+Modifier: []
+---------------------------
+Label: gestorben
+Head: 
+Modifier: []
+---------------------------
+Label: Wiederherstellung
+Head: Wiederherstellung
+Modifier: []
+---------------------------
+Label: Zeitraum - Köln
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Bremen
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Hagen
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Frankfurt
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Hamburg
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Budapest
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Oslo
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Helsinki
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: äußerliche Umgestaltung
+Head: Umgestaltung
+Modifier: ["äußerliche"]
+---------------------------
+Label: Zeitraum - München
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Mägliche weitere Stationen der Ausstellung: Hamburg, Wien, Budapest
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Erneuerung
+Head: Erneuerung
+Modifier: []
+---------------------------
+Label: Restaurierung und Hinzufügung des Campanile
+Head: Restaurierung
+Modifier: []
+---------------------------
+Label: Restaurierung und Hinzufügung des Campanile
+Head: Hinzufügung
+Modifier: ["Campanile"]
+---------------------------
+Label: Datierung  - Wände
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung des bronzenen Originals des Lysipp
+Head: Datierung
+Modifier: ["Originals"]
+---------------------------
+Label: Datierung der marmornen  Kopie des Glykon
+Head: Datierung
+Modifier: ["Kopie"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Einweihung 
+Head: Einweihung
+Modifier: []
+---------------------------
+Label: Funddatierung
+Head: Funddatierung
+Modifier: []
+---------------------------
+Label: Jacob Kohn
+Head: Kohn
+Modifier: ["Jacob"]
+---------------------------
+Label: Joseph Kohn 
+Head: Kohn
+Modifier: ["Joseph"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Geschäftsumbau
+Head: Geschäftsumbau
+Modifier: []
+---------------------------
+Label: Gewandstoff
+Head: Gewandstoff
+Modifier: []
+---------------------------
+Label: Besätze
+Head: Besätze
+Modifier: []
+---------------------------
+Label: Kaselkreuz
+Head: Kaselkreuz
+Modifier: []
+---------------------------
+Label: Stab
+Head: Stab
+Modifier: []
+---------------------------
+Label: Kreuz
+Head: Kreuz
+Modifier: []
+---------------------------
+Label: Obergeschoß der Fassade
+Head: Obergeschoß
+Modifier: ["Fassade"]
+---------------------------
+Label: Nordportal
+Head: Nordportal
+Modifier: []
+---------------------------
+Label: Datierung  / nicht gesichert
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung  / nicht gesichert
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung  / nicht gesichert
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung  / nicht gesichert
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Zeitraum Frankfurt - erste Ausstellung und Konzeption
+Head: Frankfurt
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum Frankfurt - erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum Frankfurt -  Konzeption
+Head: Frankfurt
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum - Oxford
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum 
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Einwölbung
+Head: Einwölbung
+Modifier: []
+---------------------------
+Label: Erweiterungsbauten
+Head: Erweiterungsbauten
+Modifier: []
+---------------------------
+Label: Sterbejahr
+Head: Sterbejahr
+Modifier: []
+---------------------------
+Label: Datierung: vor
+Head: Datierung:
+Modifier: []
+---------------------------
+Label: Datierung bald nach
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Zeitraum - Entwicklung
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Dauerausstellung
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Renovierung mit Ausnahme der Apsis
+Head: Renovierung
+Modifier: []
+---------------------------
+Label: Datierung, wiedererrichtet
+Head: Datierung,
+Modifier: []
+---------------------------
+Label: Datierung, gedruckt
+Head: Datierung,
+Modifier: []
+---------------------------
+Label: Zeitraum- Salzburg
+Head: Salzburg
+Modifier: ["Zeitraum-"]
+---------------------------
+Label: Zeitraum - Düsseldorf
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Leipzig
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Chemnitz
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Frankfurt am Main
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Stettin
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Waldenburg
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Halle an der Saale
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung Original
+Head: Original
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung zweite Replik
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung Replik
+Head: Replik
+Modifier: ["Datierung"]
+---------------------------
+Label: Zeitraum Rüsselsheim- erste Ausstellung und Konzeption
+Head: Rüsselsheim-
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum Rüsselsheim- erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum - Freiburg
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Jena
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Cottbus
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Erfuhrt
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Frankfurt, DZ Bank
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung, neu gemalt
+Head: Datierung,
+Modifier: []
+---------------------------
+Label: Datierung des Triumphtors
+Head: Datierung
+Modifier: ["Triumphtors"]
+---------------------------
+Label: abgerissen
+Head: 
+Modifier: []
+---------------------------
+Label: Veränderung u. Erweiterung
+Head: Veränderung
+Modifier: []
+---------------------------
+Label: Rotunde abgerissen
+Head: Rotunde
+Modifier: []
+---------------------------
+Label: Datierung des Baus
+Head: Datierung
+Modifier: ["Baus"]
+---------------------------
+Label: gegründet am
+Head: 
+Modifier: []
+---------------------------
+Label: Zeitraum - Lausanne
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum - Wellington
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Ausbau
+Head: Ausbau
+Modifier: []
+---------------------------
+Label: Datierung der ersten Modellserie
+Head: Datierung
+Modifier: ["Modellserie"]
+---------------------------
+Label: Datierung der zweiten Modellserie
+Head: Datierung
+Modifier: ["Modellserie"]
+---------------------------
+Label: verkürzt
+Head: 
+Modifier: []
+---------------------------
+Label: Vollendung 
+Head: Vollendung
+Modifier: []
+---------------------------
+Label: Klassizistische Veränderungen am Bau
+Head: Veränderungen
+Modifier: ["Klassizistische"]
+---------------------------
+Label: Abschluss der Bauarbeiten
+Head: Abschluss
+Modifier: ["Bauarbeiten"]
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Beginn der ersten Bauphase unter Kardinal Giovanni Fazio Santoro
+Head: Beginn
+Modifier: ["Bauphase"]
+---------------------------
+Label: Errichtung der Fassade, Ausstattung von Räumen im Hauptgeschoss
+Head: Errichtung
+Modifier: ["Fassade,"]
+---------------------------
+Label: Arbeiten am Außenbau und an den Innenräumen des Palazzo
+Head: Arbeiten
+Modifier: []
+---------------------------
+Label: Arbeiten am Außenbau und an den Innenräumen des Palazzo
+Head: Innenräumen
+Modifier: ["an", "den", "Palazzo"]
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Datierung, Veröffentlichungsjahr der Publikation
+Head: Veröffentlichungsjahr
+Modifier: ["Datierung,", "Publikation"]
+---------------------------
+Label: Zeitraum St. Louis- erste Ausstellung und Konzeption
+Head: Louis-
+Modifier: ["Zeitraum", "St."]
+---------------------------
+Label: Zeitraum St. Louis- erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum - Rüsselsheim
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum Zwickau- erste Ausstellung und Konzeption
+Head: Zwickau-
+Modifier: ["Zeitraum"]
+---------------------------
+Label: Zeitraum Zwickau- erste Ausstellung und Konzeption
+Head: Konzeption
+Modifier: []
+---------------------------
+Label: Zeitraum - Ratingen
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum St. Louis
+Head: Louis
+Modifier: ["Zeitraum", "St."]
+---------------------------
+Label: Zeitraum - Lübeck
+Head: Zeitraum
+Modifier: []
+---------------------------
+Label: Zeitraum- Freiburg
+Head: Freiburg
+Modifier: ["Zeitraum-"]
+---------------------------
+Label: zerstörrt
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung der Ausstattung
+Head: Datierung
+Modifier: ["Ausstattung"]
+---------------------------
+Label: Datierung des Entwurfs
+Head: Datierung
+Modifier: ["Entwurfs"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung Selbstbildnisrelief
+Head: Selbstbildnisrelief
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Inschrifttafel
+Head: Inschrifttafel
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Beginn der Arbeit an der Serie
+Head: Beginn
+Modifier: ["Arbeit"]
+---------------------------
+Label: Datierung Vorbild
+Head: Vorbild
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: überarbeitet
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: zerstört durch Terroranschalg
+Head: Terroranschalg
+Modifier: ["zerstört", "durch"]
+---------------------------
+Label: zerstörrt und wieder aufgebaut
+Head: 
+Modifier: []
+---------------------------
+Label: zerstörrt und wieder aufgebaut
+Head: 
+Modifier: []
+---------------------------
+Label: Datierung Turm
+Head: Turm
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Umbau durch Solon Spencer Beman
+Head: Umbau
+Modifier: []
+---------------------------
+Label: Umbau zum Studebaker Theater durch Andrew N. Rebori
+Head: Umbau
+Modifier: []
+---------------------------
+Label: Anbau an der Wabash Avenue von Andrew N. Rebori
+Head: Anbau
+Modifier: []
+---------------------------
+Label: Erster Umbau der Lobby durch Frank Lloyd Wright
+Head: Umbau
+Modifier: ["Erster", "Lobby"]
+---------------------------
+Label: Zweiter Umbau der Lobby durch William Drummond
+Head: Umbau
+Modifier: ["Zweiter", "Lobby"]
+---------------------------
+Label: Sanierung durch Hasbrouck-Hunderman
+Head: Sanierung
+Modifier: []
+---------------------------
+Label: Sanierung durch Hasbrouk Peterson Associates
+Head: Sanierung
+Modifier: []
+---------------------------
+Label: Weiterführung der Sanierung durch Hasbrouk Peterson Associates
+Head: Weiterführung
+Modifier: ["Sanierung"]
+---------------------------
+Label: Weiterführung des Umbaus durch McClier Corporation 
+Head: Weiterführung
+Modifier: ["Umbaus"]
+---------------------------
+Label: Erstes und Zweites Stockwerk durch Burnham & Root
+Head: Erstes
+Modifier: []
+---------------------------
+Label: Erstes und Zweites Stockwerk durch Burnham & Root
+Head: Stockwerk
+Modifier: ["Zweites"]
+---------------------------
+Label: Obere Stockwerke durch D.H. Burnham & Co.
+Head: Stockwerke
+Modifier: ["Obere"]
+---------------------------
+Label: Anbau im Norden druch D.H. Burnham & Co.
+Head: Anbau
+Modifier: []
+---------------------------
+Label: Anbau im Süden durch Holabird & Roche
+Head: Anbau
+Modifier: []
+---------------------------
+Label: Sanierung durch John Vinci
+Head: Sanierung
+Modifier: []
+---------------------------
+Label: Anbau um ein Joch an der Adam Street
+Head: Anbau
+Modifier: []
+---------------------------
+Label: Anbau durch Holabird & Roche
+Head: Anbau
+Modifier: []
+---------------------------
+Label: Erweiterungsbau von fünf Jochen an der State Street durch D.H. Burnham & Co.
+Head: Erweiterungsbau
+Modifier: []
+---------------------------
+Label: Erweiterungsbau von drei Jochen an der State Street durch Holabird & Root
+Head: Erweiterungsbau
+Modifier: []
+---------------------------
+Label: Sanierung der Rotunde und Ornamentik an der Außenfassade durch John Vinci
+Head: Sanierung
+Modifier: ["Rotunde"]
+---------------------------
+Label: Sanierung der Rotunde und Ornamentik an der Außenfassade durch John Vinci
+Head: Ornamentik
+Modifier: []
+---------------------------
+Label: Anbau des nördlichen Gebäudeteils und der Verbindungsbrücke durch Graham, Anderson, Probst und White
+Head: Anbau
+Modifier: ["Gebäudeteils"]
+---------------------------
+Label: Anbau des nördlichen Gebäudeteils und der Verbindungsbrücke durch Graham, Anderson, Probst und White
+Head: Verbindungsbrücke
+Modifier: []
+---------------------------
+Label: Anbau des nördlichen Gebäudeteils und der Verbindungsbrücke durch Graham, Anderson, Probst und White
+Head: White
+Modifier: []
+---------------------------
+Label: Bau des Wrigley Building Plaza durch Louis R. Solomon, John D. Cordwell Associates
+Head: Bau
+Modifier: ["Wrigley"]
+---------------------------
+Label: Renovierung der Lobby durch Powell-Kleinschmidt
+Head: Renovierung
+Modifier: ["Lobby"]
+---------------------------
+Label: gegründet als Graham, Burnham & Co.
+Head: Burnham
+Modifier: ["gegründet", "als", "Graham,"]
+---------------------------
+Label: Anbau des WGN Building durch Hood and Howells
+Head: Anbau
+Modifier: ["WGN"]
+---------------------------
+Label: Sanierung der Fassade durch Wiss-Janney Elstner Associates
+Head: Sanierung
+Modifier: ["Fassade"]
+---------------------------
+Label: Sanierung der Lobby und der Büros durch John Vinci
+Head: Sanierung
+Modifier: ["Lobby"]
+---------------------------
+Label: Sanierung der Lobby und der Büros durch John Vinci
+Head: Büros
+Modifier: []
+---------------------------
+Label: Sanierung durch Skidmore, Ownings & Merrill
+Head: Sanierung
+Modifier: []
+---------------------------
+Label: Abriss
+Head: Abriss
+Modifier: []
+---------------------------
+Label: sechsstöckiger Anbau links
+Head: Anbau
+Modifier: ["sechsstöckiger"]
+---------------------------
+Label: eröffnet
+Head: 
+Modifier: []
+---------------------------
+Label: geschlossen
+Head: 
+Modifier: []
+---------------------------
+Label: Neueröffnung
+Head: Neueröffnung
+Modifier: []
+---------------------------
+Label: Datierung untere 14 Stockwerke
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung Fotos
+Head: Fotos
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Zeichnung
+Head: Zeichnung
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung des Patents
+Head: Datierung
+Modifier: ["Patents"]
+---------------------------
+Label: Weihung
+Head: Weihung
+Modifier: []
+---------------------------
+Label: Beginnder der Ausstellung
+Head: Beginnder
+Modifier: ["Ausstellung"]
+---------------------------
+Label: Ende der Ausstellung
+Head: Ende
+Modifier: ["Ausstellung"]
+---------------------------
+Label: Wiederaufbau nach Kriegszerstörung  ab
+Head: Wiederaufbau
+Modifier: []
+---------------------------
+Label: Eröffnung des heutigen Baus
+Head: Eröffnung
+Modifier: ["Baus"]
+---------------------------
+Label: Zerstörrung eines großen Teil des Museums und der Sammlung
+Head: Zerstörrung
+Modifier: []
+---------------------------
+Label: Zerstörrung eines großen Teil des Museums und der Sammlung
+Head: Sammlung
+Modifier: []
+---------------------------
+Label: Einsatz
+Head: Einsatz
+Modifier: []
+---------------------------
+Label: Sterbedatum
+Head: Sterbedatum
+Modifier: []
+---------------------------
+Label: Umbau des Haupeingangs und des Rektorats durch Ferdinand Kramer
+Head: Umbau
+Modifier: ["Haupeingangs"]
+---------------------------
+Label: Umbau des Haupeingangs und des Rektorats durch Ferdinand Kramer
+Head: Rektorats
+Modifier: ["des"]
+---------------------------
+Label: Baudirektors der Johann Wolfgang Goethe-Universität Frankfurt am Main
+Head: Baudirektors
+Modifier: ["Johann"]
+---------------------------
+Label: Porzellanfiguren gefertigt durch die Meißner Porzellanmanufaktur
+Head: Porzellanfiguren
+Modifier: []
+---------------------------
+Label: Datierung Unterbau /französisch, Paris
+Head: Unterbau
+Modifier: ["Datierung"]
+---------------------------
+Label: 1. Entwurfsphase
+Head: Entwurfsphase
+Modifier: ["1."]
+---------------------------
+Label: 2. Entwurfsphase
+Head: Entwurfsphase
+Modifier: ["2."]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung der Figuren von Wydyz
+Head: Datierung
+Modifier: ["Figuren"]
+---------------------------
+Label: Datierung des neugotischen Schaukastens von Glaenz
+Head: Datierung
+Modifier: ["Schaukastens"]
+---------------------------
+Label: Datierung beg.
+Head: Datierung
+Modifier: []
+---------------------------
+Label: romanischer Vorgängerbau 
+Head: Vorgängerbau
+Modifier: ["romanischer"]
+---------------------------
+Label: Jetziger Bau
+Head: Bau
+Modifier: ["Jetziger"]
+---------------------------
+Label: Datierung des Vorgängerbaus 
+Head: Datierung
+Modifier: ["Vorgängerbaus"]
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Datierung der Statue
+Head: Datierung
+Modifier: ["Statue"]
+---------------------------
+Label: Datierung der Basreliefs des Sockels
+Head: Datierung
+Modifier: ["Basreliefs"]
+---------------------------
+Label: Nordfassade
+Head: Nordfassade
+Modifier: []
+---------------------------
+Label: Datierung ?
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: neue Aufnahmen
+Head: Aufnahmen
+Modifier: ["neue"]
+---------------------------
+Label: erstmalige Erwähnung
+Head: Erwähnung
+Modifier: ["erstmalige"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung des  Baus und der Fresken
+Head: Datierung
+Modifier: ["Baus"]
+---------------------------
+Label: Datierung des  Baus und der Fresken
+Head: Fresken
+Modifier: []
+---------------------------
+Label: Malereien von Ambrosius Gander
+Head: Malereien
+Modifier: []
+---------------------------
+Label: Renovierung
+Head: Renovierung
+Modifier: []
+---------------------------
+Label: letzmals erwähnt 
+Head: 
+Modifier: []
+---------------------------
+Label: Wirkungsdaten 
+Head: Wirkungsdaten
+Modifier: []
+---------------------------
+Label: Datierung der Türme
+Head: Datierung
+Modifier: ["Türme"]
+---------------------------
+Label: Todesjahr nach
+Head: Todesjahr
+Modifier: []
+---------------------------
+Label: künstlerisch aktiv
+Head: 
+Modifier: []
+---------------------------
+Label: Geburtsjahr 
+Head: Geburtsjahr
+Modifier: []
+---------------------------
+Label: Geburtsjahr 
+Head: Geburtsjahr
+Modifier: []
+---------------------------
+Label: Jahr der Fertigstellung
+Head: Jahr
+Modifier: ["Fertigstellung"]
+---------------------------
+Label: Datierung der Architektur und der Skulptur
+Head: Datierung
+Modifier: ["Architektur"]
+---------------------------
+Label: Datierung der Architektur und der Skulptur
+Head: Skulptur
+Modifier: []
+---------------------------
+Label: Fertigstellung des Ateliertrakts
+Head: Fertigstellung
+Modifier: ["Ateliertrakts"]
+---------------------------
+Label: Fertigstellung des Haupthauses
+Head: Fertigstellung
+Modifier: ["Haupthauses"]
+---------------------------
+Label: Bemalung der Giebelfiguren 
+Head: Bemalung
+Modifier: ["Giebelfiguren"]
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Gründung der Abtei
+Head: Gründung
+Modifier: ["Abtei"]
+---------------------------
+Label: Wiedererrichtung des Baus
+Head: Wiedererrichtung
+Modifier: ["Baus"]
+---------------------------
+Label: Bau der Fassade
+Head: Bau
+Modifier: ["Fassade"]
+---------------------------
+Label: Wirkungsddaten
+Head: Wirkungsddaten
+Modifier: []
+---------------------------
+Label: Datierung der Villa
+Head: Datierung
+Modifier: ["Villa"]
+---------------------------
+Label: Entwürfe durch Palladio
+Head: Entwürfe
+Modifier: []
+---------------------------
+Label: Wirkungsdauer
+Head: Wirkungsdauer
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Sterbejahr vor
+Head: Sterbejahr
+Modifier: []
+---------------------------
+Label: Lebens- / Schaffensdaten
+Head: Lebens-
+Modifier: []
+---------------------------
+Label: Lebens- / Schaffensdaten
+Head: Schaffensdaten
+Modifier: []
+---------------------------
+Label: Beginn der Bauarbeiten
+Head: Beginn
+Modifier: ["Bauarbeiten"]
+---------------------------
+Label: Entwurf von Andrea Palladio
+Head: Entwurf
+Modifier: []
+---------------------------
+Label: Errichtung der Loggia des Obergeschoss
+Head: Errichtung
+Modifier: ["Loggia"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Anfertigung der Pläne durch Palladio 
+Head: Anfertigung
+Modifier: ["Pläne"]
+---------------------------
+Label: Ausführung der Bauarbeiten
+Head: Ausführung
+Modifier: ["Bauarbeiten"]
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Datierung des Freskenzyklus von Paolo Veronese
+Head: Datierung
+Modifier: ["Freskenzyklus"]
+---------------------------
+Label: Datierung der Fresken von Paolo Veronese
+Head: Datierung
+Modifier: ["Fresken"]
+---------------------------
+Label: Datierung des Freskenzyklus der Loggia der Villa Godi
+Head: Datierung
+Modifier: ["Freskenzyklus"]
+---------------------------
+Label: Erteilung des Auftrags an Palladio
+Head: Erteilung
+Modifier: ["Auftrags"]
+---------------------------
+Label: Veränderungen am usprünglichen Plan durch Muttoni
+Head: Veränderungen
+Modifier: []
+---------------------------
+Label: Umbau durch Domenico Cerato
+Head: Umbau
+Modifier: []
+---------------------------
+Label: Einreichung des Bauantrags durch Vincenzo Poiana
+Head: Einreichung
+Modifier: ["Bauantrags"]
+---------------------------
+Label: Fertigstellung eines der beiden Gebäue
+Head: Fertigstellung
+Modifier: []
+---------------------------
+Label: Bewohnbar
+Head: Bewohnbar
+Modifier: []
+---------------------------
+Label: Vollendung des Palazzo
+Head: Vollendung
+Modifier: ["Palazzo"]
+---------------------------
+Label: Entwurf durch Palladio
+Head: Entwurf
+Modifier: []
+---------------------------
+Label: Vertragsunterzeichnung mit den Maurern
+Head: Vertragsunterzeichnung
+Modifier: []
+---------------------------
+Label: Bauarbeiten
+Head: Bauarbeiten
+Modifier: []
+---------------------------
+Label: Planungsbeginn
+Head: Planungsbeginn
+Modifier: []
+---------------------------
+Label: Vollendung des Palazzi
+Head: Vollendung
+Modifier: ["Palazzi"]
+---------------------------
+Label: Vollendung
+Head: Vollendung
+Modifier: []
+---------------------------
+Label: Beginn der Bauarbeiten der Loggia durch Palladio
+Head: Beginn
+Modifier: ["Bauarbeiten"]
+---------------------------
+Label: Vollendung der Loggia
+Head: Vollendung
+Modifier: ["Loggia"]
+---------------------------
+Label: Errichtung von Treppe und Portal
+Head: Errichtung
+Modifier: []
+---------------------------
+Label: Errichtung von Treppe und Portal
+Head: Portal
+Modifier: []
+---------------------------
+Label: Datierung des schmiedeeisernen Eingangstors
+Head: Datierung
+Modifier: ["Eingangstors"]
+---------------------------
+Label: Vollendung des Anwesens
+Head: Vollendung
+Modifier: ["Anwesens"]
+---------------------------
+Label: Bau der Wirtschaftsflügel durch Palladio
+Head: Bau
+Modifier: ["Wirtschaftsflügel"]
+---------------------------
+Label: Datierung der Rekonstruktion durch Goldschmidt
+Head: Datierung
+Modifier: ["Rekonstruktion"]
+---------------------------
+Label: Wirkungsdaten 
+Head: Wirkungsdaten
+Modifier: []
+---------------------------
+Label: Datierung des heutigen Baus
+Head: Datierung
+Modifier: ["Baus"]
+---------------------------
+Label: Vollendung des Chores
+Head: Vollendung
+Modifier: ["Chores"]
+---------------------------
+Label: Vollendung des Lettners
+Head: Vollendung
+Modifier: ["Lettners"]
+---------------------------
+Label: Datierung des Glockenturms
+Head: Datierung
+Modifier: ["Glockenturms"]
+---------------------------
+Label: Datierung: barocker Hochaltar
+Head: Datierung:
+Modifier: []
+---------------------------
+Label: Datierung: Restaurierung der Marienkapelle
+Head: Restaurierung
+Modifier: ["Datierung:", "Marienkapelle"]
+---------------------------
+Label: Datierung: Einweihung des Chores
+Head: Einweihung
+Modifier: ["Datierung:", "Chores"]
+---------------------------
+Label: Datierung: Vollendung des Turmbaus
+Head: Vollendung
+Modifier: ["Datierung:", "Turmbaus"]
+---------------------------
+Label: Datierung: Hochaltar
+Head: Hochaltar
+Modifier: ["Datierung:"]
+---------------------------
+Label: Teilweise Zerstörung durch Bombenangriffe
+Head: Zerstörung
+Modifier: ["Teilweise"]
+---------------------------
+Label: Datierung: 2. Bauphase
+Head: Datierung:
+Modifier: []
+---------------------------
+Label: Datierung: Umbau
+Head: Umbau
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung:  Pogrom und Umnutzung als Lagerhalle und Stall
+Head: Pogrom
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung:  Pogrom und Umnutzung als Lagerhalle und Stall
+Head: Umnutzung
+Modifier: []
+---------------------------
+Label: Datierung:  Pogrom und Umnutzung als Lagerhalle und Stall
+Head: Stall
+Modifier: []
+---------------------------
+Label: Datierung: Sanierung 
+Head: Sanierung
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Nutzung als Museum 
+Head: Nutzung
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Weihe
+Head: Weihe
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Bestätigung der Weihe
+Head: Bestätigung
+Modifier: ["Datierung:", "Weihe"]
+---------------------------
+Label: Datierung: Gründung:
+Head: Gründung:
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Grundsteinlegung
+Head: Grundsteinlegung
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Weihe des Chores
+Head: Weihe
+Modifier: ["Datierung:", "Chores"]
+---------------------------
+Label: Datierung: teilweise Zerstörung
+Head: Datierung:
+Modifier: []
+---------------------------
+Label: Datierung: erste Bauinschrift
+Head: Datierung:
+Modifier: []
+---------------------------
+Label: Datierung: Kanzel
+Head: Kanzel
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Chorgestühl
+Head: Chorgestühl
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Turm
+Head: Turm
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Rathausfestsaal und Ratsstube
+Head: Rathausfestsaal
+Modifier: ["Datierung:"]
+---------------------------
+Label: Datierung: Rathausfestsaal und Ratsstube
+Head: Ratsstube
+Modifier: []
+---------------------------
+Label: Datierung: Vollendung des Doms
+Head: Vollendung
+Modifier: ["Datierung:", "Doms"]
+---------------------------
+Label: Todesjahr vor
+Head: Todesjahr
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung Modell
+Head: Modell
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Entwurf
+Head: Entwurf
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung Fotocollage
+Head: Fotocollage
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung der Urfassung
+Head: Datierung
+Modifier: ["Urfassung"]
+---------------------------
+Label: Datierung der Kopie
+Head: Datierung
+Modifier: ["Kopie"]
+---------------------------
+Label: Datierung Aufstellung
+Head: Aufstellung
+Modifier: ["Datierung"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Lebensdaten 
+Head: Lebensdaten
+Modifier: []
+---------------------------
+Label: Zeitraum Teil I
+Head: I
+Modifier: ["Zeitraum", "Teil"]
+---------------------------
+Label: Zeitraum Teil II
+Head: II
+Modifier: ["Zeitraum", "Teil"]
+---------------------------
+Label: Zeitraum Teil III
+Head: III
+Modifier: ["Zeitraum", "Teil"]
+---------------------------
+Label: Geburtsjahr ULAN
+Head: ULAN
+Modifier: ["Geburtsjahr"]
+---------------------------
+Label: Enthüllung
+Head: Enthüllung
+Modifier: []
+---------------------------
+Label: Enthüllung des ersten Denkmals
+Head: Enthüllung
+Modifier: ["Denkmals"]
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------
+Label: Datierung 
+Head: Datierung
+Modifier: []
+---------------------------

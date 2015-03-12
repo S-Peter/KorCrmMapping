@@ -12,8 +12,6 @@ module KorCrmMapping::EditDistanceCalculator
       size = string2.size
     end
     normalizedDistance = 1.0 - distance.to_f/size.to_f
-    puts "Distance between #{string1} and #{string2} is #{distance}"
-    puts "Normalized distance between #{string1} and #{string2} is #{normalizedDistance}"
     normalizedDistance
   end
   

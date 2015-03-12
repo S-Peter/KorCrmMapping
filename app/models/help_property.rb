@@ -1,4 +1,4 @@
 class HelpProperty
   
-  attr_accessor :domain, :range, :label, :path
+  attr_accessor :domain, :range, :label, :uri
 end

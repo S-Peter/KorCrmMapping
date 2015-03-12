@@ -61,6 +61,10 @@ class CrmProperty < CrmRessource
     end
   end
   
+  def setSimilarity (korLabel)
+    @similarity = KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance @label, korLabel
+  end
+  
   def as_json(*a) 
     domainUri = nil
     if domain != nil

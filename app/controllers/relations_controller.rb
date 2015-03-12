@@ -76,6 +76,17 @@ class RelationsController < ApplicationController
     
     @actualRelation = findActualRelation @relations, @relationId, @domainId, @rangeId 
     
+    for crmProperty in @crmProperties
+      crmProperty.setSimilarity @actualRelation.relation.name
+      puts crmProperty.similarity
+    end
+    
+    sourceClass = @actualRelation.domain.crmClass
+    targetClass = @actualRelation.range.crmClass
+    shortestPathTree = KorCrmMapping::ShortestPathCalculator.dijkstra @crmProperties, sourceClass, targetClass
+    @shortestPath = KorCrmMapping::ShortestPathCalculator.calculateShortestPathFromTargetToSource shortestPathTree, sourceClass, targetClass
+    @shortestPath.reverse!
+    
     @sessionChainLinks = session[:chainLinks]
     domainClass = @sessionChainLinks[@sessionChainLinks.length-2] #domain of last property in chain or initial domain
     @fittingCRMProperties = Array.new
@@ -144,6 +155,11 @@ class RelationsController < ApplicationController
     end  
     
     redirect_to :action => "editPathProperty", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
+  end
+  
+  def updatePath
+    puts "Update Path"
+    redirect_to relations_path
   end
   
   def destroy

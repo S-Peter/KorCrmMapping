@@ -14,11 +14,11 @@ module KorCrmMapping::ShortestPathCalculator
     puts sourceClass.label
     puts targetClass.label
     
-    sourcePropertiesWithDomain = getPropertiesOfClass sourceClass
+    sourcePropertiesWithDomain = getPropertiesOfClass sourceClass, @@crmProperties
     for sourcePropertyWithDomain in sourcePropertiesWithDomain
       domain = sourcePropertyWithDomain.range
       puts "ShortestPath via #{sourcePropertyWithDomain.label}"
-      pathLength = bfs domain, targetClass
+      pathLength = bfs domain, targetClass, @@crmProperties
       puts pathLength
     end
     return # nothing, else memory allocation error!!!!!!!!!!!!!!!
@@ -26,8 +26,10 @@ module KorCrmMapping::ShortestPathCalculator
   
   def self.dijkstraTest
     loadMappingObjects
+    
+    relationToMapName = "hat geschaffen"
     for crmProperty in @@crmProperties
-      crmProperty.similarity = 1
+      crmProperty.setSimilarity relationToMapName
     end
     
     for crmClass in @@crmClasses
@@ -39,22 +41,47 @@ module KorCrmMapping::ShortestPathCalculator
       end
     end
     
+    puts relationToMapName
     puts sourceClass.label
     puts targetClass.label
     
     puts "---------------------Dijkstra------------------"
-    shortestPathProperties = dijkstra sourceClass, targetClass
+    shortestPathProperties = dijkstra @@crmProperties, sourceClass, targetClass
     dFile = File.new("dijkstra", "w")
-    for property in shortestPathProperties
-      dFile.write "Property: Path: #{property.path}, Label: #{property.label}, Domain: #{property.domain.label}, Range: #{property.range.label}"
+    for property in shortestPathProperties #helpProperties!!!
+      dFile.write "Property: Path: #{property.uri.path}, Label: #{property.label}, Domain: #{property.domain.label}, Range: #{property.range.label}"
       dFile.write "\n"
     end
     dFile.close
+    
+    shortestPath = calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, targetClass
+    shortestPath.reverse!
+    puts "++++++++++++++++++++++++++++++++++++++++++++++"
+    puts "ShortestPath:"
+    for element in shortestPath
+      puts element.label
+    end
 
     return # nothing, else memory allocation error!!!!!!!!!!!!!!!
   end
+  
+  def self.calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, targetClass #HelpProperties
+    shortestPathFromTargetToSource = Array.new
+    if sourceClass != targetClass
+      for shortestPathProperty in shortestPathProperties
+        if shortestPathProperty.range == targetClass
+          shortestPathFromTargetToSource.push targetClass
+          shortestPathFromTargetToSource.push shortestPathProperty
+          shortestPathFromTargetToSource.concat calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, shortestPathProperty.domain
+        end
+      end
+    else
+      shortestPathFromTargetToSource.push sourceClass
+    end
+    return shortestPathFromTargetToSource
+  end
 
-  def self.dijkstra sourceClass, targetClass #without specialisation!!!
+  def self.dijkstra crmProperties, sourceClass, targetClass #without specialisation!!!
     green = Array.new
     yellow= Array.new
     red = Array.new
@@ -74,19 +101,17 @@ module KorCrmMapping::ShortestPathCalculator
       yellow.delete nodeWithMinDistance
       
       if nodeWithMinDistance == targetClass
-        puts"Already visited nodes with discovered shortest path"
-        for g in green
-          puts g.label
-        end
         break
       end
 
-      propertiesOfClass = getPropertiesOfClass nodeWithMinDistance
+      propertiesOfClass = getPropertiesOfClass nodeWithMinDistance, crmProperties
       for propertyOfClass in propertiesOfClass
+        puts propertyOfClass.label
+        puts propertyOfClass.similarity
         if !(yellow.include? propertyOfClass.range or green.include? propertyOfClass.range) #node grey
           helpProperty = HelpProperty.new      
           helpProperty.label = propertyOfClass.label
-          helpProperty.path = propertyOfClass.uri.path
+          helpProperty.uri = propertyOfClass.uri
           helpProperty.domain = nodeWithMinDistance
           helpProperty.range = propertyOfClass.range
           red.push helpProperty
@@ -98,7 +123,7 @@ module KorCrmMapping::ShortestPathCalculator
             if dist[propertyOfClass.range] > dist[nodeWithMinDistance] + propertyOfClass.similarity #never true since similarity always 1!!!
               helpProperty = HelpProperty.new      
               helpProperty.label = propertyOfClass.label
-              helpProperty.path = propertyOfClass.uri.path
+              helpProperty.uri = propertyOfClass.uri
               helpProperty.domain = nodeWithMinDistance
               helpProperty.range = propertyOfClass.range
               red.push helpProperty
@@ -150,7 +175,7 @@ module KorCrmMapping::ShortestPathCalculator
     return propertiesToNode
   end
   
-  def self.bfs sourceClass, targetClass
+  def self.bfs sourceClass, targetClass, crmProperties
     #initialization
     pathLength = 0
     queue = Array.new
@@ -181,7 +206,7 @@ module KorCrmMapping::ShortestPathCalculator
         break
       end 
   
-      propertiesWithDomain = getPropertiesOfClassAndSubclasses crmClass
+      propertiesWithDomain = getPropertiesOfClassAndSubclasses crmClass, crmProperties
       for propertyWithDomain in propertiesWithDomain
         range = propertyWithDomain.range
         if !visited.include? range
@@ -197,12 +222,12 @@ module KorCrmMapping::ShortestPathCalculator
   end
   
   private
-  def self.getPropertiesOfClass (crmClass) #returns all properties of crmClass and those inherited from its superclasses
+  def self.getPropertiesOfClass (crmClass, crmProperties) #returns all properties of crmClass and those inherited from its superclasses
     crmClassSubAndSuperClasses = Array.new
     crmClassSubAndSuperClasses.push crmClass
     crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSuperClasses
     propertiesWithDomainClass = Array.new
-    for crmProperty in @@crmProperties
+    for crmProperty in crmProperties
       for crmClass in crmClassSubAndSuperClasses
         if crmClass.isA? crmProperty.domain
           if !propertiesWithDomainClass.include? crmProperty
@@ -215,13 +240,13 @@ module KorCrmMapping::ShortestPathCalculator
   end
   
   private
-  def self.getPropertiesOfClassAndSubclasses (crmClass) #returns all properties of crmClass and those inherited from its superclasses + those of its subClasses since class specification of inner node is possible!!!
+  def self.getPropertiesOfClassAndSubclasses (crmClass, crmProperties) #returns all properties of crmClass and those inherited from its superclasses + those of its subClasses since class specification of inner node is possible!!!
     crmClassSubAndSuperClasses = Array.new
     crmClassSubAndSuperClasses.push crmClass
     crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSubClasses
     crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSuperClasses
     propertiesWithDomainClass = Array.new
-    for crmProperty in @@crmProperties
+    for crmProperty in crmProperties
       for crmClass in crmClassSubAndSuperClasses
         if crmClass.isA? crmProperty.domain
           if !propertiesWithDomainClass.include? crmProperty

@@ -51,4 +51,33 @@
 </table>
 <% end %>
 
+<%= form_tag({controller: "relations", action: "updatePath"}, method: "post") do %>
+<%= hidden_field_tag :relationId, @relationId %>
+<%= hidden_field_tag :domainId, @domainId %>
+<%= hidden_field_tag :rangeId, @rangeId %>
+<% j = 0 %>
+<% while j < @shortestPath.size%>
+	<%= hidden_field_tag "element" + j.to_s, @shortestPath[j].uri %>
+	<% j += 1 %>
+<%end%>
+<table>
+		<tr>
+		<td>Vorgeschlagener Pfad</td>
+		<td>
+			<% i = 0%>
+			<% while i < @shortestPath.size%>
+				<%= @shortestPath[i].label%>
+				<% i += 1 %>
+				<% if i < @shortestPath.size%>
+					<%= " : " %>
+				<%end%>
+			<% end %>
+		</td>	
+		<td>
+			<%= submit_tag("OK") %>
+		</td>
+	</tr>
+</table>
+<% end %>
+
 <%= link_to 'Abbruch', relations_path %>
