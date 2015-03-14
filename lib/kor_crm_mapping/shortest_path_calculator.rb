@@ -1,33 +1,33 @@
 module KorCrmMapping::ShortestPathCalculator
   
-  def self.shortestPathTest
+  def self.helpPropertyTest
     loadMappingObjects
+    
+    sourceClass = nil
     for crmClass in @@crmClasses
-      if crmClass.uri.path.eql? '/120111/E40_Legal_Body'
+      if crmClass.uri.path.eql? '/120111/E39_Actor'
         sourceClass = crmClass
-      end
-      if crmClass.uri.path.eql? '/120111/E73_Information_Object'
-        targetClass = crmClass
+        break
       end
     end
     
-    puts sourceClass.label
-    puts targetClass.label
-    
-    sourcePropertiesWithDomain = getPropertiesOfClass sourceClass, @@crmProperties
-    for sourcePropertyWithDomain in sourcePropertiesWithDomain
-      domain = sourcePropertyWithDomain.range
-      puts "ShortestPath via #{sourcePropertyWithDomain.label}"
-      pathLength = bfs domain, targetClass, @@crmProperties
-      puts pathLength
+    helpProperties = getPropertiesOfClassAndSubclasses2 crmClass, @@crmProperties
+    puts helpProperties.size
+    for hp in helpProperties
+      puts "Property: #{hp.label}, Domain: #{hp.domain.label}, Range: #{hp.range.label}"
+      if crmClass.isA? hp.domain
+        puts "#{crmClass.label} is domain of Property"
+      else 
+        puts puts "Domain of Property is Subclass of #{crmClass.label}"
+      end
     end
-    return # nothing, else memory allocation error!!!!!!!!!!!!!!!
+    return
   end
   
   def self.dijkstraTest
     loadMappingObjects
     
-    relationToMapName = "hat geschaffen"
+    relationToMapName = "Herausgeber/in von"
     for crmProperty in @@crmProperties
       crmProperty.setSimilarity relationToMapName
     end
@@ -64,163 +64,74 @@ module KorCrmMapping::ShortestPathCalculator
 
     return # nothing, else memory allocation error!!!!!!!!!!!!!!!
   end
-  
-  def self.calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, targetClass #HelpProperties
-    shortestPathFromTargetToSource = Array.new
-    if sourceClass != targetClass
-      for shortestPathProperty in shortestPathProperties
-        if shortestPathProperty.range == targetClass
-          shortestPathFromTargetToSource.push targetClass
-          shortestPathFromTargetToSource.push shortestPathProperty
-          shortestPathFromTargetToSource.concat calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, shortestPathProperty.domain
-        end
-      end
-    else
-      shortestPathFromTargetToSource.push sourceClass
-    end
-    return shortestPathFromTargetToSource
-  end
 
-  def self.dijkstra crmProperties, sourceClass, targetClass #without specialisation!!!
-    green = Array.new
-    yellow= Array.new
-    red = Array.new
-    dist = Hash.new
+  def self.dijkstra crmProperties, startNode, targetNode
+    visitedNodes = Array.new
+    spottedNodes = Array.new
+    shortestEdgesToNodes = Array.new
+    distances = Hash.new
     
     #initialization
-    yellow.push sourceClass  
-    dist[sourceClass] = 0
+    spottedNodes.push startNode  
+    distances[startNode] = 0
     
-    #sonderfall shortest path to same node!!!
+    #sonderfall shortest path to same node!!! TODO
     
-    while !yellow.empty?
+    while !spottedNodes.empty?
          
-      #select seen node with least distance to startNode
-      nodeWithMinDistance = findNodeWithMinDist yellow, dist
-      green.push nodeWithMinDistance
-      yellow.delete nodeWithMinDistance
+      #select spotted node with least distance to startNode
+      nodeWithMinDistance = findNodeWithMinDist spottedNodes, distances
+      puts nodeWithMinDistance.label
+      visitedNodes.push nodeWithMinDistance
+      spottedNodes.delete nodeWithMinDistance
       
-      if nodeWithMinDistance == targetClass
+      if targetNode.isA? nodeWithMinDistance
+        puts "Target Node #{nodeWithMinDistance.label} reached!"
         break
       end
 
-      propertiesOfClass = getPropertiesOfClass nodeWithMinDistance, crmProperties
-      for propertyOfClass in propertiesOfClass
-        puts propertyOfClass.label
-        puts propertyOfClass.similarity
-        if !(yellow.include? propertyOfClass.range or green.include? propertyOfClass.range) #node grey
-          helpProperty = HelpProperty.new      
-          helpProperty.label = propertyOfClass.label
-          helpProperty.uri = propertyOfClass.uri
-          helpProperty.domain = nodeWithMinDistance
-          helpProperty.range = propertyOfClass.range
-          red.push helpProperty
+      helpPropertiesOfClass = getPropertiesOfClassAndSubclasses nodeWithMinDistance, crmProperties
+      for helpPropertyOfClass in helpPropertiesOfClass
+        if !(spottedNodes.include? helpPropertyOfClass.range or visitedNodes.include? helpPropertyOfClass.range)
+          shortestEdgesToNodes.push helpPropertyOfClass
           
-          yellow.push propertyOfClass.range
-          dist[propertyOfClass.range] = dist[nodeWithMinDistance] + propertyOfClass.similarity
+          spottedNodes.push helpPropertyOfClass.range
+          distances[helpPropertyOfClass.range] = distances[nodeWithMinDistance] + helpPropertyOfClass.similarity
         else
-          if yellow.include? propertyOfClass.range #node yellow
-            if dist[propertyOfClass.range] > dist[nodeWithMinDistance] + propertyOfClass.similarity #never true since similarity always 1!!!
-              helpProperty = HelpProperty.new      
-              helpProperty.label = propertyOfClass.label
-              helpProperty.uri = propertyOfClass.uri
-              helpProperty.domain = nodeWithMinDistance
-              helpProperty.range = propertyOfClass.range
-              red.push helpProperty
-              
-              for property in red
-                if property.range.eql? propertyOfClass.range
-                  red.delete property
+          if spottedNodes.include? helpPropertyOfClass.range
+            if distances[helpPropertyOfClass.range] > distances[nodeWithMinDistance] + helpPropertyOfClass.similarity
+                         
+              for property in shortestEdgesToNodes
+                if property.range.eql? helpPropertyOfClass.range
+                  shortestEdgesToNodes.delete property
                 end
               end   
-                        
-              dist[propertyOfClass.range] = dist[nodeWithMinDistance] + propertyOfClass.similarity            
+              
+              shortestEdgesToNodes.push helpPropertyOfClass                        
+              distances[helpPropertyOfClass.range] = distances[nodeWithMinDistance] + helpPropertyOfClass.similarity            
             end
-          else #node green
           end
         end
       end  
     end
-    return red
+    return shortestEdgesToNodes #HelpProperties
   end
   
-  def self.findNodeWithMinDist yellow, dist
+  def self.findNodeWithMinDist spottedNodes, distances
     i = 0
-    minDist = dist[yellow[i]]
-    nodeWithMinDistance = yellow[i]
-    while i < yellow.size - 1
+    minDist = distances[spottedNodes[i]]
+    nodeWithMinDistance = spottedNodes[i]
+    while i < spottedNodes.size - 1
       i += 1
-       if dist[yellow[i]] < minDist
-        minDist = dist[yellow[i]]
-        nodeWithMinDistance = yellow[i]
+       if distances[spottedNodes[i]] < minDist
+        minDist = distances[spottedNodes[i]]
+        nodeWithMinDistance = spottedNodes[i]
       end
     end
     nodeWithMinDistance
   end
-  
-  def self.findPathFromTargetToSource (properties, source, target)
-    propertiesToNode = Array.new
-    for property in properties
-      if property.range == target
-        propertiesToNode.push property
-      end
-    end
-    puts "Number of properties to node(must be 1!!!): #{propertiesToNode.size}"
-    puts propertiesToNode.last.domain.label
-    puts source.label
-    if propertiesToNode.last.domain != source
-      puts "if"
-      propertiesToNode.concat findPathFromTargetToSource properties, source, propertiesToNode.last.domain
-    end  
-    return propertiesToNode
-  end
-  
-  def self.bfs sourceClass, targetClass, crmProperties
-    #initialization
-    pathLength = 0
-    queue = Array.new
-    visited = Array.new
-    
-    visited.push sourceClass
-    
-    level = 0
-    numberOfNodesOnLevel = Hash.new 0
-    queue.push sourceClass  
-    numberOfNodesOnLevel[level] += 1
-    
-    numberOfDropsOnLevel= 0
-    
-    while !queue.empty?
-      if numberOfDropsOnLevel == numberOfNodesOnLevel[level] #-> next level reached
-        numberOfDropsOnLevel = 0
-        level += 1
-      end
-      
-      crmClass = queue.first
-      queue = queue.drop(1)
-      numberOfDropsOnLevel += 1
-     
-      if crmClass.isA? targetClass
-        #shortestPath found!!!
-        pathLength = level + 1
-        break
-      end 
-  
-      propertiesWithDomain = getPropertiesOfClassAndSubclasses crmClass, crmProperties
-      for propertyWithDomain in propertiesWithDomain
-        range = propertyWithDomain.range
-        if !visited.include? range
-          queue.push range
-          numberOfNodesOnLevel[level + 1] += 1
-          visited.push range
-        end
-      end
-    end
-    
-    ## 0 -> infinite!
-    return pathLength
-  end
-  
+
+=begin  
   private
   def self.getPropertiesOfClass (crmClass, crmProperties) #returns all properties of crmClass and those inherited from its superclasses
     crmClassSubAndSuperClasses = Array.new
@@ -238,7 +149,8 @@ module KorCrmMapping::ShortestPathCalculator
     end
     propertiesWithDomainClass
   end
-  
+=end
+=begin  
   private
   def self.getPropertiesOfClassAndSubclasses (crmClass, crmProperties) #returns all properties of crmClass and those inherited from its superclasses + those of its subClasses since class specification of inner node is possible!!!
     crmClassSubAndSuperClasses = Array.new
@@ -257,6 +169,49 @@ module KorCrmMapping::ShortestPathCalculator
     end
     propertiesWithDomainClass
   end
+=end
+  
+  private
+  def self.getPropertiesOfClassAndSubclasses (crmClass, crmProperties) #returns all properties of crmClass and those inherited from its superclasses + those of its subClasses since class specification of inner node is possible!!!
+    propertiesWithClassAsDomainClass = Array.new
+    
+    crmClassSubAndSuperClasses = Array.new
+    crmClassSubAndSuperClasses.push crmClass
+    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSubClasses
+    crmClassSubAndSuperClasses.concat crmClass.getDirectOrIndirectSuperClasses
+    
+    for crmClass in crmClassSubAndSuperClasses
+      for crmProperty in crmProperties
+        if crmClass == crmProperty.domain
+          helpProperty = HelpProperty.new      
+          helpProperty.label = crmProperty.label
+          helpProperty.uri = crmProperty.uri
+          helpProperty.similarity = crmProperty.similarity
+          helpProperty.domain = crmProperty.domain
+          helpProperty.range = crmProperty.range
+          propertiesWithClassAsDomainClass.push helpProperty
+        end
+      end
+    end
+    
+    propertiesWithClassAsDomainClass
+  end
+  
+  def self.calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, targetClass #HelpProperties
+    shortestPathFromTargetToSource = Array.new
+    if sourceClass != targetClass
+      for shortestPathProperty in shortestPathProperties
+        if shortestPathProperty.range == targetClass
+          shortestPathFromTargetToSource.push targetClass
+          shortestPathFromTargetToSource.push shortestPathProperty
+          shortestPathFromTargetToSource.concat calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, shortestPathProperty.domain
+        end
+      end
+    else
+      shortestPathFromTargetToSource.push sourceClass
+    end
+    return shortestPathFromTargetToSource
+  end  
   
   private
   def self.loadMappingObjects
@@ -278,4 +233,22 @@ module KorCrmMapping::ShortestPathCalculator
     end
   end
   
+=begin  
+    def self.findPathFromTargetToSource (properties, source, target)
+    propertiesToNode = Array.new
+    for property in properties
+      if property.range == target
+        propertiesToNode.push property
+      end
+    end
+    puts "Number of properties to node(must be 1!!!): #{propertiesToNode.size}"
+    puts propertiesToNode.last.domain.label
+    puts source.label
+    if propertiesToNode.last.domain != source
+      puts "if"
+      propertiesToNode.concat findPathFromTargetToSource properties, source, propertiesToNode.last.domain
+    end  
+    return propertiesToNode
+  end
+=end  
 end
