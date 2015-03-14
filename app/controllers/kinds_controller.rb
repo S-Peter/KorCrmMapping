@@ -8,19 +8,8 @@ class KindsController < ApplicationController
     loadMappingObjects  
     kindId = params[:id]
     @kind = findKind kindId, @kinds
-    for crmClass in @crmClasses
-      normalizedLevenshteinDistance = KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance @kind.name, crmClass.label
-      crmClass.distanceValue = normalizedLevenshteinDistance
-    end  
-    puts "Before sorting"
-    for crmClass in @crmClasses
-      puts crmClass.distanceValue 
-    end
-    puts "After sorting"
-    @crmClasses.sort_by! {|cClass| -cClass.distanceValue} 
-    for crmClass in @crmClasses
-      puts crmClass.distanceValue 
-    end
+    
+    @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses
   end
   
   def update

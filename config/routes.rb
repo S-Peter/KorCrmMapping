@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :kinds, only: [:index, :edit, :update, :destroy]
-  resources :relations, only: [:index, :edit, :update, :destroy]
+  resources :relations, only: [:index, :edit, :destroy]
   
   get 'relations/edit', to: 'relations#edit'
   get 'relations/editDomain', to: 'relations#editDomain'

@@ -68,16 +68,6 @@ module KorCrmMapping::VerbPhraseAnalyser
             end
           end
         end
-=begin
-        k= i +1
-        while k <verbPhraseTokens.size
-          if @@seperablePrefix.include? verbPhraseTokens[k]
-            verbPhraseConstituent.head = verbPhraseTokens[k] + verbPhraseConstituent.head
-            break
-          end
-          k+=1
-        end
-=end
         break
       end
       i +=1

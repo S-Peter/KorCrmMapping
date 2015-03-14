@@ -3,10 +3,10 @@ module KorCrmMapping::ShortestPathCalculator
   def self.shortestPathTest
     loadMappingObjects
     for crmClass in @@crmClasses
-      if crmClass.uri.path.eql? '/120111/E21_Person'
+      if crmClass.uri.path.eql? '/120111/E40_Legal_Body'
         sourceClass = crmClass
       end
-      if crmClass.uri.path.eql? '/120111/E24_Physical_Man-Made_Thing'
+      if crmClass.uri.path.eql? '/120111/E73_Information_Object'
         targetClass = crmClass
       end
     end
@@ -33,10 +33,10 @@ module KorCrmMapping::ShortestPathCalculator
     end
     
     for crmClass in @@crmClasses
-      if crmClass.uri.path.eql? '/120111/E21_Person'
+      if crmClass.uri.path.eql? '/120111/E40_Legal_Body'
         sourceClass = crmClass
       end
-      if crmClass.uri.path.eql? '/120111/E24_Physical_Man-Made_Thing'
+      if crmClass.uri.path.eql? '/120111/E73_Information_Object'
         targetClass = crmClass
       end
     end

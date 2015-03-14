@@ -7,23 +7,15 @@ module KorCrmMapping::NounPhraseAnalyser
   def self.npaTest
     loadMappingObjects
     parsedElementsFile = File.new("NpsParsed", "w")
-=begin    
-    for crmClass in @@crmClasses
-      nounPhraseConstituents = analyseNounPhrase4 crmClass.label
-      for nounPhraseConstituent in nounPhraseConstituents
-        puts "Head: #{nounPhraseConstituent.head}"
-        puts "Modifier: #{nounPhraseConstituent.modifiers.inspect}"
-      end
-    end
-=end    
+ 
     for kind in @@kinds
-      nounPhraseConstituents = analyseNounPhrase4 kind.name
+      nounPhraseConstituents = analyseNounPhrase kind.name
       for nounPhraseConstituent in nounPhraseConstituents
         parsedElementsFile.write "Label: #{kind.name}"
         parsedElementsFile.write "\n"
         parsedElementsFile.write "Head: #{nounPhraseConstituent.head}"
         parsedElementsFile.write "\n"
-        parsedElementsFile.write "Modifier: #{nounPhraseConstituent.modifiers.inspect}"
+        parsedElementsFile.write "Modifiers: #{nounPhraseConstituent.modifiers.inspect}"
         parsedElementsFile.write "\n"
         parsedElementsFile.write "---------------------------"
         parsedElementsFile.write "\n"
@@ -34,12 +26,10 @@ module KorCrmMapping::NounPhraseAnalyser
   end
   
   # for pattern attributes NOUN genitive attribute 'ODER' attributes NOUN genitive attribute, ...
-  def self.analyseNounPhrase4 (nounPhrase)
-    puts nounPhrase
+  def self.analyseNounPhrase (nounPhrase)
     nounPhrase = clean nounPhrase
     nounPhraseConstituents = Array.new
     nounPhraseTokens = nounPhrase.split
-    #puts nounPhraseTokens.inspect
     i = 0
     startNounPhraseConstituent = i
     while i < nounPhraseTokens.size
@@ -58,15 +48,12 @@ module KorCrmMapping::NounPhraseAnalyser
     nounPhraseConstituent = NounPhraseConstituent.new
     i = 0
     while i < nounPhraseConstituentTokens.size
-      #if nounPhraseConstituentTokens[i].start_with? "/[A-Z]/" #head found
       if nounPhraseConstituentTokens[i].match /^[A-Z, Ä, Ö, Ü]/ #head found
-
-        #while nounPhraseConstituentTokens[i+1].start_with? "/[A-Z]/"
-        while (nounPhraseConstituentTokens[i+1] != nil) && (nounPhraseConstituentTokens[i+1].match /^[A-Z, Ä, Ö, Ü]/ )
+        while (nounPhraseConstituentTokens[i+1] != nil) && (nounPhraseConstituentTokens[i+1].match /^[A-Z, Ä, Ö, Ü]/)
           i += 1
         end
-        nounPhraseConstituent.head = nounPhraseConstituentTokens[i]
-       
+        nounPhraseConstituent.head = nounPhraseConstituentTokens[i]  
+           
         #prenomial attributes
         j = 0
         while j < i
@@ -80,7 +67,6 @@ module KorCrmMapping::NounPhraseAnalyser
         k = i + 1
         if (k < nounPhraseConstituentTokens.size) && (@@genitiveDeterminer.include? nounPhraseConstituentTokens[k]) #genitive attribute found
           while k < nounPhraseConstituentTokens.size
-            #if nounPhraseConstituentTokens[k].start_with? "/[A-Z]/"
             if nounPhraseConstituentTokens[k].match /^[A-Z, Ä, Ö, Ü]/ 
               nounPhraseConstituent.modifiers.push nounPhraseConstituentTokens[k]
               break
@@ -97,7 +83,6 @@ module KorCrmMapping::NounPhraseAnalyser
   
   private 
   def self.clean nounPhrase
-    #nounPhrase.gsub! /\([^\)]*\)/, ""#remove everything in brackets
     nounPhrase.gsub! /\(.*\)/, ""#remove everything in brackets
     return nounPhrase
   end
