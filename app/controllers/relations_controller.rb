@@ -34,7 +34,6 @@ class RelationsController < ApplicationController
     kindId = params[:domainId]
     @kind = findKind kindId, @kinds    
     @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses
-    #@crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason
     @relationId = params[:relationId]
     @domainId = params[:domainId]
     @rangeId = params[:rangeId]
@@ -45,7 +44,6 @@ class RelationsController < ApplicationController
     kindId = params[:rangeId]
     @kind = findKind kindId, @kinds 
     @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses
-    #@crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason
     @relationId = params[:relationId]
     @domainId = params[:domainId]
     @rangeId = params[:rangeId]
@@ -75,32 +73,15 @@ class RelationsController < ApplicationController
     
     @sessionChainLinks = session[:chainLinks]
     domainClass = @sessionChainLinks[@sessionChainLinks.length-2] #domain of last property in chain or initial domain
-    @fittingCRMProperties = Array.new
-    for crmProperty in @crmProperties
-      if domainClass.isA? crmProperty.domain
-        @fittingCRMProperties.push crmProperty
-      end
-    end
+    rangeClass = @sessionChainLinks[@sessionChainLinks.length-1]
+    @fittingCRMProperties = calculateFittingProperties @crmProperties, domainClass
     
-    for crmProperty in @crmProperties
-      crmProperty.setSimilarity @actualRelation.relation.name
-      puts crmProperty.similarity
+    if !(domainClass.uri.eql? rangeClass.uri)
+    @shortestPath = calculateShortestPath @actualRelation, @crmProperties, domainClass
+    @shortestPath[@shortestPath.size-1] = @sessionChainLinks[@sessionChainLinks.size-1]
+    else
+      @shortestPath = Array.new
     end
-    
-    rangeClass = @actualRelation.range.crmClass
-    shortestPathTree = KorCrmMapping::ShortestPathCalculator.dijkstra @crmProperties, domainClass, rangeClass
-    puts "shortestPathTree"
-    for x in shortestPathTree
-      puts x.label
-    end
-    puts "Domain#{domainClass.label}"
-    puts "Range#{rangeClass.label}"
-    @shortestPath = KorCrmMapping::ShortestPathCalculator.calculateShortestPathFromTargetToSource shortestPathTree, domainClass, rangeClass
-    puts "shortestPath"
-    for y in @shortestPath
-      puts y.label
-    end
-    @shortestPath.reverse!
   end
   
   def editPathClass
@@ -114,9 +95,7 @@ class RelationsController < ApplicationController
     @sessionChainLinks = session[:chainLinks]
     lastProperty =  @sessionChainLinks[@sessionChainLinks.length-2]
       
-    @fittingCRMClasses = Array.new
-    @fittingCRMClasses = @fittingCRMClasses.push lastProperty.range
-    @fittingCRMClasses = lastProperty.range.getDirectOrIndirectSubClasses
+    @fittingCRMClasses = calculateFittingClasses lastProperty
   end
   
   def updatePathProperty
@@ -174,15 +153,18 @@ class RelationsController < ApplicationController
     shortestPathUris =Array.new
     i= 0
     while params["element"+i.to_s] != nil
-      shortestPathUris.push params["element"+i.to_s]
+      shortestPathUris.push RDF::URI.new(params["element"+i.to_s])
       i += 1
     end
-    for shortestPathUri in shortestPathUris
+    puts "Number shortest path uris :#{shortestPathUris.size}"
+    h = 1
+    while h < shortestPathUris.size-1
+      shortestPathUri  = shortestPathUris[h]
       uriFound = false
       j = 0
       while j < @crmProperties.size && !uriFound
         if @crmProperties[j].uri.eql? shortestPathUri
-          sessionChainLinks.push @crmProperties[j]
+          sessionChainLinks.insert(-2, @crmProperties[j])
           uriFound = true
         end
         j += 1
@@ -190,11 +172,12 @@ class RelationsController < ApplicationController
       k=0
       while k < @crmClasses.size && !uriFound
         if @crmClasses[k].uri.eql? shortestPathUri
-          sessionChainLinks.push @crmClasses[k]
+          sessionChainLinks.insert(-2, @crmClasses[k])
           uriFound = true
         end
         k += 1
       end
+      h += 1
     end
     actualRelation = findActualRelation @relations, relationId, domainId, rangeId
     actualRelation.chainLinks = sessionChainLinks
@@ -213,6 +196,48 @@ class RelationsController < ApplicationController
     KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
 
     redirect_to relations_path
+  end
+  
+  private
+  def calculateFittingProperties (crmProperties, crmClass)
+    fittingCRMProperties = Array.new
+    for crmProperty in crmProperties
+      if crmClass.isA? crmProperty.domain
+        fittingCRMProperties.push crmProperty
+      end
+    end
+    return fittingCRMProperties
+  end
+  
+  private
+  def calculateFittingClasses property
+    fittingCRMClasses = Array.new
+    fittingCRMClasses = fittingCRMClasses.push property.range
+    fittingCRMClasses = property.range.getDirectOrIndirectSubClasses
+    return fittingCRMClasses
+  end
+  
+  private
+  def calculateShortestPath (actualRelation, crmProperties, domainClass)
+    for crmProperty in crmProperties
+      crmProperty.setSimilarity actualRelation.relation.name
+      puts crmProperty.similarity
+    end
+    
+    rangeClass = actualRelation.range.crmClass
+    inheritanceFreeCrmProperties = KorCrmMapping::ShortestPathCalculator.deriveInheritanceFreePropertyGraph crmProperties
+    shortestPathTree = KorCrmMapping::ShortestPathCalculator.dijkstra inheritanceFreeCrmProperties, domainClass, rangeClass
+    for shortestPathProperty in shortestPathTree
+      if shortestPathProperty.end == true
+        targetClass = shortestPathProperty.actualDomain
+        break
+      end
+    end
+    shortestPathTree.delete shortestPathProperty
+
+    shortestPath = KorCrmMapping::ShortestPathCalculator.calculateShortestPathFromTargetToSource shortestPathTree, domainClass, targetClass
+    shortestPath.reverse!
+    return shortestPath
   end
   
 end

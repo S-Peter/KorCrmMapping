@@ -1,64 +1,81 @@
-Property: Path: /120111/P95i_was_formed_by, Label: wurde gebildet von, Domain: menschliche Gruppe, Range: Gruppenbildung
-Property: Path: /120111/P99i_was_dissolved_by, Label: wurde aufgelöst durch, Domain: menschliche Gruppe, Range: Gruppenauflösung
-Property: Path: /120111/P144i_gained_member_by, Label: erwarb Mitglied durch, Domain: menschliche Gruppe, Range: Beitritt
-Property: Path: /120111/P146i_lost_member_by, Label: verlor Mitglied durch, Domain: menschliche Gruppe, Range: Austritt
-Property: Path: /120111/P11i_participated_in, Label: nahm Teil an, Domain: Akteur, Range: Ereignis
-Property: Path: /120111/P14i_performed, Label: führte aus, Domain: Akteur, Range: Handlung
-Property: Path: /120111/P23i_surrendered_title_through, Label: trat Besitztitel ab in, Domain: Akteur, Range: Erwerb
-Property: Path: /120111/P29i_received_custody_through, Label: erhielt Gewahrsam durch, Domain: Akteur, Range: Übertragung des Gewahrsams
-Property: Path: /120111/P75_possesses, Label: besitzt, Domain: Akteur, Range: Recht
-Property: Path: /120111/P76_has_contact_point, Label: hat Kontaktpunkt, Domain: Akteur, Range: Kontaktpunkt
-Property: Path: /120111/P105i_has_right_on, Label: hat Rechte an, Domain: Akteur, Range: Rechtsobjekt
-Property: Path: /120111/P131_is_identified_by, Label: wird identifziert durch, Domain: Akteur, Range: Akteurbenennung
-Property: Path: /120111/P92i_was_brought_into_existence_by, Label: wurde in Existenz gebracht durch, Domain: Seiendes, Range: Daseinsbeginn
-Property: Path: /120111/P93i_was_taken_out_of_existence_by, Label: wurde seiner Existenz beraubt durch, Domain: Seiendes, Range: Daseinsende
-Property: Path: /120111/P123i_resulted_from, Label: ergab sich aus, Domain: Seiendes, Range: Umwandlung
-Property: Path: /120111/P1_is_identified_by, Label: wird bezeichnet als, Domain: CRM Entität, Range: Benennung
-Property: Path: /120111/P2_has_type, Label: hat den Typus, Domain: CRM Entität, Range: Typus
-Property: Path: /120111/P39i_was_measured_by, Label: wurde vermessen durch, Domain: CRM Entität, Range: Messung
-Property: Path: /120111/P41i_was_classified_by, Label: wurde klassifiziert durch, Domain: CRM Entität, Range: Typuszuweisung
-Property: Path: /120111/P67i_is_referred_to_by, Label: wird angeführt von, Domain: CRM Entität, Range: Aussagenobjekt
-Property: Path: /120111/P70i_is_documented_in, Label: wird belegt in, Domain: CRM Entität, Range: Dokument
-Property: Path: /120111/P71i_is_listed_in, Label: wird aufgelistet in, Domain: CRM Entität, Range: Referenzdokument
-Property: Path: /120111/P136i_supported_type_creation, Label: belegte, Domain: CRM Entität, Range: Typuserfindung
-Property: Path: /120111/P138i_has_representation, Label: wird dargestellt durch, Domain: CRM Entität, Range: Bildliches
-Property: Path: /120111/P141i_was_assigned_by, Label: wurde zugewiesen durch, Domain: CRM Entität, Range: Merkmalszuweisung
-Property: Path: /120111/P25_moved, Label: bewegte, Domain: Objektbewegung, Range: materieller Gegenstand
-Property: Path: /120111/P31_has_modified, Label: veränderte, Domain: Bearbeitung, Range: Hergestelltes
-Property: Path: /120111/P126_employed, Label: verwendete, Domain: Bearbeitung, Range: Material
+Property: Path: /120111/P2_has_type, Label: hat den Typus, Domain: juristische Person, Range: Typus
+Property: Path: /120111/P2_has_type, Label: hat den Typus, Domain: juristische Person, Range: Sprache
+Property: Path: /120111/P2_has_type, Label: hat den Typus, Domain: juristische Person, Range: Material
+Property: Path: /120111/P2_has_type, Label: hat den Typus, Domain: juristische Person, Range: Maßeinheit
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Handlung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Erwerb
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Objektbewegung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Übertragung des Gewahrsams
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Bearbeitung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Herstellung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Teilhinzufügung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Teilentfernung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Merkmalszuweisung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Zustandsfeststellung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Kennzeichenzuweisung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Messung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Typuszuweisung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: begriffliche Schöpfung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Typuserfindung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Gruppenbildung
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Beitritt
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: Austritt
+Property: Path: /120111/P14i_performed, Label: führte aus, Domain: juristische Person, Range: kuratorische Tätigkeit
+Property: Path: /120111/P75_possesses, Label: besitzt, Domain: juristische Person, Range: Recht
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Phase
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Ereignis
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Daseinsbeginn
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Geburt
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Umwandlung
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Daseinsende
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Zerstörung
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Gruppenauflösung
+Property: Path: /120111/P10i_contains, Label: enthält, Domain: Handlung, Range: Tod
+Property: Path: /120111/P120i_occurs_after, Label: kommt nach, Domain: Handlung, Range: Geschehendes
+Property: Path: /120111/P120i_occurs_after, Label: kommt nach, Domain: Handlung, Range: Zustandsphase
 Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: CRM Entität
-Property: Path: /120111/P34_concerned, Label: betraf, Domain: Zustandsfeststellung, Range: Materielles
-Property: Path: /120111/P37_assigned, Label: wies zu, Domain: Kennzeichenzuweisung, Range: Kennung
-Property: Path: /120111/P94_has_created, Label: hat erschaffen, Domain: begriffliche Schöpfung, Range: begrifflicher Gegenstand
-Property: Path: /120111/P144_joined_with, Label: verband mit, Domain: Beitritt, Range: menschliche Gruppe
-Property: Path: /120111/P145_separated, Label: entließ, Domain: Austritt, Range: Akteur
-Property: Path: /120111/P147_curated, Label: betreute kuratorisch, Domain: kuratorische Tätigkeit, Range: Sammlung
-Property: Path: /120111/P10i_contains, Label: enthält, Domain: Phase, Range: Phase
-Property: Path: /120111/P4_has_time-span, Label: hat Zeitspanne, Domain: Geschehendes, Range: Zeitspanne
-Property: Path: /120111/P120i_occurs_after, Label: kommt nach, Domain: Geschehendes, Range: Geschehendes
-Property: Path: /120111/P103i_was_intention_of, Label: war Bestimmung von, Domain: Typus, Range: Künstliches
-Property: Path: /120111/P72i_is_language_of, Label: ist Sprache von, Domain: Sprache, Range: sprachlicher Gegenstand
-Property: Path: /120111/P68i_use_foreseen_by, Label: vorgesehen für Gebrauch durch, Domain: Material, Range: Entwurf oder Verfahren
-Property: Path: /120111/P126i_was_employed_in, Label: wurde verwendet bei, Domain: Material, Range: Bearbeitung
-Property: Path: /120111/P91i_is_unit_of, Label: ist Einheit von, Domain: Maßeinheit, Range: Maß
-Property: Path: /120111/P94i_was_created_by, Label: wurde erschaffen durch, Domain: begrifflicher Gegenstand, Range: begriffliche Schöpfung
-Property: Path: /120111/P149_is_identified_by, Label: wird identifiziert durch, Domain: begrifflicher Gegenstand, Range: Begriff- oder Konzeptbenennung 
-Property: Path: /120111/P102_has_title, Label: trägt den Titel, Domain: Künstliches, Range: Titel
-Property: Path: /120111/P130_shows_features_of, Label: zeigt Merkmale von, Domain: Sache, Range: Sache
-Property: Path: /120111/P96_by_mother, Label: durch Mutter, Domain: Geburt, Range: Person
-Property: Path: /120111/P124_transformed, Label: wandelte um, Domain: Umwandlung, Range: Seiendes
-Property: Path: /120111/P96i_gave_birth, Label: gebar, Domain: Person, Range: Geburt
-Property: Path: /120111/P100i_died_in, Label: starb in, Domain: Person, Range: Tod
-Property: Path: /120111/P13i_was_destroyed_by, Label: wurde zerstört durch, Domain: Materielles, Range: Zerstörung
-Property: Path: /120111/P34i_was_assessed_by, Label: wurde beurteilt durch, Domain: Materielles, Range: Zustandsfeststellung
-Property: Path: /120111/P44_has_condition, Label: hat Zustand, Domain: Materielles, Range: Zustandsphase
-Property: Path: /120111/P58_has_section_definition, Label: hat Abschittsdefinition, Domain: Materielles, Range: Abschnittsdefinition
-Property: Path: /120111/P59_has_section, Label: hat Bereich, Domain: Materielles, Range: Ort
-Property: Path: /120111/P113i_was_removed_by, Label: wurde entfernt durch, Domain: Materielles, Range: Teilentfernung
-Property: Path: /120111/P25i_moved_by, Label: wurde bewegt durch, Domain: materieller Gegenstand, Range: Objektbewegung
-Property: Path: /120111/P56_bears_feature, Label: trägt Merkmal, Domain: materieller Gegenstand, Range: materielles Merkmal
-Property: Path: /120111/P108i_was_produced_by, Label: wurde hergestellt durch, Domain: Hergestelltes, Range: Herstellung
-Property: Path: /120111/P110i_was_augmented_by, Label: wurde erweitert durch, Domain: Hergestelltes, Range: Teilhinzufügung
-Property: Path: /120111/P128_carries, Label: trägt, Domain: Hergestelltes, Range: symbolisches Objekt
-Property: Path: /120111/P147i_was_curated_by, Label: wurde kuratorisch betreut durch, Domain: Sammlung, Range: kuratorische Tätigkeit
-Property: Path: /120111/P142i_was_used_in, Label: wurde benutzt in, Domain: Benennung, Range: Kennzeichenzuweisung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Zeitspanne
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Ort
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Maß
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Seiendes
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Akteur
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Person
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: menschliche Gruppe
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Sache
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Künstliches
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Hergestelltes
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: künstlicher Gegenstand
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Informationsträger
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: hergestelltes Merkmal
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Sammlung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: begrifflicher Gegenstand
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Aussagenobjekt
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Informationsgegenstand
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Entwurf oder Verfahren
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Dokument
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Referenzdokument
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: sprachlicher Gegenstand
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Inschrift
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Titel
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Bildliches
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Marke
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Bild
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: symbolisches Objekt
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Benennung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Kennung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Ortsbenennung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Adresse
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Abschnittsdefinition
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Raumkoordinaten
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Orts- oder Flurname
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Zeitbenennung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Datum
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Kontaktpunkt
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Begriff- oder Konzeptbenennung 
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Akteurbenennung
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Rechtsobjekt
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Materielles
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: materieller Gegenstand
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: biologischer Gegenstand
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: materielles Merkmal
+Property: Path: /120111/P141_assigned, Label: wies zu, Domain: Merkmalszuweisung, Range: Gelände

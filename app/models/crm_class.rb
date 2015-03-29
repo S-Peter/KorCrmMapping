@@ -2,7 +2,7 @@ require 'json'
 
 class CrmClass < CrmRessource
 
-  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris, :similarity
+  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris
   
   def initialize
     @superClasses = Array.new

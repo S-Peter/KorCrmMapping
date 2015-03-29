@@ -70,47 +70,6 @@ class ApplicationController < ActionController::Base
     end
     actualRelation
   end
-
-=begin  
-  protected
-  def orderCrmClassesByNameSimilarity kind, crmClasses
-    kindNounPhraseConstituents = KorCrmMapping::NounPhraseAnalyser.analyseNounPhrase kind.name
-    for crmClass in crmClasses
-      crmClassNounPhraseConstituents = KorCrmMapping::NounPhraseAnalyser.analyseNounPhrase crmClass.label
-      
-      normalizedLevenshteinDistanceNounPhraseConstituents = 0
-      for kindNounPhraseConstituent in kindNounPhraseConstituents      
-        for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
-          normalizedLevenshteinDistanceHead = KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance kindNounPhraseConstituent.head, crmClassNounPhraseConstituent.head
-          
-          normalizedLevenshteinDistanceModifiers = 0
-          for korModifier in kindNounPhraseConstituent.modifiers
-            for crmModifier in crmClassNounPhraseConstituent.modifiers
-              normalizedLevenshteinDistanceModifier =  KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance korModifier, crmModifier
-              if normalizedLevenshteinDistanceModifier > normalizedLevenshteinDistanceModifiers
-                normalizedLevenshteinDistanceModifiers = normalizedLevenshteinDistanceModifier
-              end
-            end
-          end
-          
-          normalizedLevenshteinDistanceNounPhraseConstituent = (2.0 * normalizedLevenshteinDistanceHead.to_r / 3.0) + (normalizedLevenshteinDistanceModifier.to_r / 3.0)
-          if normalizedLevenshteinDistanceNounPhraseConstituent > normalizedLevenshteinDistanceNounPhraseConstituents
-            normalizedLevenshteinDistanceNounPhraseConstituents = normalizedLevenshteinDistanceNounPhraseConstituent
-          end
-        end   
-      end
-      crmClass.similarity = normalizedLevenshteinDistanceNounPhraseConstituents
-    end
-    
-    crmClasses.sort_by! {|cClass| -cClass.similarity} 
-    for crmClass in crmClasses
-      puts crmClass.similarity 
-    end
-    
-    return crmClasses
-  end
- 
-=end
   
   protected
   def orderCrmClassesByNameSimilarity kind, crmClasses

@@ -5,8 +5,8 @@
 {"json_class":"Kind","data":{"id":5,"name":"Literatur","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E73_Information_Object","query":null,"fragment":null}}}
 {"json_class":"Kind","data":{"id":6,"name":"Werk","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E24_Physical_Man-Made_Thing","query":null,"fragment":null}}}
 {"json_class":"Kind","data":{"id":7,"name":"Text","description":null,"crmClassUri":null}}
-{"json_class":"Kind","data":{"id":8,"name":"Personengruppe","description":"","crmClassUri":null}}
-{"json_class":"Kind","data":{"id":9,"name":"Ausstellung","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":8,"name":"Personengruppe","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E74_Group","query":null,"fragment":null}}}
+{"json_class":"Kind","data":{"id":9,"name":"Ausstellung","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E78_Collection","query":null,"fragment":null}}}
 {"json_class":"Kind","data":{"id":10,"name":"Embedded Medium","description":"","crmClassUri":null}}
 {"json_class":"Kind","data":{"id":11,"name":"Name","description":"Name der Entitaet","crmClassUri":null}}
 {"json_class":"Kind","data":{"id":12,"name":"Eindeutiger Name","description":"Eindeutiger Name der Entitaet","crmClassUri":null}}

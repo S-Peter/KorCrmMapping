@@ -17,17 +17,6 @@ Rails.application.routes.draw do
   post 'relations/updatePath', to: 'relations#updatePath'
   
   get 'relations/destroy', to: 'relations#destroy' # delete not working! why?
-  
-  #get 'mapping/startMapping', to: 'mapping#startMapping'
-  #get 'mapping/mapKorKindForm', to: 'mapping#mapKorKindForm'
-  #post 'mapping/mapKorKind', to: 'mapping#mapKorKind'
-  #get 'mapping/mapKorRelationRangeForm', to: 'mapping#mapKorRelationRangeForm'
-  #post 'mapping/mapKorRelationRange', to: 'mapping#mapKorRelationRange'
-  #get 'mapping/mapKorRelationPropertyForm', to: 'mapping#mapKorRelationPropertyForm'
-  #post 'mapping/mapKorRelationProperty', to: 'mapping#mapKorRelationProperty' 
-  #get 'mapping/mapKorRelationInnerNodeForm', to: 'mapping#mapKorRelationInnerNodeForm'
-  #post 'mapping/mapKorRelationInnerNode', to: 'mapping#mapKorRelationInnerNode' 
-  #get 'mapping/displayMapping', to: 'mapping#displayMapping'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
