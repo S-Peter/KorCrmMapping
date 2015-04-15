@@ -128,6 +128,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    treetagger-ruby (0.1.1)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -154,6 +155,7 @@ DEPENDENCIES
   rdf-rdfxml
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  treetagger-ruby
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)

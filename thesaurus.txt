@@ -1,6 +1,6 @@
 Entität, Instanz, Entity, Größe, Objekt, Symbol
 Geschehendes, Geschehen,  Ablauf, Geschehen, Handlung, Vorgang 
-Zustandsphase, Phase, Abschnitt, Entwicklungsabschnitt, Entwicklungsphase, Entwicklungsstadium, Entwicklungsstand, Entwicklungsstufe, Entwicklungszustand, Punkt, Stadium, Station, Stufe, Periode, Abstand, Dauer, Frist, Intervall, Periode, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum, Zeitspanne, Ära, Epoche, Periode, Zeitabschnitt, Zeitalter
+Zustandsphase, Phase, Abschnitt, Entwicklungsabschnitt, Entwicklungsphase, Entwicklungsstadium, Entwicklungsstand, Entwicklungsstufe, Entwicklungszustand, Stadium, Station, Stufe, Periode, Abstand, Dauer, Frist, Intervall, Periode, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum, Zeitspanne, Ära, Epoche, Periode, Zeitabschnitt, Zeitalter
 Phase, Abschnitt, Entwicklungsabschnitt, Entwicklungsphase, Entwicklungsstadium, Entwicklungsstand, Entwicklungsstufe, Entwicklungszustand, Punkt, Stadium, Station, Stufe, Periode, Abstand, Dauer, Frist, Intervall, Periode, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum, Zeitspanne, Ära, Epoche, Periode, Zeitabschnitt, Zeitalter
 Ereignis, Begebenheit, Episode, Geschehnis, Vorfall, Vorgang, Vorkommnis, Zwischenfall, Geschehen
 Zerstörung, Annihilation, Auslöschung, Destruktion, Devastation, Vernichtung, Verwüstung, Zerstörung, Zunichtemachung, Abbruch, Abriss, Demolierung
@@ -16,7 +16,7 @@ Kennzeichenzuweisung, Belegung, Zuordnung, Zuteilung, Zuweisung
 Messung, Messen, Vermessung, Survey 
 Typuszuweisung, Belegung, Zuordnung, Zuteilung, Zuweisung
 Materielles
-Gegenstand, Baustein, Bestandteil, Detail, Einzelheit, Element, Glied, Komponente, Konstituens, Modul, Punkt, Stück, Teil, Ding, Etwas, Gegenstand, Objekt, Sache
+Gegenstand, Baustein, Bestandteil, Detail, Einzelheit, Element, Glied, Komponente, Konstituens, Modul, Stück, Teil, Ding, Etwas, Gegenstand, Objekt, Sache
 Person, Charakter, Einzelwesen, Individuum, Mensch, Persönlichkeit, Subjekt
 Hergestelltes
 Merkmal, Attribut, Besonderheit, Charakteristikum, Duktus, Eigenart, Eigenheit, Eigenschaft, Eigentümlichkeit, Kennzeichen, Manier, Spezifikum 
@@ -42,7 +42,7 @@ Zeitbenennung, Auszeichnung, Beschriftung, Betitelung, Begriff, Bezeichnung, Nom
 Datum, Zeitangabe, Zeitpunkt, Datierung
 Kontaktpunkt
 Zeitspanne, Abstand, Dauer, Frist, Intervall, Periode, Phase, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum 
-Ort, Lage, Ort, Position, Punkt, Standort, Stelle
+Ort, Lage, Position, Standort, Stelle
 Maß, Kenngröße, Maß, Parameter, Mass,  Einheit, Maßeinheit, Abstufung, Ausdehnung, Ausmaß, Größe, Maße, Umfang, Weite 
 Typus, Typ, Art, Gattung, Genre, Kategorie, Klasse, Rubrik, Sorte, Wesen 
 Sprache
@@ -74,4 +74,4 @@ Beitritt, Akzession
 Austritt, Abberufung, Ablösung, Absetzung, Austritt, Demission, Enthebung, Entlassung, Kündigung, Vertragsaufhebung, Vertragsauflösung 
 Tätigkeit, Aktion, Dienst, Handlung, Anstellung, Arbeit, Beruf, Beschäftigung, Gewerbe, Job, Profession 
 Aussagenobjekt, Ding, Etwas, Gegenstand, Objekt, Sache, Teil, Entität, Größe, Symbol 
-Objekt, Ding, Etwas, Gegenstand, Objekt, Sache, Teil,  Entität, Größe, Symbol 
+Objekt, Ding, Etwas, Gegenstand, Sache, Teil,  Entität, Größe, Symbol 

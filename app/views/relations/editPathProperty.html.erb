@@ -41,7 +41,7 @@
 	</tr>
 	<tr>
 		<td><%= label_tag(:property, "Naechste Property") %></td>
-		<td><%= select_tag :property, options_from_collection_for_select(@fittingCRMProperties, :number, :label) %></td>
+		<td><%= select_tag :property, options_from_collection_for_select(@fittingCRMProperties, :number, :fullLabel) %></td>
 	</tr>
 	<tr>
 		<td>
@@ -51,7 +51,7 @@
 </table>
 <% end %>
 
-<%= form_tag({controller: "relations", action: "updatePath"}, method: "post") do %>
+<%= form_tag({controller: "relations", action: "updateCompletePath"}, method: "post") do %>
 <%= hidden_field_tag :relationId, @relationId %>
 <%= hidden_field_tag :domainId, @domainId %>
 <%= hidden_field_tag :rangeId, @rangeId %>
@@ -62,14 +62,14 @@
 <%end%>
 <table>
 		<tr>
-		<td>Vorgeschlagener Pfad</td>
+		<td>Vorgeschlagener Pfad: </td>
 		<td>
 			<% i = 0%>
 			<% while i < @shortestPath.size%>
 				<%= @shortestPath[i].label%>
 				<% i += 1 %>
 				<% if i < @shortestPath.size%>
-					<%= " : " %>
+					<%= " - " %>
 				<%end%>
 			<% end %>
 		</td>	

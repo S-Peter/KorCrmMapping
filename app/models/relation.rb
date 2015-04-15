@@ -34,7 +34,7 @@ class Relation < ActiveRecord::Base #Relation
       relation.actualRelations.push actualRelation
     end   
     
-    relation
+    return relation
   end
 	
 end

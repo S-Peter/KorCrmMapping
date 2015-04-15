@@ -16,6 +16,10 @@ class CrmProperty < CrmRessource
     end
   end
   
+  def fullLabel
+    return @notation + " " + @label
+  end
+  
   def getDomainClasses #list of most abstract domain class and its subclasses
     domainClasses = Array.new
     domainClasses.push @domain
@@ -62,7 +66,7 @@ class CrmProperty < CrmRessource
   end
   
   def setSimilarity (korLabel)
-    @similarity = KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance @label, korLabel
+    @similarity = 1 - (KorCrmMatching::EditDistanceCalculator.calculateNormalizedLevenshteinDistance @label, korLabel)
   end
   
   def as_json(*a) 
@@ -129,7 +133,7 @@ class CrmProperty < CrmRessource
     end
     crmProperty.subPropertyUris = subPropertyUris
  
-    crmProperty
+    return crmProperty
   end
   
 end

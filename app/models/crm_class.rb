@@ -2,7 +2,7 @@ require 'json'
 
 class CrmClass < CrmRessource
 
-  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris
+  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris, :headSimilarity, :modifierSimilarity
   
   def initialize
     @superClasses = Array.new
@@ -12,6 +12,10 @@ class CrmClass < CrmRessource
   def notation=(notation)
     @notation = notation
     @number = notation.byteslice(1,notation.length).to_i
+  end
+  
+  def fullLabel
+    return @notation + " " + @label
   end
   
   def addSuperClass superClass
@@ -116,7 +120,7 @@ class CrmClass < CrmRessource
     end
     crmClass.subClassUris = subClassUris
  
-    crmClass
+    return crmClass
   end
  
 end

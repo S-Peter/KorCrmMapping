@@ -38,7 +38,7 @@ class Kind < ActiveRecord::Base #Entitaetstyp
         })   
       kind.crmClassUri= uri
     end 
-    kind
+    return kind
   end
 
 end

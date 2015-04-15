@@ -5,19 +5,19 @@ class ApplicationController < ActionController::Base
   
   protected
   def loadMappingObjects
-    @crmClasses = KorCrmMapping::CrmSerializerDeserializer.deserializeClassesInJason
+    @crmClasses = KorCrmSerializingDeserializing::CrmSerializerDeserializer.deserializeClassesInJason
     for crmClass in @crmClasses
       crmClass.reestablishLinks @crmClasses
     end
-    @crmProperties = KorCrmMapping::CrmSerializerDeserializer.deserializePropertiesInJason
+    @crmProperties = KorCrmSerializingDeserializing::CrmSerializerDeserializer.deserializePropertiesInJason
     for crmProperty in @crmProperties
       crmProperty.reestablishLinks @crmProperties, @crmClasses
     end
-    @kinds = KorCrmMapping::KorSerializerDeserializer.deserializeKindsInJason
+    @kinds = KorCrmSerializingDeserializing::KorSerializerDeserializer.deserializeKindsInJason
     for kind in @kinds
       kind.reestablishLinks @crmClasses
     end
-    @relations = KorCrmMapping::KorSerializerDeserializer.deserializeRelationsInJason
+    @relations = KorCrmSerializingDeserializing::KorSerializerDeserializer.deserializeRelationsInJason
     for relation in @relations
       relation.reestablishLinks @kinds, @crmClasses, @crmProperties
     end
@@ -70,77 +70,161 @@ class ApplicationController < ActionController::Base
     end
     actualRelation
   end
-  
+
+=begin
   protected
   def orderCrmClassesByNameSimilarity kind, crmClasses
-    kindNounPhraseConstituents = KorCrmMapping::NounPhraseAnalyser.analyseNounPhrase kind.name
+    kindNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase kind.name
+    kindNounPhraseHeads = Array.new
+    for kindNounPhraseConstituent in kindNounPhraseConstituents
+      kindNounPhraseHeads.push kindNounPhraseConstituent.head
+    end
+    
+    kindNameSynonyms =  getSynonyms kindNounPhraseHeads
     
     for crmClass in crmClasses
-      crmClassNounPhraseConstituents = KorCrmMapping::NounPhraseAnalyser.analyseNounPhrase crmClass.label
-      
-      bestNormalizedLevenshteinDistancePerNounPhraseConstituentPairs = 0
-      for kindNounPhraseConstituent in kindNounPhraseConstituents  
-        kindHeadSynonyms = getSynonyms kindNounPhraseConstituent.head
-        for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
-          crmHeadSynonyms = getSynonyms crmClassNounPhraseConstituent.head
-          
-          bestNormalizedLevenshteinDistanceAmongstSynonymPairs = 0
-          for kindHeadSynonym in kindHeadSynonyms
-            for crmHeadSynonym in crmHeadSynonyms
-             normalizedLevenshteinDistancePerSynonymPair = KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance kindHeadSynonym, crmHeadSynonym
-             if normalizedLevenshteinDistancePerSynonymPair > bestNormalizedLevenshteinDistanceAmongstSynonymPairs
-               bestNormalizedLevenshteinDistanceAmongstSynonymPairs = normalizedLevenshteinDistancePerSynonymPair
-             end
-            end
-          end
-
-          bestNormalizedLevenshteinDistancePerModifierPairs = 0
-          for korModifier in kindNounPhraseConstituent.modifiers
-            for crmModifier in crmClassNounPhraseConstituent.modifiers
-              normalizedLevenshteinDistanceModifier =  KorCrmMapping::EditDistanceCalculator.calculateNormalizedLevenshteinDistance korModifier, crmModifier
-              if normalizedLevenshteinDistanceModifier > bestNormalizedLevenshteinDistancePerModifierPairs
-                bestNormalizedLevenshteinDistancePerModifierPairs = normalizedLevenshteinDistanceModifier
-              end
-            end
-          end
-          
-          normalizedLevenshteinDistancePerNounPhraseConstituentPairs = (2.0 * bestNormalizedLevenshteinDistanceAmongstSynonymPairs.to_r / 3.0) + (bestNormalizedLevenshteinDistancePerModifierPairs.to_r / 3.0)
-          if normalizedLevenshteinDistancePerNounPhraseConstituentPairs > bestNormalizedLevenshteinDistancePerNounPhraseConstituentPairs
-            bestNormalizedLevenshteinDistancePerNounPhraseConstituentPairs = normalizedLevenshteinDistancePerNounPhraseConstituentPairs
-          end
-        end   
+      crmClassNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
+      crmClassNounPhraseHeads = Array.new
+      for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
+        crmClassNounPhraseHeads.push crmClassNounPhraseConstituent.head
       end
-      crmClass.similarity = bestNormalizedLevenshteinDistancePerNounPhraseConstituentPairs
+      crmClassNameSynonyms =  getSynonyms crmClassNounPhraseHeads   
+      
+      bestNormalizedLevenshteinDistancePerSynonymPair = 0
+      for kindNameSynonym in kindNameSynonyms
+        for crmClassNameSynonym in crmClassNameSynonyms
+          normalizedLevenshteinDistancePerSynonymPair = KorCrmMatching::EditDistanceCalculator.calculateNormalizedLevenshteinDistance kindNameSynonym, crmClassNameSynonym
+          if normalizedLevenshteinDistancePerSynonymPair > bestNormalizedLevenshteinDistancePerSynonymPair
+            bestNormalizedLevenshteinDistancePerSynonymPair = normalizedLevenshteinDistancePerSynonymPair
+          end
+        end
+      end   
+      crmClass.similarity = bestNormalizedLevenshteinDistancePerSynonymPair 
     end
     
     crmClasses.sort_by! {|cClass| -cClass.similarity} 
-    for crmClass in crmClasses
-      puts crmClass.similarity 
-    end
     
     return crmClasses
   end
+=end
   
   protected
-  def getSynonyms baseWord
-    synonyms = Array.new
-    synonyms.push baseWord
-    File.open('thesaurus.txt').each do |line|
-      words =  line.split(',')
-      for word in words
-        word.gsub! "\n", ""
-        word.strip!
+  def orderCrmClassesByNameSimilarity kind, crmClasses
+    kindNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase kind.name
+    kindNounPhraseHeads = Array.new
+    kindNounPhraseModifiers= Array.new
+    for kindNounPhraseConstituent in kindNounPhraseConstituents
+      kindNounPhraseHeads.push kindNounPhraseConstituent.head
+      for modifier in kindNounPhraseConstituent.modifiers
+        kindNounPhraseModifiers.push modifier
       end
-      if words.include? baseWord
-        for word in words
-          if !synonyms.include? word
-            synonyms.push word
+    end
+    
+    kindNameSynonyms =  getSynonyms kindNounPhraseHeads
+    
+    for crmClass in crmClasses
+      crmClassNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
+      crmClassNounPhraseHeads = Array.new
+      crmClassNounPhraseModifiers = Array.new
+      for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
+        crmClassNounPhraseHeads.push crmClassNounPhraseConstituent.head
+        for modifier in crmClassNounPhraseConstituent.modifiers
+          crmClassNounPhraseModifiers.push modifier
+        end
+      end
+      crmClassNameSynonyms =  getSynonyms crmClassNounPhraseHeads   
+      
+      #HeadSimilarity
+      bestNormalizedLevenshteinDistancePerSynonymPair = 0
+      for kindNameSynonym in kindNameSynonyms
+        for crmClassNameSynonym in crmClassNameSynonyms
+          normalizedLevenshteinDistancePerSynonymPair = KorCrmMatching::EditDistanceCalculator.calculateNormalizedLevenshteinDistance kindNameSynonym, crmClassNameSynonym
+          if normalizedLevenshteinDistancePerSynonymPair > bestNormalizedLevenshteinDistancePerSynonymPair
+            bestNormalizedLevenshteinDistancePerSynonymPair = normalizedLevenshteinDistancePerSynonymPair
           end
+        end
+      end   
+ 
+      crmClass.headSimilarity = bestNormalizedLevenshteinDistancePerSynonymPair
+      
+      #ModifierSimilarity
+      bestNormalizedLevenshteinDistancePerModifierPair = 0
+      if kindNounPhraseModifiers.empty?
+        if crmClassNounPhraseModifiers.empty?
+          bestNormalizedLevenshteinDistancePerModifierPair = 1
+        end 
+      else  
+        for korKindModifier in kindNounPhraseModifiers
+          for crmClassModifier in crmClassNounPhraseModifiers
+            normalizedLevenshteinDistancePerModifierPair = KorCrmMatching::EditDistanceCalculator.calculateNormalizedLevenshteinDistance korKindModifier, crmClassModifier
+            if normalizedLevenshteinDistancePerModifierPair > bestNormalizedLevenshteinDistancePerModifierPair
+              bestNormalizedLevenshteinDistancePerModifierPair = normalizedLevenshteinDistancePerModifierPair
+            end
+          end
+        end   
+      end
+         
+      crmClass.modifierSimilarity = bestNormalizedLevenshteinDistancePerModifierPair
+    end   
+    
+    #order classes by headSimilarity and modifierSimilarity
+    headModifierArray = Array.new
+    crmClasses.sort_by! {|cClass| -cClass.headSimilarity}   
+    i= 0
+    while i < crmClasses.size
+      if i == 0
+        j = 0
+        headModifierArray[j] = Array.new
+        headModifierArray[j].push crmClasses[i]
+      else
+        if headModifierArray.last.first.headSimilarity != crmClasses[i].headSimilarity
+          j += 1
+          headModifierArray[j] = Array.new
+          headModifierArray[j].push crmClasses[i]     
+        else
+          headModifierArray.last.push crmClasses[i]
+        end
+      end
+      i += 1
+    end
+    
+    for modifierArray in headModifierArray
+      modifierArray.sort_by! {|cClass| -cClass.modifierSimilarity} 
+    end
+    
+    classesOrderedByHeadAndModifierSimilarity = Array.new
+    for modifierArray in headModifierArray
+      for crmClass in modifierArray
+        classesOrderedByHeadAndModifierSimilarity.push crmClass
+      end
+    end
+    
+    return classesOrderedByHeadAndModifierSimilarity
+  end
+  
+  protected
+  def getSynonyms baseWords
+    synonyms = Array.new  
+    for baseWord in baseWords
+      if !synonyms.include? baseWord
+        synonyms.push baseWord
+        File.open('thesaurus.txt').each do |line|
+          words =  line.split(',')
+          for word in words
+            word.gsub! "\n", ""
+            word.strip!
+          end
+          if words.include? baseWord
+            for word in words
+              if !synonyms.include? word
+                synonyms.push word
+              end
+            end
+          end  
         end
       end  
     end
-    puts "Synonyms"
-    puts synonyms.inspect
+    
     return synonyms
   end
   

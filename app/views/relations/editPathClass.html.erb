@@ -1,7 +1,21 @@
+<p>
+	<% if @targetPossiblyReached == true %>
+		<%= form_tag({controller: "relations", action: "updatePath"}, method: "post") do %>
+			<%= hidden_field_tag :relationId, @relationId %>
+			<%= hidden_field_tag :domainId, @domainId %>
+			<%= hidden_field_tag :rangeId, @rangeId %>
+			<span><b>Is target reached?</b></span>
+			<br />
+			<%= submit_tag("Yes") %>
+		<% end %>
+	<% end %>
+</p>
+
 <%= form_tag({controller: "relations", action: "updatePathClass"}, method: "post") do %>
 <%= hidden_field_tag :relationId, @relationId %>
 <%= hidden_field_tag :domainId, @domainId %>
 <%= hidden_field_tag :rangeId, @rangeId %>
+
 <table>
 	<tr>
 		<th></th>
@@ -41,7 +55,7 @@
 	</tr>
 	<tr>
 		<td><%= label_tag(:class, "Spezifischste Range-Klasse") %></td>
-		<td><%= select_tag :class, options_from_collection_for_select(@fittingCRMClasses, :number, :label) %></td>
+		<td><%= select_tag :class, options_from_collection_for_select(@fittingCRMClasses, :number, :fullLabel) %></td>
 	</tr>
 	<tr>
 		<td>

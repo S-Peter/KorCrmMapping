@@ -59,7 +59,7 @@ class RelationsController < ApplicationController
     crmClassNumber = params[:crmc]
     @crmClass = findCRMClass crmClassNumber, @crmClasses
     @kind.crmClass = @crmClass
-    KorCrmMapping::KorSerializerDeserializer.serializeKindInJason @kind
+    KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeKindInJason @kind
     redirect_to :action => "edit", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
   end
   
@@ -94,6 +94,20 @@ class RelationsController < ApplicationController
     
     @sessionChainLinks = session[:chainLinks]
     lastProperty =  @sessionChainLinks[@sessionChainLinks.length-2]
+    
+    possibleTargetClasses = @sessionChainLinks.last.getDirectOrIndirectSubClasses
+    @targetPossiblyReached = false
+    i = 0
+    #while i < possibleTargetClasses.size && !@targetPossiblyReached
+    #  if (possibleTargetClasses[i].isA? lastProperty.range)
+    #    @targetPossiblyReached = true
+    #  end
+    #  i += 1
+    #end
+    
+    if (@sessionChainLinks.last.isA? lastProperty.range)
+      @targetPossiblyReached = true
+    end
       
     @fittingCRMClasses = calculateFittingClasses lastProperty
   end
@@ -114,14 +128,14 @@ class RelationsController < ApplicationController
     end   
     
     #redirect
-    if !(sessionChainLinks.last.isA? crmProperty.range) #range not yet reached-> continue chain linking
+    #if !(sessionChainLinks.last.isA? crmProperty.range) #range not yet reached-> continue chain linking
       redirect_to :action => "editPathClass", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
-    else #range reached -> persist chainLinks for actual relation 
-      actualRelation = findActualRelation @relations, relationId, domainId, rangeId
-      actualRelation.chainLinks = sessionChainLinks
-      KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
-      redirect_to relations_path
-    end
+    #else #range reached -> persist chainLinks for actual relation 
+    #  actualRelation = findActualRelation @relations, relationId, domainId, rangeId
+    #  actualRelation.chainLinks = sessionChainLinks
+    #  KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
+    #  redirect_to relations_path
+    #end
   end
   
   def updatePathClass
@@ -142,7 +156,20 @@ class RelationsController < ApplicationController
     redirect_to :action => "editPathProperty", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
   end
   
-  def updatePath 
+  def updatePath
+    loadMappingObjects
+    relationId = params[:relationId]
+    domainId = params[:domainId]
+    rangeId = params[:rangeId]
+    sessionChainLinks = session[:chainLinks]
+    
+    actualRelation = findActualRelation @relations, relationId, domainId, rangeId
+    actualRelation.chainLinks = sessionChainLinks
+    KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
+    redirect_to relations_path
+  end
+  
+  def updateCompletePath 
     loadMappingObjects
     relationId = params[:relationId]
     domainId = params[:domainId]
@@ -156,7 +183,6 @@ class RelationsController < ApplicationController
       shortestPathUris.push RDF::URI.new(params["element"+i.to_s])
       i += 1
     end
-    puts "Number shortest path uris :#{shortestPathUris.size}"
     h = 1
     while h < shortestPathUris.size-1
       shortestPathUri  = shortestPathUris[h]
@@ -181,7 +207,7 @@ class RelationsController < ApplicationController
     end
     actualRelation = findActualRelation @relations, relationId, domainId, rangeId
     actualRelation.chainLinks = sessionChainLinks
-    KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
+    KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
     redirect_to relations_path
   end
   
@@ -193,7 +219,7 @@ class RelationsController < ApplicationController
     
     actualRelation = findActualRelation @relations, relationId, domainId, rangeId
     actualRelation.chainLinks = Array.new
-    KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
+    KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
 
     redirect_to relations_path
   end
@@ -212,8 +238,14 @@ class RelationsController < ApplicationController
   private
   def calculateFittingClasses property
     fittingCRMClasses = Array.new
-    fittingCRMClasses = fittingCRMClasses.push property.range
-    fittingCRMClasses = property.range.getDirectOrIndirectSubClasses
+    fittingCRMClasses.push property.range
+    directOrIndirectSubclasses = property.range.getDirectOrIndirectSubClasses
+    for directOrIndirectSubclass in directOrIndirectSubclasses
+      if !(fittingCRMClasses.include? directOrIndirectSubclass)
+        fittingCRMClasses.push directOrIndirectSubclass
+      end
+    end
+    fittingCRMClasses.sort_by! {|cClass| cClass.number}
     return fittingCRMClasses
   end
   
@@ -221,12 +253,13 @@ class RelationsController < ApplicationController
   def calculateShortestPath (actualRelation, crmProperties, domainClass)
     for crmProperty in crmProperties
       crmProperty.setSimilarity actualRelation.relation.name
-      puts crmProperty.similarity
     end
     
+    inheritanceFreeCrmProperties = KorCrmMatching::ShortestPathCalculator.deriveInheritanceFreePropertyGraph crmProperties
+    
     rangeClass = actualRelation.range.crmClass
-    inheritanceFreeCrmProperties = KorCrmMapping::ShortestPathCalculator.deriveInheritanceFreePropertyGraph crmProperties
-    shortestPathTree = KorCrmMapping::ShortestPathCalculator.dijkstra inheritanceFreeCrmProperties, domainClass, rangeClass
+    shortestPathTree = KorCrmMatching::ShortestPathCalculator.dijkstra inheritanceFreeCrmProperties, domainClass, rangeClass
+    
     for shortestPathProperty in shortestPathTree
       if shortestPathProperty.end == true
         targetClass = shortestPathProperty.actualDomain
@@ -234,9 +267,9 @@ class RelationsController < ApplicationController
       end
     end
     shortestPathTree.delete shortestPathProperty
-
-    shortestPath = KorCrmMapping::ShortestPathCalculator.calculateShortestPathFromTargetToSource shortestPathTree, domainClass, targetClass
+    shortestPath = KorCrmMatching::ShortestPathCalculator.calculateShortestPathFromTargetToSource shortestPathTree, domainClass, targetClass
     shortestPath.reverse!
+    
     return shortestPath
   end
   

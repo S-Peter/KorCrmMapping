@@ -10,6 +10,9 @@ class KindsController < ApplicationController
     @kind = findKind kindId, @kinds
     
     @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses
+    
+    printOrderedClasses @crmClasses, @kind
+    
   end
   
   def update
@@ -24,7 +27,7 @@ class KindsController < ApplicationController
       deleteImpactedActualRelations @relations, kind, crmClass
     end
     kind.crmClass = crmClass
-    KorCrmMapping::KorSerializerDeserializer.serializeKindInJason kind
+    KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeKindInJason kind
     redirect_to kinds_path
   end
   
@@ -37,7 +40,7 @@ class KindsController < ApplicationController
     deleteImpactedActualRelations @relations, kind, nil
   
     kind.crmClass = nil
-    KorCrmMapping::KorSerializerDeserializer.serializeKindInJason kind
+    KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeKindInJason kind
     redirect_to kinds_path
   end
   
@@ -57,8 +60,18 @@ class KindsController < ApplicationController
       end
       for impactedActualRelation in impactedActualRelations
         impactedActualRelation.chainLinks = Array.new
-        KorCrmMapping::KorSerializerDeserializer.serializeRelationInJason impactedActualRelation.relation
+        KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason impactedActualRelation.relation
       end
+  end
+  
+  private 
+  def printOrderedClasses orderedCrmClasses, kind
+    classesFile = File.new("orderedCrmClasses" + kind.name, "w")
+    for crmClass in orderedCrmClasses#
+      classesFile.write crmClass.label
+      classesFile.write "\n"
+    end
+    classesFile.close
   end
  
 end

@@ -1,7 +1,11 @@
 class CrmRessource
   
-  attr_accessor :uri, :comment, :label, :number, :similarity
+  attr_accessor :uri, :label, :comment, :number, :similarity
   attr_reader :notation
+  
+  def fullLabel
+    return @notation + " " + @label
+  end
   
   protected # -> utility class?
   def self.createUri uriHash

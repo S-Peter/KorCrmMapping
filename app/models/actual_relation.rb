@@ -74,7 +74,7 @@ class ActualRelation
       uris.push uri 
     end   
     actualRelation.chainLinkUris = uris
-    actualRelation
+    return actualRelation
   end
   
 end

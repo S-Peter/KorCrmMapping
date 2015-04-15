@@ -9,7 +9,7 @@
  
   <p>
     <%= label_tag(:class, "CRM class:") %><br>
-	<%= select_tag :class, options_from_collection_for_select(@crmClasses, :number, :label) %>
+	<%= select_tag :class, options_from_collection_for_select(@crmClasses, :number, :fullLabel) %>
   </p>
  
   <p>

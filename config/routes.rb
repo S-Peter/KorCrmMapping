@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'relations/editPathClass', to: 'relations#editPathClass'
   post 'relations/updatePathClass', to: 'relations#updatePathClass'
   
+  post 'relations/updateCompletePath', to: 'relations#updateCompletePath'
   post 'relations/updatePath', to: 'relations#updatePath'
   
   get 'relations/destroy', to: 'relations#destroy' # delete not working! why?
