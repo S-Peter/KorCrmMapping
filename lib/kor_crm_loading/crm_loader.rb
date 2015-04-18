@@ -63,8 +63,12 @@ module KorCrmLoading::CrmLoader
           #  crmClass.notation = object.value
           #end
         end
-      end         
-     @@crmClasses.push crmClass
+      end  
+        
+      #precompute noun phrase analysis
+      nounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
+      crmClass.nounPhraseConstituents = nounPhraseConstituents   
+      @@crmClasses.push crmClass
     end
    
     #add Super & Sub Classes
@@ -82,7 +86,7 @@ module KorCrmLoading::CrmLoader
     end
     
     #order Array by code number
-    @@crmClasses = @@crmClasses.sort_by {|x| x.number}
+    @@crmClasses.sort_by! {|x| x.number}
   end
   
   private
@@ -140,7 +144,7 @@ module KorCrmLoading::CrmLoader
     completeMissingDomainAndRange
     
     #order Array by code number
-    @@crmProperties = @@crmProperties.sort_by {|x| x.number}
+    @@crmProperties.sort_by! {|x| x.number}
   end
   
  #add Super-, Sub- and InverseProperties

@@ -2,7 +2,7 @@ require 'json'
 
 class CrmClass < CrmRessource
 
-  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris, :headSimilarity, :modifierSimilarity
+  attr_accessor :superClasses, :subClasses, :superClassUris, :subClassUris, :headSimilarity, :modifierSimilarity, :nounPhraseConstituents
   
   def initialize
     @superClasses = Array.new
@@ -92,33 +92,45 @@ class CrmClass < CrmRessource
 
     {
       "json_class"   => self.class.name,
-      "data"         => {"uri" => uri, "notation" => notation, "label" => label, "comment" => comment, "superClassUris" => superClassUris, "subClassUris" => subClassUris }
+      "data"         => {"uri" => uri, "notation" => notation, "label" => label, "comment" => comment, "superClassUris" => superClassUris, "subClassUris" => subClassUris, "nounPhraseConstituents" => nounPhraseConstituents }
     }.as_json(*a)
   end
 
   
   def self.json_create(serializedClass)
-    classDate = JSON.parse(serializedClass)["data"]
+    classData = JSON.parse(serializedClass)["data"]
     crmClass = new
-    uri = createUri classDate["uri"]
+    uri = createUri classData["uri"]
     crmClass.uri = uri
-    crmClass.label = classDate["label"]
-    crmClass.notation = classDate["notation"]
-    crmClass.comment = classDate["comment"]
+    crmClass.label = classData["label"]
+    crmClass.notation = classData["notation"]
+    crmClass.comment = classData["comment"]
     
     superClassUris = Array.new
-    superClassUriHashs = classDate["superClassUris"]
+    superClassUriHashs = classData["superClassUris"]
     for superClassUriHash in superClassUriHashs
       superClassUris.push createUri superClassUriHash
     end
     crmClass.superClassUris = superClassUris
     
     subClassUris = Array.new
-    subClassUriHashs = classDate["subClassUris"]
+    subClassUriHashs = classData["subClassUris"]
     for subClassUriHash in subClassUriHashs
       subClassUris.push createUri subClassUriHash
     end
     crmClass.subClassUris = subClassUris
+    
+    nounPhraseConstituents = Array.new
+    nounPhraseConstituentsHashs = classData["nounPhraseConstituents"]
+    for nounPhraseConstituentHash in nounPhraseConstituentsHashs
+      nounPhraseConstituent = KorCrmMatching::NounPhraseAnalyser::NounPhraseConstituent.new
+      head = nounPhraseConstituentHash["head"]
+      modifiers = nounPhraseConstituentHash["modifiers"]
+      nounPhraseConstituent.head = head
+      nounPhraseConstituent.modifiers= modifiers
+      nounPhraseConstituents.push nounPhraseConstituent
+    end
+    crmClass.nounPhraseConstituents = nounPhraseConstituents
  
     return crmClass
   end

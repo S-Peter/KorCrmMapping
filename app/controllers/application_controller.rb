@@ -123,7 +123,7 @@ class ApplicationController < ActionController::Base
     kindNameSynonyms =  getSynonyms kindNounPhraseHeads
     
     for crmClass in crmClasses
-      crmClassNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
+      crmClassNounPhraseConstituents = crmClass.nounPhraseConstituents #noun phrase preanalysed when CRM first loaded for reasons of performance 
       crmClassNounPhraseHeads = Array.new
       crmClassNounPhraseModifiers = Array.new
       for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
@@ -200,32 +200,6 @@ class ApplicationController < ActionController::Base
     end
     
     return classesOrderedByHeadAndModifierSimilarity
-  end
-  
-  protected
-  def getSynonyms baseWords
-    synonyms = Array.new  
-    for baseWord in baseWords
-      if !synonyms.include? baseWord
-        synonyms.push baseWord
-        File.open('thesaurus.txt').each do |line|
-          words =  line.split(',')
-          for word in words
-            word.gsub! "\n", ""
-            word.strip!
-          end
-          if words.include? baseWord
-            for word in words
-              if !synonyms.include? word
-                synonyms.push word
-              end
-            end
-          end  
-        end
-      end  
-    end
-    
-    return synonyms
   end
   
 end

@@ -46,6 +46,3 @@ gem 'activerecord-session_store'
 
 #string edit distance algorithms
 gem 'damerau-levenshtein', '~> 1.0.3'
-
-#tree tagger: POS-tagging & lemmatization
-gem 'treetagger-ruby'

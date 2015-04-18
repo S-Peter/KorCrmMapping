@@ -1,23 +1,8 @@
-require 'treetagger' # gem not working!
 module Treetaggertest
-  def self.treetag  #not working!!!
-    # Instantiate a tagger instance with default values.
-    tagger = TreeTagger::Tagger.new(:binary => "C:\\TreeTagger\\bin\\tag-german")
-    # Process an array of tokens.
-    tagger.process(%w{Ich gehe in die Schule})
-    #tagger.process(Array["Ich", "gehe", "in", "die", "Schule"])
-    #tagger.process("Ich gehe in die Schule")
-    # Flush the pipeline.
-    tagger.flush
-    # Get the processed data.
-    output = tagger.get_output
-    puts output.inspect
-    puts "Before end"
-  end
   
-  def self.treetag2
+  def self.treetag
     io = IO.popen("C:\\TreeTagger\\bin\\tag-german.bat C:\\TreeTagger\\hund.txt") 
-    tagFile = File.new("tagging", "w")
+    tagFile = File.new("auxiliaryFile", "w")
     line = io.gets
     while line != nil
       #puts line
@@ -37,17 +22,17 @@ module Treetaggertest
     end
   end
   
-  def self.treetag3  
+  def self.treetag2 
     loadMappingObjects
     # Instantiate a tagger instance with default values.
     tagger = TreeTagger::Tagger.new(:binary => "C:\\TreeTagger\\bin\\tag-german")
     tagFile = File.new("tagging", "a")
     # Process an array of tokens.
     for kind in @@kinds
-      auxiliaryFile = File.new("kindName.txt", "w")
+      auxiliaryFile = File.new("auxiliaryFile.txt", "w")
       auxiliaryFile.write kind.name
       auxiliaryFile.close
-      io = IO.popen("C:\\TreeTagger\\bin\\tag-german.bat kindName.txt")       
+      io = IO.popen("C:\\TreeTagger\\bin\\tag-german.bat taggerTest.txt")       
       line = io.gets #line for each tagged word
       while line != nil
         words = line.split(/\s+/)
@@ -57,10 +42,23 @@ module Treetaggertest
       end     
     end
     for relation in @@relations
-      auxiliaryFile = File.new("relationName.txt", "w")
+      auxiliaryFile = File.new("taggerTest.txt", "w")
       auxiliaryFile.write relation.name
       auxiliaryFile.close
-      io = IO.popen("C:\\TreeTagger\\bin\\tag-german.bat relationName.txt")       
+      io = IO.popen("C:\\TreeTagger\\bin\\tag-german.bat taggerTest.txt")       
+      line = io.gets #line for each tagged word
+      while line != nil
+        words = line.split(/\s+/)
+        tagFile.write words.inspect
+        tagFile.write "\n"
+        line = io.gets
+      end      
+    end
+    for crmClass in @@crmClasses
+      auxiliaryFile = File.new("taggerTest.txt", "w")
+      auxiliaryFile.write crmClass.label
+      auxiliaryFile.close
+      io = IO.popen("C:\\TreeTagger\\bin\\tag-german.bat taggerTest.txt")       
       line = io.gets #line for each tagged word
       while line != nil
         words = line.split(/\s+/)
@@ -70,6 +68,24 @@ module Treetaggertest
       end      
     end
     tagFile.close
+  end
+  
+  def self.decomposeCompounds
+    loadMappingObjects
+    for crmClass in @@crmClasses
+      auxiliaryFile = File.new("auxiliaryFile.txt", "w")
+      auxiliaryFile.write crmClass.label
+      auxiliaryFile.close
+      io = IO.popen("java -jar jwordsplitter-3.4\\jwordsplitter-3.4.jar auxiliaryFile.txt")
+      puts crmClass.label
+      line = io.gets
+      while line != nil
+        puts line
+        line = io.gets
+      end 
+      puts "-----------------------------------------------------------------"  
+    end
+    return
   end
   
   private

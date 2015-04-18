@@ -1,24 +1,20 @@
 Entität, Instanz, Entity, Größe, Objekt, Symbol
 Geschehendes, Geschehen,  Ablauf, Geschehen, Handlung, Vorgang 
-Zustandsphase, Phase, Abschnitt, Entwicklungsabschnitt, Entwicklungsphase, Entwicklungsstadium, Entwicklungsstand, Entwicklungsstufe, Entwicklungszustand, Stadium, Station, Stufe, Periode, Abstand, Dauer, Frist, Intervall, Periode, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum, Zeitspanne, Ära, Epoche, Periode, Zeitabschnitt, Zeitalter
 Phase, Abschnitt, Entwicklungsabschnitt, Entwicklungsphase, Entwicklungsstadium, Entwicklungsstand, Entwicklungsstufe, Entwicklungszustand, Punkt, Stadium, Station, Stufe, Periode, Abstand, Dauer, Frist, Intervall, Periode, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum, Zeitspanne, Ära, Epoche, Periode, Zeitabschnitt, Zeitalter
 Ereignis, Begebenheit, Episode, Geschehnis, Vorfall, Vorgang, Vorkommnis, Zwischenfall, Geschehen
 Zerstörung, Annihilation, Auslöschung, Destruktion, Devastation, Vernichtung, Verwüstung, Zerstörung, Zunichtemachung, Abbruch, Abriss, Demolierung
 Handlung, Ablauf, Geschehen, Handlungsschema, Vorgang, Aktion, Operation, Tat 
 Erwerb, Aneignung, Anschaffung, Erwerbung, Investition, Kauf,  Anschaffung, Beschaffung, Besorgung, Einkauf, Akquisition, Aufkauf, Kauf, Übernahme, Zukauf 
-Objektbewegung,  Bewegung, Positionsänderung, Translokation, Verschiebung
+Bewegung, Positionsänderung, Translokation, Verschiebung
 Übertragung, Transfer, Übermittlung
 Bearbeitung, Umarbeitung, Adaption 
 Herstellung, Anfertigung, Erstellung, Erzeugung, Fabrikation, Fertigung, Generierung, Hervorbringung, Produktion, Schaffung, Zubereitung 
-Merkmalszuweisung,  Belegung, Zuordnung, Zuteilung, Zuweisung
-Zustandsfeststellung,  Befund, Ergebnis, Feststellung, Resultat 
-Kennzeichenzuweisung, Belegung, Zuordnung, Zuteilung, Zuweisung
+Zuweisung, Belegung, Zuordnung, Zuteilung, Typuszuweisung
+Feststellung, Befund, Ergebnis, Resultat, Zustandsfeststellung
 Messung, Messen, Vermessung, Survey 
-Typuszuweisung, Belegung, Zuordnung, Zuteilung, Zuweisung
-Materielles
+Zuweisung, Belegung, Zuordnung, Zuteilung, Typuszuweisung
 Gegenstand, Baustein, Bestandteil, Detail, Einzelheit, Element, Glied, Komponente, Konstituens, Modul, Stück, Teil, Ding, Etwas, Gegenstand, Objekt, Sache
 Person, Charakter, Einzelwesen, Individuum, Mensch, Persönlichkeit, Subjekt
-Hergestelltes
 Merkmal, Attribut, Besonderheit, Charakteristikum, Duktus, Eigenart, Eigenheit, Eigenschaft, Eigentümlichkeit, Kennzeichen, Manier, Spezifikum 
 Gelände, Terrain 
 Entwurf, Design, Konzept, Konzeption, Plan 
@@ -27,51 +23,41 @@ Recht, Autorisation, Autorisierung, Befugnis, Berechtigung, Bevollmächtigung, B
 Dokument, Schriftstück, Unterlage, Urkunde 
 Inschrift, Aufschrift, Eintrag, Eintragung, Widmung 
 Titel, Begriff, Bezeichner, Bezeichnung, Name
-Bildliches
-Marke
 Bild, Abbildung  Aufnahme, Bild, Bildnis, Abbildung, Darstellung, Illustration 
 Akteur, Handelnder
 Benennung, Auszeichnung, Beschriftung, Betitelung, Begriff, Bezeichnung, Nomenklatur, Notation  
-Kennung, Identifikation, Code, Geheimzeichen, ID, Identifikationsnummer, Identifikator, Identifizierungszeichen, Schlüssel 
-Ortsbennenung, Auszeichnung, Beschriftung, Betitelung, Begriff, Bezeichnung, Nomenklatur, Notation  
+Kennung, Identifikation, Code, Geheimzeichen, ID, Identifikationsnummer, Identifikator, Identifizierungszeichen, Schlüssel  
 Adresse, Anschrift, Postadresse, Postanschrift 
-Abschnittsdefinition, Abgrenzung, Begriffsbestimmung, Begriffserklärung, Begriffsklärung, Bestimmung, Definition, Eingrenzung, Erklärung, Spezifizierung
-Raumkoordinaten
-Orts- oder Flurname, Begriff, Bezeichner, Bezeichnung, Name, Titel 
-Zeitbenennung, Auszeichnung, Beschriftung, Betitelung, Begriff, Bezeichnung, Nomenklatur, Notation  
+Definition, Abgrenzung, Begriffsbestimmung, Begriffserklärung, Begriffsklärung, Bestimmung, Eingrenzung, Erklärung, Spezifizierung
+Koordinaten, Raumkoordinaten
+Name, Begriff, Bezeichner, Bezeichnung, Titel   
 Datum, Zeitangabe, Zeitpunkt, Datierung
-Kontaktpunkt
-Zeitspanne, Abstand, Dauer, Frist, Intervall, Periode, Phase, Spanne, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum 
+Punkt, Lage, Ort, Position, Standort, Stelle 
+Spanne, Abstand, Dauer, Frist, Intervall, Periode, Phase, Weile, Zeit, Zeitabschnitt, Zeitabstand, Zeitdauer, Zeitdifferenz, Zeitintervall, Zeitlang, Zeitraum 
 Ort, Lage, Position, Standort, Stelle
-Maß, Kenngröße, Maß, Parameter, Mass,  Einheit, Maßeinheit, Abstufung, Ausdehnung, Ausmaß, Größe, Maße, Umfang, Weite 
+Einheit, Maß, Kenngröße, Maß, Parameter, Mass, Abstufung, Ausdehnung, Ausmaß, Größe, Maße, Umfang, Weite, Maßeinheit 
 Typus, Typ, Art, Gattung, Genre, Kategorie, Klasse, Rubrik, Sorte, Wesen 
-Sprache
-Material, Materie, Werkstoff 
-Maßeinheit, Einheit, Maß, Mass
+Material, Materie, Werkstoff
 Wert, Zahl
-Zahl
-Zeitprimitiv
 Zeichenkette, Zeichenfolge, Zeichenstrang, String
-Daseinsbeginn, Anbruch, Anfang, Beginn, Start 
-Daseinsende, Abbruch, Beendigung, Einstellung, Ende, Schluss 
+Beginn, Anbruch, Anfang, Start 
+Ende, Abbruch, Beendigung, Einstellung, Schluss 
 Schöpfung, Entwicklung, Erfindung, Erschaffung, Kreation, Planung, Schöpfung, Hervorbringung 
-Gruppenbildung, Aufkommen, Ausbildung, Bildung, Entstehen, Entstehung, Entwicklung, Genese, Heranbildung, Herausbildung, Werden 
+Bildung, Aufkommen, Ausbildung, Entstehen, Entstehung, Entwicklung, Genese, Heranbildung, Herausbildung, Werden 
 Geburt, Gebären, Niederkunft 
-Gruppenauflösung, Abschaffung, Annullierung, Aufhebung, Auflösung, Beseitigung, Einstellung, Streichung
+Auflösung, Abschaffung, Annullierung, Aufhebung, Beseitigung, Einstellung, Streichung, Gruppenauflösung
 Tod, Ableben, Abschied, Exitus, Lebensende, Sterben , Versterben 
 Sache, Ding, Etwas, Gegenstand, Objekt, Teil 
 Künstliches, artifiziell, falsch, künstlich, nicht echt, pseudo, synthetisch, synthetisiert, unecht
-Rechtsobjekt, Ding, Etwas, Gegenstand, Objekt, Sache, Teil
 Gruppe, Gesellschaft, Gruppe, Körperschaft, Kollektiv, Team 
 Seiendes, bestehend, existent, gegeben, gegenwärtig, seiend, vorhanden 
 Sammlung, Kollektion
-Teilhinzufügung, Beifügung, Ergänzung, Hinzufügung, Hinzunahme, Zusatz 
-Teilentfernung, Entfernung, Löschung, Vernichtung
+Hinzufügung, Beifügung, Ergänzung, Hinzunahme, Zusatz, Teilhinzufügung
+Entfernung, Löschung, Vernichtung
 Umwandlung, Gestaltswandel, Transformation, Umgestaltung, Verwandlung, Verwandlungsprozess, Wandlung, Metamorphose
-Typuserfindung
+Erfindung, Entwicklung, Erschaffung, Kreation, Planung, Schöpfung, Hervorbringung, Typuserfindung
 Informationsträger, Kommunikationsträger, Medium, Mittel, Mittler 
 Beitritt, Akzession 
 Austritt, Abberufung, Ablösung, Absetzung, Austritt, Demission, Enthebung, Entlassung, Kündigung, Vertragsaufhebung, Vertragsauflösung 
 Tätigkeit, Aktion, Dienst, Handlung, Anstellung, Arbeit, Beruf, Beschäftigung, Gewerbe, Job, Profession 
-Aussagenobjekt, Ding, Etwas, Gegenstand, Objekt, Sache, Teil, Entität, Größe, Symbol 
-Objekt, Ding, Etwas, Gegenstand, Sache, Teil,  Entität, Größe, Symbol 
+Objekt, Ding, Etwas, Gegenstand, Sache, Teil, Entität, Größe, Symbol 
