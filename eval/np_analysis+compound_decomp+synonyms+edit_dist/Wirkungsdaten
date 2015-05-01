@@ -1,39 +1,35 @@
 Zustandsphase
 Kontaktpunkt
-Datum
-Phase
 Zeitspanne
+Phase
+Datum
 materieller Gegenstand
-biologischer Gegenstand
 sprachlicher Gegenstand
+biologischer Gegenstand
 Informationsgegenstand
 begrifflicher Gegenstand
-Sache
-symbolisches Objekt
-künstlicher Gegenstand
-Aussagenobjekt
 Rechtsobjekt
+Aussagenobjekt
+Sache
+künstlicher Gegenstand
+symbolisches Objekt
 Bild
-Typus
+Bildliches
 Material
+Typus
 Orts- oder Flurname
-Maßeinheit
-Maß
-Handlung
 Ort
+Handlung
+Begriff- oder Konzeptbenennung 
 Titel
 Ortsbenennung
 Akteurbenennung
 Referenzdokument
 begriffliche Schöpfung
+Bearbeitung
 Dokument
-Begriff- oder Konzeptbenennung 
 Benennung
 Zeitbenennung
-Seiendes
-Typuserfindung
-Bearbeitung
-Raumkoordinaten
 Zerstörung
 Merkmalszuweisung
 materielles Merkmal
@@ -41,42 +37,46 @@ juristische Person
 Kennzeichenzuweisung
 hergestelltes Merkmal
 kuratorische Tätigkeit
-Informationsträger
-Austritt
-Recht
-Entwurf oder Verfahren
-Typuszuweisung
-Gruppenbildung
-Akteur
 Messung
+Austritt
+Gruppenbildung
+Hergestelltes
+Maß
+Informationsträger
+Akteur
+Entwurf oder Verfahren
+Maßeinheit
+Recht
 Person
 Abschnittsdefinition
+Teilentfernung
 Tod
 Herstellung
-Teilentfernung
-Geburt
+Seiendes
 CRM Entität
+Geburt
 Daseinsende
 Materielles
 Gruppenauflösung
+Raumkoordinaten
 Zustandsfeststellung
+Künstliches
 Übertragung des Gewahrsams
-Geschehendes
-Sammlung
 Objektbewegung
 Umwandlung
-Beitritt
+Geschehendes
+Sammlung
 Erwerb
+Beitritt
 Ereignis
 Kennung
-Marke
-Künstliches
 Inschrift
+Marke
 Adresse
 Daseinsbeginn
-Teilhinzufügung
-Hergestelltes
+Typuserfindung
 Sprache
+Typuszuweisung
 Gelände
 menschliche Gruppe
-Bildliches
+Teilhinzufügung

@@ -70,47 +70,13 @@ class ApplicationController < ActionController::Base
     end
     actualRelation
   end
-
-=begin
+=begin  
   protected
   def orderCrmClassesByNameSimilarity kind, crmClasses
     kindNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase kind.name
-    kindNounPhraseHeads = Array.new
     for kindNounPhraseConstituent in kindNounPhraseConstituents
-      kindNounPhraseHeads.push kindNounPhraseConstituent.head
-    end
-    
-    kindNameSynonyms =  getSynonyms kindNounPhraseHeads
-    
-    for crmClass in crmClasses
-      crmClassNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
-      crmClassNounPhraseHeads = Array.new
-      for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
-        crmClassNounPhraseHeads.push crmClassNounPhraseConstituent.head
-      end
-      crmClassNameSynonyms =  getSynonyms crmClassNounPhraseHeads   
-      
-      bestNormalizedLevenshteinDistancePerSynonymPair = 0
-      for kindNameSynonym in kindNameSynonyms
-        for crmClassNameSynonym in crmClassNameSynonyms
-          normalizedLevenshteinDistancePerSynonymPair = KorCrmMatching::EditDistanceCalculator.calculateNormalizedLevenshteinDistance kindNameSynonym, crmClassNameSynonym
-          if normalizedLevenshteinDistancePerSynonymPair > bestNormalizedLevenshteinDistancePerSynonymPair
-            bestNormalizedLevenshteinDistancePerSynonymPair = normalizedLevenshteinDistancePerSynonymPair
-          end
-        end
-      end   
-      crmClass.similarity = bestNormalizedLevenshteinDistancePerSynonymPair 
-    end
-    
-    crmClasses.sort_by! {|cClass| -cClass.similarity} 
-    
-    return crmClasses
-  end
-=end
-  
-  protected
-  def orderCrmClassesByNameSimilarity kind, crmClasses
-    kindNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase kind.name
+        KorCrmMatching::CompoundDecomposer.decomposeHeadCompound! kindNounPhraseConstituent
+      end 
     kindNounPhraseHeads = Array.new
     kindNounPhraseModifiers= Array.new
     for kindNounPhraseConstituent in kindNounPhraseConstituents
@@ -120,10 +86,10 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    kindNameSynonyms =  getSynonyms kindNounPhraseHeads
+    kindNameSynonyms =  KorCrmMatching::SynonymsProvider.getSynonyms kindNounPhraseHeads
     
     for crmClass in crmClasses
-      crmClassNounPhraseConstituents = crmClass.nounPhraseConstituents #noun phrase preanalysed when CRM first loaded for reasons of performance 
+      crmClassNounPhraseConstituents = crmClass.nounPhraseConstituents #noun phrase preanalysed and compounds predecomposed when CRM first loaded
       crmClassNounPhraseHeads = Array.new
       crmClassNounPhraseModifiers = Array.new
       for crmClassNounPhraseConstituent in crmClassNounPhraseConstituents
@@ -132,7 +98,7 @@ class ApplicationController < ActionController::Base
           crmClassNounPhraseModifiers.push modifier
         end
       end
-      crmClassNameSynonyms =  getSynonyms crmClassNounPhraseHeads   
+      crmClassNameSynonyms =  KorCrmMatching::SynonymsProvider.getSynonyms crmClassNounPhraseHeads   
       
       #HeadSimilarity
       bestNormalizedLevenshteinDistancePerSynonymPair = 0
@@ -201,5 +167,111 @@ class ApplicationController < ActionController::Base
     
     return classesOrderedByHeadAndModifierSimilarity
   end
+=end 
+
+  protected
+  def orderCrmClassesByNameSimilarity (kind, crmClasses)
+    kindNounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase kind.name
+    decomposeHeads kindNounPhraseConstituents
+    kindNounPhraseHeads = getHeads kindNounPhraseConstituents
+    kindNounPhraseModifiers = getModifiers kindNounPhraseConstituents
+    kindNameSynonyms =  KorCrmMatching::SynonymsProvider.getSynonyms kindNounPhraseHeads
+    
+    for crmClass in crmClasses
+      crmClassNounPhraseConstituents = crmClass.nounPhraseConstituents #noun phrase preanalysed and compounds predecomposed when CRM first loaded
+      crmClassNounPhraseHeads = getHeads crmClassNounPhraseConstituents
+      crmClassNounPhraseModifiers = getModifiers crmClassNounPhraseConstituents
+      crmClassNameSynonyms =  KorCrmMatching::SynonymsProvider.getSynonyms crmClassNounPhraseHeads   
+      
+      #HeadSimilarity
+      crmClass.headSimilarity = calculateBestSimilarity kindNameSynonyms, crmClassNameSynonyms
+      
+      #ModifierSimilarity
+      if kindNounPhraseModifiers.empty? && crmClassNounPhraseModifiers.empty?
+        crmClass.modifierSimilarity = 1 
+      else  
+        crmClass.modifierSimilarity = calculateBestSimilarity kindNounPhraseModifiers, crmClassNounPhraseModifiers 
+      end
+    end   
+    
+    #return by headSimilarity and modifierSimilarity ordered classes 
+    return orderClassesByHeadAndModifierSimilarity crmClasses
+  end
   
+  private
+  def decomposeHeads (nounPhraseConstituents)
+    for nounPhraseConstituents in nounPhraseConstituents
+      KorCrmMatching::CompoundDecomposer.decomposeHeadCompound! nounPhraseConstituents
+    end 
+  end
+  
+  private
+  def getHeads kindNounPhraseConstituents
+    kindNounPhraseHeads = Array.new
+    for kindNounPhraseConstituent in kindNounPhraseConstituents
+      kindNounPhraseHeads.push kindNounPhraseConstituent.head
+    end 
+    return kindNounPhraseHeads
+  end
+  
+  private
+  def getModifiers kindNounPhraseConstituents
+    kindNounPhraseModifiers = Array.new
+    for kindNounPhraseConstituent in kindNounPhraseConstituents
+      for modifier in kindNounPhraseConstituent.modifiers
+        kindNounPhraseModifiers.push modifier
+      end
+    end 
+    return kindNounPhraseModifiers
+  end
+  
+  private 
+  def calculateBestSimilarity (kindNameSynonyms, crmClassNameSynonyms)
+    bestNormalizedLevenshteinDistancePerSynonymPair = 0
+    for kindNameSynonym in kindNameSynonyms
+      for crmClassNameSynonym in crmClassNameSynonyms
+        normalizedLevenshteinDistancePerSynonymPair = KorCrmMatching::EditDistanceCalculator.calculateNormalizedLevenshteinDistance kindNameSynonym, crmClassNameSynonym
+        if normalizedLevenshteinDistancePerSynonymPair > bestNormalizedLevenshteinDistancePerSynonymPair
+          bestNormalizedLevenshteinDistancePerSynonymPair = normalizedLevenshteinDistancePerSynonymPair
+        end
+      end
+    end  
+    return bestNormalizedLevenshteinDistancePerSynonymPair
+  end
+  
+  private
+  def orderClassesByHeadAndModifierSimilarity (crmClasses)
+    headModifierArray = Array.new
+    crmClasses.sort_by! {|cClass| -cClass.headSimilarity}   
+    i= 0
+    while i < crmClasses.size
+      if i == 0
+        j = 0
+        headModifierArray[j] = Array.new
+        headModifierArray[j].push crmClasses[i]
+      else
+        if headModifierArray.last.first.headSimilarity != crmClasses[i].headSimilarity
+          j += 1
+          headModifierArray[j] = Array.new
+          headModifierArray[j].push crmClasses[i]     
+        else
+          headModifierArray.last.push crmClasses[i]
+        end
+      end
+      i += 1
+    end
+    
+    for modifierArray in headModifierArray
+      modifierArray.sort_by! {|cClass| -cClass.modifierSimilarity} 
+    end
+    
+    classesOrderedByHeadAndModifierSimilarity = Array.new
+    for modifierArray in headModifierArray
+      for crmClass in modifierArray
+        classesOrderedByHeadAndModifierSimilarity.push crmClass
+      end
+    end
+    
+    return classesOrderedByHeadAndModifierSimilarity
+  end
 end

@@ -1,52 +1,52 @@
 Informationsträger
 Titel
-Informationsgegenstand
-Zustandsphase
-Zeitspanne
+Orts- oder Flurname
+Begriff- oder Konzeptbenennung 
 Phase
+Kontaktpunkt
+Zeitspanne
+Zustandsphase
 Kennung
-symbolisches Objekt
 Sache
 sprachlicher Gegenstand
+Rechtsobjekt
+Informationsgegenstand
+Aussagenobjekt
+symbolisches Objekt
 begrifflicher Gegenstand
 künstlicher Gegenstand
 biologischer Gegenstand
 materieller Gegenstand
 Gruppenauflösung
-Messung
-Typuszuweisung
-Materielles
-Zustandsfeststellung
-Merkmalszuweisung
 Person
-Herstellung
+Typuszuweisung
 Hergestelltes
-hergestelltes Merkmal
-materielles Merkmal
+Geschehendes
+Austritt
 Gelände
-Bearbeitung
+Messung
 Entwurf oder Verfahren
 Recht
 Dokument
-Referenzdokument
-Übertragung des Gewahrsams
+Beitritt
+Ereignis
 Inschrift
-Objektbewegung
+Typuserfindung
 Bildliches
 Marke
 Bild
 Akteur
-juristische Person
+Umwandlung
 Benennung
-Erwerb
-Ortsbenennung
+Teilhinzufügung
+Sammlung
 Adresse
-Abschnittsdefinition
+Seiendes
 Raumkoordinaten
-Orts- oder Flurname
-Zeitbenennung
+Herstellung
+Zerstörung
 Datum
-Kontaktpunkt
+Bearbeitung
 Handlung
 Ort
 Maß
@@ -54,29 +54,29 @@ Typus
 Sprache
 Material
 Maßeinheit
-Daseinsbeginn
-Daseinsende
-begriffliche Schöpfung
-Gruppenbildung
 Geburt
-Kennzeichenzuweisung
-Tod
-Zerstörung
 Künstliches
-Rechtsobjekt
-Ereignis
+Tod
+Materielles
+Erwerb
+Gruppenbildung
+begriffliche Schöpfung
+Objektbewegung
+Daseinsende
+Daseinsbeginn
+Übertragung des Gewahrsams
 menschliche Gruppe
-Begriff- oder Konzeptbenennung 
-Seiendes
-Sammlung
-Teilhinzufügung
+Zeitbenennung
+Abschnittsdefinition
+Ortsbenennung
+Merkmalszuweisung
 Teilentfernung
-Umwandlung
+juristische Person
 Akteurbenennung
-Typuserfindung
-Geschehendes
-Beitritt
-Austritt
+Zustandsfeststellung
+Kennzeichenzuweisung
+Referenzdokument
+materielles Merkmal
 kuratorische Tätigkeit
-Aussagenobjekt
+hergestelltes Merkmal
 CRM Entität

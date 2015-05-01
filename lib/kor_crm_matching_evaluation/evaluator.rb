@@ -239,6 +239,7 @@ module KorCrmMatchingEvaluation::Evaluator
   
   def self.evaluateNPAnalysisCompoundDecompositionSynonymsEditDistance
     loadMappingObjects
+    
     for crmClass in @@crmClasses #precompute noun phrase analysis for crmClasses (performance)
       nounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
       for nounPhraseConstituent in nounPhraseConstituents
@@ -269,6 +270,7 @@ module KorCrmMatchingEvaluation::Evaluator
         end
       end
       kindNameHeadSynonyms =  KorCrmMatching::SynonymsProvider.getSynonyms kindNounPhraseHeads
+      
       for crmClass in @@crmClasses
         crmClassNounPhraseConstituents = crmClass.nounPhraseConstituents
         crmClassNounPhraseHeads = Array.new
@@ -347,15 +349,33 @@ module KorCrmMatchingEvaluation::Evaluator
     printOrderedClasses @@NP_ANALYSIS_AND_COMPOUND_DECOMPOSITION_AND_SYNONYMS_AND_EDIT_DISTANCE_TYPE, orderedCrmClasses, kind
     end # kinds  
   end
+
+=begin  
+  def self.evaluateAll
+    loadMappingObjects
+    evaluateNoMatching
+    evaluateEditDistanceOnly
+    evaluateNPAnalysisEditDistance
+    evaluateNPAnalysisCompoundDecompositionEditDistance
+    evaluateNPAnalysisCompoundDecompositionSynonymsEditDistance
+    return
+  end
+=end  
+
   
   private 
   def self.printOrderedClasses (type, orderedCrmClasses, kind)
     classesFile = File.new(@@EVAL_PATH + "\\" + type + "\\" + kind.name, "w")
-    for crmClass in orderedCrmClasses
-      classesFile.write crmClass.label
-      classesFile.write "\n"
+    i = 0
+    while i < orderedCrmClasses.size
+      classesFile.write orderedCrmClasses[i].label     
+      i += 1
+      if i < orderedCrmClasses.size
+        classesFile.write "\n"
+      end
     end
     classesFile.close
+    return
   end
   
   private

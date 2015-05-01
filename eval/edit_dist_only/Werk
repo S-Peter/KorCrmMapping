@@ -1,7 +1,7 @@
 Marke
-Person
-Geburt
 Erwerb
+Geburt
+Person
 Beitritt
 Ort
 Material
@@ -9,46 +9,46 @@ Zerstörung
 Recht
 Referenzdokument
 Bearbeitung
-Materielles
 Herstellung
+Materielles
 Merkmalszuweisung
-Rechtsobjekt
 Akteur
+Rechtsobjekt
 materielles Merkmal
 Hergestelltes
-Sprache
-Kennung
+Adresse
 Teilentfernung
-Typuserfindung
-Gelände
 Messung
+Kennung
 Aussagenobjekt
 hergestelltes Merkmal
-Adresse
+Typuserfindung
+Gelände
+Sprache
 Akteurbenennung
 Dokument
+Austritt
 Seiendes
 Ereignis
-Austritt
-Benennung
 juristische Person
-menschliche Gruppe
 Inschrift
+Benennung
+menschliche Gruppe
 Orts- oder Flurname
 symbolisches Objekt
-Zeitspanne
 Maßeinheit
+Zeitspanne
 materieller Gegenstand
-begriffliche Schöpfung
-Entwurf oder Verfahren
-künstlicher Gegenstand
-kuratorische Tätigkeit
 Daseinsende
-sprachlicher Gegenstand
+künstlicher Gegenstand
+Entwurf oder Verfahren
+kuratorische Tätigkeit
+begriffliche Schöpfung
 biologischer Gegenstand
-Geschehendes
-begrifflicher Gegenstand
+sprachlicher Gegenstand
 Kontaktpunkt
+begrifflicher Gegenstand
+Geschehendes
 Daseinsbeginn
 Übertragung des Gewahrsams
 Zeitbenennung
@@ -56,27 +56,27 @@ Ortsbenennung
 Typuszuweisung
 Objektbewegung
 Gruppenbildung
-Raumkoordinaten
 Teilhinzufügung
+Raumkoordinaten
 Begriff- oder Konzeptbenennung 
 Gruppenauflösung
 Informationsträger
-Abschnittsdefinition
 Kennzeichenzuweisung
 Zustandsfeststellung
+Abschnittsdefinition
 Informationsgegenstand
-Zustandsphase
-Phase
-CRM Entität
-Umwandlung
-Bild
 Typus
-Sache
 Bildliches
+Titel
+Sammlung
+Bild
+Künstliches
+Umwandlung
+Sache
+Tod
 Datum
 Maß
-Titel
-Tod
 Handlung
-Sammlung
-Künstliches
+Phase
+Zustandsphase
+CRM Entität

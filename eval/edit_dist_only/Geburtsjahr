@@ -7,34 +7,34 @@ Entwurf oder Verfahren
 Informationsträger
 hergestelltes Merkmal
 Gruppenauflösung
-Typus
-Austritt
-materieller Gegenstand
-Material
-Ort
-Adresse
-Gelände
+Informationsgegenstand
 Recht
+Typus
+Material
+Sprache
+Zerstörung
 Messung
+Ort
 Beitritt
 Akteur
-Sprache
-Informationsgegenstand
-Zerstörung
-begrifflicher Gegenstand
+Adresse
+Austritt
+Gelände
+materieller Gegenstand
 Geschehendes
-juristische Person
 menschliche Gruppe
-symbolisches Objekt
+begrifflicher Gegenstand
+juristische Person
 materielles Merkmal
+symbolisches Objekt
 Hergestelltes
 Zeitbenennung
 Zustandsphase
-Typuserfindung
 Teilentfernung
+Typuserfindung
 künstlicher Gegenstand
-Akteurbenennung
 Raumkoordinaten
+Akteurbenennung
 sprachlicher Gegenstand
 biologischer Gegenstand
 Referenzdokument
@@ -44,39 +44,39 @@ Kennzeichenzuweisung
 Abschnittsdefinition
 Zustandsfeststellung
 Begriff- oder Konzeptbenennung 
-begriffliche Schöpfung
+Maß
 Datum
-Marke
-Ereignis
-Künstliches
-Erwerb
 Dokument
+Materielles
 Seiendes
-Herstellung
-kuratorische Tätigkeit
-Bearbeitung
+Titel
 Kennung
 Benennung
-Maß
-Titel
-Sache
-Materielles
-Daseinsende
+Marke
 Phase
+kuratorische Tätigkeit
+Daseinsende
+begriffliche Schöpfung
+Erwerb
+Künstliches
+Bearbeitung
+Ereignis
+Sache
+Herstellung
 Kontaktpunkt
-Daseinsbeginn
 Ortsbenennung
+Daseinsbeginn
+Typuszuweisung
 Gruppenbildung
 Aussagenobjekt
 Objektbewegung
-Typuszuweisung
 Teilhinzufügung
+Maßeinheit
+Sammlung
+Handlung
 Tod
 Umwandlung
-Handlung
-Bildliches
-Maßeinheit
-Inschrift
-Sammlung
-CRM Entität
 Bild
+Bildliches
+Inschrift
+CRM Entität

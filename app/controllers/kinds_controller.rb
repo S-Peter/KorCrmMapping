@@ -11,7 +11,7 @@ class KindsController < ApplicationController
     
     @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses
     
-    printOrderedClasses @crmClasses, @kind #for evaluation
+    #printOrderedClasses @crmClasses, @kind #for evaluation
     
   end
   

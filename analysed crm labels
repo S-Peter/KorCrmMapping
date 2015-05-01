@@ -1,0 +1,747 @@
+Label: CRM Entität
+
+NounPhraseConstituent:
+Head: Entität
+Modifiers: ["CRM"]
+
+Head synonyms: ["Entität", "Instanz", "Entity", "Größe", "Objekt", "Symbol", "Ding", "Etwas", "Gegenstand", "Sache", "Teil", "Symbolfigur"]
+All Modifiers: ["CRM"]
+----------------------------------------------------------------
+Label: Geschehendes
+
+NounPhraseConstituent:
+Head: Geschehendes
+Modifiers: []
+
+Head synonyms: ["Geschehendes", "Geschehen", "Ablauf", "Handlung", "Vorgang"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Zustandsphase
+
+NounPhraseConstituent:
+Head: Phase
+Modifiers: ["Zustand"]
+
+Head synonyms: ["Phase", "Abschnitt", "Entwicklungsabschnitt", "Entwicklungsphase", "Entwicklungsstadium", "Entwicklungsstand", "Entwicklungsstufe", "Entwicklungszustand", "Punkt", "Stadium", "Station", "Stufe", "Periode", "Abstand", "Dauer", "Frist", "Intervall", "Spanne", "Weile", "Zeit", "Zeitabschnitt", "Zeitabstand", "Zeitdauer", "Zeitdifferenz", "Zeitintervall", "Zeitlang", "Zeitraum", "Zeitspanne", "Ära", "Epoche", "Zeitalter"]
+All Modifiers: ["Zustand"]
+----------------------------------------------------------------
+Label: Phase
+
+NounPhraseConstituent:
+Head: Phase
+Modifiers: []
+
+Head synonyms: ["Phase", "Abschnitt", "Entwicklungsabschnitt", "Entwicklungsphase", "Entwicklungsstadium", "Entwicklungsstand", "Entwicklungsstufe", "Entwicklungszustand", "Punkt", "Stadium", "Station", "Stufe", "Periode", "Abstand", "Dauer", "Frist", "Intervall", "Spanne", "Weile", "Zeit", "Zeitabschnitt", "Zeitabstand", "Zeitdauer", "Zeitdifferenz", "Zeitintervall", "Zeitlang", "Zeitraum", "Zeitspanne", "Ära", "Epoche", "Zeitalter"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Ereignis
+
+NounPhraseConstituent:
+Head: Ereignis
+Modifiers: []
+
+Head synonyms: ["Ereignis", "Begebenheit", "Episode", "Geschehnis", "Vorfall", "Vorgang", "Vorkommnis", "Zwischenfall", "Geschehen"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Zerstörung
+
+NounPhraseConstituent:
+Head: Zerstörung
+Modifiers: []
+
+Head synonyms: ["Zerstörung", "Annihilation", "Auslöschung", "Destruktion", "Devastation", "Vernichtung", "Verwüstung", "Zunichtemachung", "Abbruch", "Abriss", "Demolierung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Handlung
+
+NounPhraseConstituent:
+Head: Handlung
+Modifiers: []
+
+Head synonyms: ["Handlung", "Geschehendes", "Geschehen", "Ablauf", "Vorgang", "Handlungsschema", "Aktion", "Operation", "Tat", "Tätigkeit", "Dienst", "Anstellung", "Arbeit", "Beruf", "Beschäftigung", "Gewerbe", "Job", "Profession"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Erwerb
+
+NounPhraseConstituent:
+Head: Erwerb
+Modifiers: []
+
+Head synonyms: ["Erwerb", "Aneignung", "Anschaffung", "Erwerbung", "Investition", "Kauf", "Beschaffung", "Besorgung", "Einkauf", "Akquisition", "Aufkauf", "Übernahme", "Zukauf"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Objektbewegung
+
+NounPhraseConstituent:
+Head: Bewegung
+Modifiers: ["Objekt"]
+
+Head synonyms: ["Bewegung", "Positionsänderung", "Translokation", "Verschiebung"]
+All Modifiers: ["Objekt"]
+----------------------------------------------------------------
+Label: Übertragung des Gewahrsams
+
+NounPhraseConstituent:
+Head: Übertragung
+Modifiers: ["Gewahrsam"]
+
+Head synonyms: ["Übertragung", "Transfer", "Übermittlung"]
+All Modifiers: ["Gewahrsam"]
+----------------------------------------------------------------
+Label: Bearbeitung
+
+NounPhraseConstituent:
+Head: Bearbeitung
+Modifiers: []
+
+Head synonyms: ["Bearbeitung", "Umarbeitung", "Adaption"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Herstellung
+
+NounPhraseConstituent:
+Head: Herstellung
+Modifiers: []
+
+Head synonyms: ["Herstellung", "Anfertigung", "Erstellung", "Erzeugung", "Fabrikation", "Fertigung", "Generierung", "Hervorbringung", "Produktion", "Schaffung", "Zubereitung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Merkmalszuweisung
+
+NounPhraseConstituent:
+Head: Zuweisung
+Modifiers: ["Merkmal"]
+
+Head synonyms: ["Zuweisung", "Belegung", "Zuordnung", "Zuteilung"]
+All Modifiers: ["Merkmal"]
+----------------------------------------------------------------
+Label: Zustandsfeststellung
+
+NounPhraseConstituent:
+Head: Stellung
+Modifiers: ["Zustand", "fest"]
+
+Head synonyms: ["Stellung"]
+All Modifiers: ["Zustand", "fest"]
+----------------------------------------------------------------
+Label: Kennzeichenzuweisung
+
+NounPhraseConstituent:
+Head: Zuweisung
+Modifiers: ["Kennzeichen"]
+
+Head synonyms: ["Zuweisung", "Belegung", "Zuordnung", "Zuteilung"]
+All Modifiers: ["Kennzeichen"]
+----------------------------------------------------------------
+Label: Messung
+
+NounPhraseConstituent:
+Head: Messung
+Modifiers: []
+
+Head synonyms: ["Messung", "Messen", "Vermessung", "Survey"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Typuszuweisung
+
+NounPhraseConstituent:
+Head: Typuszuweisung
+Modifiers: []
+
+Head synonyms: ["Typuszuweisung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Materielles
+
+NounPhraseConstituent:
+Head: Materielles
+Modifiers: []
+
+Head synonyms: ["Materielles", "Körperliches", "Physisches", "Stoffliches"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: materieller Gegenstand
+
+NounPhraseConstituent:
+Head: Gegenstand
+Modifiers: ["materiell"]
+
+Head synonyms: ["Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Sache", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: ["materiell"]
+----------------------------------------------------------------
+Label: biologischer Gegenstand
+
+NounPhraseConstituent:
+Head: Gegenstand
+Modifiers: ["biologisch"]
+
+Head synonyms: ["Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Sache", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: ["biologisch"]
+----------------------------------------------------------------
+Label: Person
+
+NounPhraseConstituent:
+Head: Person
+Modifiers: []
+
+Head synonyms: ["Person", "Charakter", "Einzelwesen", "Individuum", "Mensch", "Persönlichkeit", "Subjekt"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: künstlicher Gegenstand
+
+NounPhraseConstituent:
+Head: Gegenstand
+Modifiers: ["künstlich"]
+
+Head synonyms: ["Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Sache", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: ["künstlich"]
+----------------------------------------------------------------
+Label: Hergestelltes
+
+NounPhraseConstituent:
+Head: Hergestelltes
+Modifiers: []
+
+Head synonyms: ["Hergestelltes", "Angefertigtes", "Erstelltes", "Gefertigtes", "Generiertes", "Gemachtes", "Verfertigtes", "Fabriziertes", "Produziertes", "Geschaffenes", "Erzeugtes", "Erschaffenes"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: hergestelltes Merkmal
+
+NounPhraseConstituent:
+Head: Merkmal
+Modifiers: ["hergestellt"]
+
+Head synonyms: ["Merkmal", "Attribut", "Besonderheit", "Charakteristikum", "Duktus", "Eigenart", "Eigenheit", "Eigenschaft", "Eigentümlichkeit", "Kennzeichen", "Manier", "Spezifikum"]
+All Modifiers: ["hergestellt"]
+----------------------------------------------------------------
+Label: materielles Merkmal
+
+NounPhraseConstituent:
+Head: Merkmal
+Modifiers: ["materiell"]
+
+Head synonyms: ["Merkmal", "Attribut", "Besonderheit", "Charakteristikum", "Duktus", "Eigenart", "Eigenheit", "Eigenschaft", "Eigentümlichkeit", "Kennzeichen", "Manier", "Spezifikum"]
+All Modifiers: ["materiell"]
+----------------------------------------------------------------
+Label: Gelände
+
+NounPhraseConstituent:
+Head: Gelände
+Modifiers: []
+
+Head synonyms: ["Gelände", "Terrain"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: begrifflicher Gegenstand
+
+NounPhraseConstituent:
+Head: Gegenstand
+Modifiers: ["begrifflich"]
+
+Head synonyms: ["Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Sache", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: ["begrifflich"]
+----------------------------------------------------------------
+Label: Entwurf oder Verfahren
+
+NounPhraseConstituent:
+Head: Entwurf
+Modifiers: []
+NounPhraseConstituent:
+Head: Verfahren
+Modifiers: []
+
+Head synonyms: ["Entwurf", "Design", "Konzept", "Konzeption", "Plan", "Verfahren", "Ansatz", "Arbeitsweise", "Art und Weise", "Betrachtungsweise", "Herangehensweise", "Methode", "Methodik", "Prozedere", "Prozedur", "Technik", "Verfahrensweise", "Vorgehen", "Vorgehensweise"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Recht
+
+NounPhraseConstituent:
+Head: Recht
+Modifiers: []
+
+Head synonyms: ["Recht", "Autorisation", "Autorisierung", "Befugnis", "Berechtigung", "Bevollmächtigung", "Billigung", "Erlaubnis", "Ermächtigung", "Genehmigung", "Lizenz", "Plazet", "Zulassung", "Konzession"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Dokument
+
+NounPhraseConstituent:
+Head: Dokument
+Modifiers: []
+
+Head synonyms: ["Dokument", "Schriftstück", "Unterlage", "Urkunde"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Referenzdokument
+
+NounPhraseConstituent:
+Head: Dokument
+Modifiers: ["Referenz"]
+
+Head synonyms: ["Dokument", "Schriftstück", "Unterlage", "Urkunde"]
+All Modifiers: ["Referenz"]
+----------------------------------------------------------------
+Label: sprachlicher Gegenstand
+
+NounPhraseConstituent:
+Head: Gegenstand
+Modifiers: ["sprachlich"]
+
+Head synonyms: ["Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Sache", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: ["sprachlich"]
+----------------------------------------------------------------
+Label: Inschrift
+
+NounPhraseConstituent:
+Head: Inschrift
+Modifiers: []
+
+Head synonyms: ["Inschrift", "Aufschrift", "Eintrag", "Eintragung", "Widmung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Titel
+
+NounPhraseConstituent:
+Head: Titel
+Modifiers: []
+
+Head synonyms: ["Titel", "Begriff", "Bezeichner", "Bezeichnung", "Name"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Bildliches
+
+NounPhraseConstituent:
+Head: Bildliches
+Modifiers: []
+
+Head synonyms: ["Bildliches", "Abbildung  Aufnahme", "Bild", "Abbildung", "Darstellung", "Illustration"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Marke
+
+NounPhraseConstituent:
+Head: Marke
+Modifiers: []
+
+Head synonyms: ["Marke"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Bild
+
+NounPhraseConstituent:
+Head: Bild
+Modifiers: []
+
+Head synonyms: ["Bild", "Bildliches", "Abbildung  Aufnahme", "Abbildung", "Darstellung", "Illustration"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Akteur
+
+NounPhraseConstituent:
+Head: Akteur
+Modifiers: []
+
+Head synonyms: ["Akteur", "Handelnder"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: juristische Person
+
+NounPhraseConstituent:
+Head: Person
+Modifiers: ["juristisch"]
+
+Head synonyms: ["Person", "Charakter", "Einzelwesen", "Individuum", "Mensch", "Persönlichkeit", "Subjekt"]
+All Modifiers: ["juristisch"]
+----------------------------------------------------------------
+Label: Benennung
+
+NounPhraseConstituent:
+Head: Benennung
+Modifiers: []
+
+Head synonyms: ["Benennung", "Auszeichnung", "Beschriftung", "Betitelung", "Begriff", "Bezeichnung", "Nomenklatur", "Notation"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Kennung
+
+NounPhraseConstituent:
+Head: Kennung
+Modifiers: []
+
+Head synonyms: ["Kennung", "Identifikation", "Code", "Geheimzeichen", "ID", "Identifikationsnummer", "Identifikator", "Identifizierungszeichen", "Schlüssel"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Ortsbenennung
+
+NounPhraseConstituent:
+Head: Benennung
+Modifiers: ["Orts"]
+
+Head synonyms: ["Benennung", "Auszeichnung", "Beschriftung", "Betitelung", "Begriff", "Bezeichnung", "Nomenklatur", "Notation"]
+All Modifiers: ["Orts"]
+----------------------------------------------------------------
+Label: Adresse
+
+NounPhraseConstituent:
+Head: Adresse
+Modifiers: []
+
+Head synonyms: ["Adresse", "Anschrift", "Postadresse", "Postanschrift"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Abschnittsdefinition
+
+NounPhraseConstituent:
+Head: Definition
+Modifiers: ["Abschnitt"]
+
+Head synonyms: ["Definition", "Abgrenzung", "Begriffsbestimmung", "Begriffserklärung", "Begriffsklärung", "Bestimmung", "Eingrenzung", "Erklärung", "Spezifizierung"]
+All Modifiers: ["Abschnitt"]
+----------------------------------------------------------------
+Label: Raumkoordinaten
+
+NounPhraseConstituent:
+Head: Raumkoordinaten
+Modifiers: []
+
+Head synonyms: ["Raumkoordinaten"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Orts- oder Flurname
+
+NounPhraseConstituent:
+Head: Orts-
+Modifiers: []
+NounPhraseConstituent:
+Head: Name
+Modifiers: ["Flur"]
+
+Head synonyms: ["Orts-", "Name", "Titel", "Begriff", "Bezeichner", "Bezeichnung"]
+All Modifiers: ["Flur"]
+----------------------------------------------------------------
+Label: Zeitbenennung
+
+NounPhraseConstituent:
+Head: Benennung
+Modifiers: ["Zeit"]
+
+Head synonyms: ["Benennung", "Auszeichnung", "Beschriftung", "Betitelung", "Begriff", "Bezeichnung", "Nomenklatur", "Notation"]
+All Modifiers: ["Zeit"]
+----------------------------------------------------------------
+Label: Datum
+
+NounPhraseConstituent:
+Head: Datum
+Modifiers: []
+
+Head synonyms: ["Datum", "Zeitangabe", "Zeitpunkt", "Datierung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Kontaktpunkt
+
+NounPhraseConstituent:
+Head: Punkt
+Modifiers: ["Kontakt"]
+
+Head synonyms: ["Punkt", "Phase", "Abschnitt", "Entwicklungsabschnitt", "Entwicklungsphase", "Entwicklungsstadium", "Entwicklungsstand", "Entwicklungsstufe", "Entwicklungszustand", "Stadium", "Station", "Stufe", "Periode", "Abstand", "Dauer", "Frist", "Intervall", "Spanne", "Weile", "Zeit", "Zeitabschnitt", "Zeitabstand", "Zeitdauer", "Zeitdifferenz", "Zeitintervall", "Zeitlang", "Zeitraum", "Zeitspanne", "Ära", "Epoche", "Zeitalter"]
+All Modifiers: ["Kontakt"]
+----------------------------------------------------------------
+Label: Zeitspanne
+
+NounPhraseConstituent:
+Head: Spanne
+Modifiers: ["Zeit"]
+
+Head synonyms: ["Spanne", "Phase", "Abschnitt", "Entwicklungsabschnitt", "Entwicklungsphase", "Entwicklungsstadium", "Entwicklungsstand", "Entwicklungsstufe", "Entwicklungszustand", "Punkt", "Stadium", "Station", "Stufe", "Periode", "Abstand", "Dauer", "Frist", "Intervall", "Weile", "Zeit", "Zeitabschnitt", "Zeitabstand", "Zeitdauer", "Zeitdifferenz", "Zeitintervall", "Zeitlang", "Zeitraum", "Zeitspanne", "Ära", "Epoche", "Zeitalter"]
+All Modifiers: ["Zeit"]
+----------------------------------------------------------------
+Label: Ort
+
+NounPhraseConstituent:
+Head: Ort
+Modifiers: []
+
+Head synonyms: ["Ort", "Lage", "Position", "Standort", "Stelle"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Maß
+
+NounPhraseConstituent:
+Head: Maß
+Modifiers: []
+
+Head synonyms: ["Maß", "Einheit", "Kenngröße", "Parameter", "Mass", "Maßstab", "Maßeinheit"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Typus
+
+NounPhraseConstituent:
+Head: Typus
+Modifiers: []
+
+Head synonyms: ["Typus", "Typ", "Art", "Gattung", "Genre", "Kategorie", "Klasse", "Rubrik", "Sorte", "Wesen"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Sprache
+
+NounPhraseConstituent:
+Head: Sprache
+Modifiers: []
+
+Head synonyms: ["Sprache"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Material
+
+NounPhraseConstituent:
+Head: Material
+Modifiers: []
+
+Head synonyms: ["Material", "Materie", "Werkstoff"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Maßeinheit
+
+NounPhraseConstituent:
+Head: Maßeinheit
+Modifiers: []
+
+Head synonyms: ["Maßeinheit", "Maß", "Einheit", "Kenngröße", "Parameter", "Mass", "Maßstab"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Daseinsbeginn
+
+NounPhraseConstituent:
+Head: Beginn
+Modifiers: ["Dasein"]
+
+Head synonyms: ["Beginn", "Anbruch", "Anfang", "Start"]
+All Modifiers: ["Dasein"]
+----------------------------------------------------------------
+Label: Daseinsende
+
+NounPhraseConstituent:
+Head: Ende
+Modifiers: ["Dasein"]
+
+Head synonyms: ["Ende", "Abbruch", "Beendigung", "Einstellung", "Schluss"]
+All Modifiers: ["Dasein"]
+----------------------------------------------------------------
+Label: begriffliche Schöpfung
+
+NounPhraseConstituent:
+Head: Schöpfung
+Modifiers: ["begrifflich"]
+
+Head synonyms: ["Schöpfung", "Entwicklung", "Erfindung", "Erschaffung", "Kreation", "Planung", "Hervorbringung"]
+All Modifiers: ["begrifflich"]
+----------------------------------------------------------------
+Label: Gruppenbildung
+
+NounPhraseConstituent:
+Head: Bildung
+Modifiers: ["Gruppen"]
+
+Head synonyms: ["Bildung", "Aufkommen", "Ausbildung", "Entstehen", "Entstehung", "Entwicklung", "Genese", "Heranbildung", "Herausbildung", "Werden"]
+All Modifiers: ["Gruppen"]
+----------------------------------------------------------------
+Label: Geburt
+
+NounPhraseConstituent:
+Head: Geburt
+Modifiers: []
+
+Head synonyms: ["Geburt", "Gebären", "Niederkunft"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Gruppenauflösung
+
+NounPhraseConstituent:
+Head: Gruppenauflösung
+Modifiers: []
+
+Head synonyms: ["Gruppenauflösung", "Auflösung", "Abschaffung", "Annullierung", "Aufhebung", "Beseitigung", "Einstellung", "Streichung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Tod
+
+NounPhraseConstituent:
+Head: Tod
+Modifiers: []
+
+Head synonyms: ["Tod", "Ableben", "Abschied", "Exitus", "Lebensende", "Sterben", "Versterben"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Sache
+
+NounPhraseConstituent:
+Head: Sache
+Modifiers: []
+
+Head synonyms: ["Sache", "Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Künstliches
+
+NounPhraseConstituent:
+Head: Künstliches
+Modifiers: []
+
+Head synonyms: ["Künstliches", "Artifizielles", "Falsches", "nicht Echtes", "Synthetisches", "Synthetisiertes", "Unechtes"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Rechtsobjekt
+
+NounPhraseConstituent:
+Head: Objekt
+Modifiers: ["Recht"]
+
+Head synonyms: ["Objekt", "Entität", "Instanz", "Entity", "Größe", "Symbol", "Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Sache", "Symbolfigur"]
+All Modifiers: ["Recht"]
+----------------------------------------------------------------
+Label: Informationsgegenstand
+
+NounPhraseConstituent:
+Head: Gegenstand
+Modifiers: ["Information"]
+
+Head synonyms: ["Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Objekt", "Sache", "Entität", "Größe", "Symbol", "Symbolfigur"]
+All Modifiers: ["Information"]
+----------------------------------------------------------------
+Label: menschliche Gruppe
+
+NounPhraseConstituent:
+Head: Gruppe
+Modifiers: ["menschlich"]
+
+Head synonyms: ["Gruppe", "Gesellschaft", "Körperschaft", "Kollektiv", "Team"]
+All Modifiers: ["menschlich"]
+----------------------------------------------------------------
+Label: Begriff- oder Konzeptbenennung 
+
+NounPhraseConstituent:
+Head: Begriff
+Modifiers: []
+NounPhraseConstituent:
+Head: Benennung
+Modifiers: ["Konzept"]
+
+Head synonyms: ["Begriff", "Titel", "Bezeichner", "Bezeichnung", "Name", "Benennung", "Auszeichnung", "Beschriftung", "Betitelung", "Nomenklatur", "Notation"]
+All Modifiers: ["Konzept"]
+----------------------------------------------------------------
+Label: Seiendes
+
+NounPhraseConstituent:
+Head: Seiendes
+Modifiers: []
+
+Head synonyms: ["Seiendes", "Bestehendes", "Existentes", "Gegebenes", "Gegenwärtiges", "Vorhandenes"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Sammlung
+
+NounPhraseConstituent:
+Head: Sammlung
+Modifiers: []
+
+Head synonyms: ["Sammlung", "Kollektion"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Teilhinzufügung
+
+NounPhraseConstituent:
+Head: Teilhinzufügung
+Modifiers: []
+
+Head synonyms: ["Teilhinzufügung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Teilentfernung
+
+NounPhraseConstituent:
+Head: Entfernung
+Modifiers: ["Teil"]
+
+Head synonyms: ["Entfernung", "Löschung", "Vernichtung"]
+All Modifiers: ["Teil"]
+----------------------------------------------------------------
+Label: Umwandlung
+
+NounPhraseConstituent:
+Head: Umwandlung
+Modifiers: []
+
+Head synonyms: ["Umwandlung", "Gestaltswandel", "Transformation", "Umgestaltung", "Verwandlung", "Verwandlungsprozess", "Wandlung", "Metamorphose"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Akteurbenennung
+
+NounPhraseConstituent:
+Head: Benennung
+Modifiers: ["Akteur"]
+
+Head synonyms: ["Benennung", "Auszeichnung", "Beschriftung", "Betitelung", "Begriff", "Bezeichnung", "Nomenklatur", "Notation"]
+All Modifiers: ["Akteur"]
+----------------------------------------------------------------
+Label: Typuserfindung
+
+NounPhraseConstituent:
+Head: Typuserfindung
+Modifiers: []
+
+Head synonyms: ["Typuserfindung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Informationsträger
+
+NounPhraseConstituent:
+Head: Informationsträger
+Modifiers: []
+
+Head synonyms: ["Informationsträger", "Kommunikationsträger", "Medium", "Mittel", "Mittler"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Beitritt
+
+NounPhraseConstituent:
+Head: Beitritt
+Modifiers: []
+
+Head synonyms: ["Beitritt", "Akzession"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: Austritt
+
+NounPhraseConstituent:
+Head: Austritt
+Modifiers: []
+
+Head synonyms: ["Austritt", "Abberufung", "Ablösung", "Absetzung", "Demission", "Enthebung", "Entlassung", "Kündigung", "Vertragsaufhebung", "Vertragsauflösung"]
+All Modifiers: []
+----------------------------------------------------------------
+Label: kuratorische Tätigkeit
+
+NounPhraseConstituent:
+Head: Tätigkeit
+Modifiers: ["kuratorische"]
+
+Head synonyms: ["Tätigkeit", "Aktion", "Dienst", "Handlung", "Anstellung", "Arbeit", "Beruf", "Beschäftigung", "Gewerbe", "Job", "Profession"]
+All Modifiers: ["kuratorische"]
+----------------------------------------------------------------
+Label: Aussagenobjekt
+
+NounPhraseConstituent:
+Head: Objekt
+Modifiers: ["Aussagen"]
+
+Head synonyms: ["Objekt", "Entität", "Instanz", "Entity", "Größe", "Symbol", "Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Sache", "Symbolfigur"]
+All Modifiers: ["Aussagen"]
+----------------------------------------------------------------
+Label: symbolisches Objekt
+
+NounPhraseConstituent:
+Head: Objekt
+Modifiers: ["symbolisch"]
+
+Head synonyms: ["Objekt", "Entität", "Instanz", "Entity", "Größe", "Symbol", "Gegenstand", "Baustein", "Bestandteil", "Detail", "Einzelheit", "Element", "Glied", "Komponente", "Konstituens", "Modul", "Stück", "Teil", "Ding", "Etwas", "Sache", "Symbolfigur"]
+All Modifiers: ["symbolisch"]
+----------------------------------------------------------------

@@ -4,15 +4,15 @@ Beitritt
 Austritt
 Ortsbenennung
 Inschrift
+Marke
+Zerstörung
+Recht
 Titel
 Datum
-Recht
-Zerstörung
-Marke
 Herstellung
 Bearbeitung
-Akteur
 Person
+Akteur
 Erwerb
 Orts- oder Flurname
 Hergestelltes
@@ -20,63 +20,63 @@ Sprache
 Adresse
 Objektbewegung
 Raumkoordinaten
-Dokument
 Material
 Referenzdokument
 Ereignis
+Dokument
 Informationsträger
 juristische Person
 symbolisches Objekt
 Maßeinheit
 Zeitspanne
 hergestelltes Merkmal
-Informationsgegenstand
-Künstliches
-Materielles
 materieller Gegenstand
-CRM Entität
+Künstliches
+Informationsgegenstand
 kuratorische Tätigkeit
+Materielles
 künstlicher Gegenstand
-sprachlicher Gegenstand
+CRM Entität
 biologischer Gegenstand
-Kontaktpunkt
-begrifflicher Gegenstand
+sprachlicher Gegenstand
 Rechtsobjekt
-Übertragung des Gewahrsams
+begrifflicher Gegenstand
+Kontaktpunkt
 Zustandsphase
 Zeitbenennung
-Typuserfindung
+Übertragung des Gewahrsams
 Aussagenobjekt
-Teilentfernung
+Typuserfindung
 Gruppenbildung
+Teilentfernung
 Akteurbenennung
 Begriff- oder Konzeptbenennung 
 Gruppenauflösung
 Merkmalszuweisung
 menschliche Gruppe
 materielles Merkmal
-Zustandsfeststellung
 Abschnittsdefinition
+Zustandsfeststellung
 begriffliche Schöpfung
 Entwurf oder Verfahren
-Sammlung
+Handlung
 Tod
+Sache
+Gelände
+Daseinsende
+Daseinsbeginn
+Typus
+Maß
+Seiendes
+Sammlung
+Teilhinzufügung
+Bildliches
+Umwandlung
+Kennzeichenzuweisung
+Messung
+Phase
+Typuszuweisung
 Geschehendes
 Bild
-Daseinsbeginn
-Kennzeichenzuweisung
-Maß
-Typus
-Teilhinzufügung
-Umwandlung
-Bildliches
-Daseinsende
-Typuszuweisung
-Gelände
-Benennung
-Seiendes
-Handlung
 Kennung
-Phase
-Sache
-Messung
+Benennung

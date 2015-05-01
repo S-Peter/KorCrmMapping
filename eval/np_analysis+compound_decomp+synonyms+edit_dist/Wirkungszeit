@@ -1,12 +1,9 @@
 Zustandsphase
 Zeitspanne
-Ort
-Kontaktpunkt
 Phase
-Maßeinheit
-Maß
-Ortsbenennung
+Kontaktpunkt
 Akteurbenennung
+Ortsbenennung
 Begriff- oder Konzeptbenennung 
 Benennung
 Zeitbenennung
@@ -14,69 +11,72 @@ Tod
 Adresse
 begriffliche Schöpfung
 Gruppenbildung
-Typuserfindung
 Bearbeitung
 materieller Gegenstand
 sprachlicher Gegenstand
 biologischer Gegenstand
-begrifflicher Gegenstand
 Informationsgegenstand
-Sache
-Datum
+begrifflicher Gegenstand
+CRM Entität
 Rechtsobjekt
 künstlicher Gegenstand
-CRM Entität
+Sache
 Aussagenobjekt
 Inschrift
+Datum
 symbolisches Objekt
 juristische Person
 kuratorische Tätigkeit
-Person
-Entwurf oder Verfahren
-Informationsträger
 Handlung
+Informationsträger
+Entwurf oder Verfahren
 Sprache
+Person
 Merkmalszuweisung
 Referenzdokument
 Kennzeichenzuweisung
 Dokument
-Material
-Typuszuweisung
 Austritt
+Material
 Zerstörung
 Kennung
 materielles Merkmal
 hergestelltes Merkmal
-Bild
-Beitritt
-Umwandlung
 Typus
 Recht
 Übertragung des Gewahrsams
-Orts- oder Flurname
+Umwandlung
+Beitritt
+Bild
+Ort
+Bildliches
 Zustandsfeststellung
-Daseinsende
 Daseinsbeginn
+Daseinsende
+Orts- oder Flurname
 Abschnittsdefinition
-Sammlung
-Gruppenauflösung
-Herstellung
-Gelände
-Künstliches
-Objektbewegung
-Erwerb
 menschliche Gruppe
-Akteur
-Seiendes
+Titel
+Herstellung
 Geburt
+Messung
+Typuszuweisung
+Objektbewegung
+Künstliches
+Erwerb
+Akteur
+Maßeinheit
+Gelände
+Seiendes
+Sammlung
 Teilhinzufügung
 Teilentfernung
 Raumkoordinaten
-Materielles
 Ereignis
+Typuserfindung
+Maß
+Materielles
 Marke
 Hergestelltes
-Bildliches
-Titel
 Geschehendes
-Messung
+Gruppenauflösung

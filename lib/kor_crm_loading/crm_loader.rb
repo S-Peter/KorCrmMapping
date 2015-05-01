@@ -65,8 +65,11 @@ module KorCrmLoading::CrmLoader
         end
       end  
         
-      #precompute noun phrase analysis
+      #precompute noun phrase analysis and predecompose head compounds
       nounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
+      for nounPhraseConstituent in nounPhraseConstituents
+        KorCrmMatching::CompoundDecomposer.decomposeHeadCompound! nounPhraseConstituent
+      end 
       crmClass.nounPhraseConstituents = nounPhraseConstituents   
       @@crmClasses.push crmClass
     end
