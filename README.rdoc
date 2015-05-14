@@ -1,27 +1,25 @@
-== README
+= KCM - KorCrmMapper
 
-h1. KCM - KorCrmMapper
-
-h2. Description:
+== Description:
 This tool supports mapping operations between elements of ConedaKor (Entitätstypen, Relationen) and the CIDOC CRM (Classes, Properties)
 
-h2. Prerequisites:
+== Prerequisites:
 * Windows 7 system environment (in order to be able to use the command line tool TreeTagger)
 * Ruby version 2.1.5p273
 * Rails version 4.1.8
 * Access to a ConedaKor database
 
-h2. Installation and configuration:
+== Installation and configuration:
 * get the project directory (https://github.com/S-Peter/KorCrmMapping)
 * install missing gems (see Gemfile in project directory)
-** switch to the "bin" directory of the project directory
-** execute command: bundle install
+  * switch to the "bin" directory of the project directory
+  * execute command: bundle install
 * configure access to ConedaKor database
-** modify default configuration in "config/database.yml" in the project directory
+  * modify default configuration in "config/database.yml" in the project directory
 * load data structures from sources (the CIDOC CRM version 5.0.4 in its German translation is included as the ECRM implementation in the project directory)
-** still in working directory "bin" of the project directory execute command: KorCrmLoading::CrmLoader.loadCRM
-** execute command: KorCrmLoading::KorLoader.loadKor
+  * still in working directory "bin" of the project directory execute command: KorCrmLoading::CrmLoader.loadCRM
+  * execute command: KorCrmLoading::KorLoader.loadKor
 * start Rails server
-** execute command: rails server
+  * execute command: rails server
 * start mapping
-** open your browser and navigate to address "localhost:3000"
+  * open your browser and navigate to address "localhost:3000"
