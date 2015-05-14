@@ -1,3 +1,5 @@
+require 'json'
+
 class CrmRessource
   
   attr_accessor :uri, :label, :comment, :number, :similarity
@@ -7,7 +9,7 @@ class CrmRessource
     return @notation + " " + @label
   end
   
-  protected # -> utility class?
+  protected
   def self.createUri uriHash
     if uriHash!= nil
       uri = RDF::URI.new({
@@ -16,7 +18,7 @@ class CrmRessource
       :path   => uriHash["path"],
     })
     end    
-    uri
+    return uri
   end
   
 end

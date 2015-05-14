@@ -90,7 +90,7 @@ module KorCrmMatching::NounPhraseAnalyser
     auxiliaryFile = File.new("auxiliaryFile.txt", "w")
     auxiliaryFile.write nounPhrase
     auxiliaryFile.close
-    io = IO.popen("TreeTagger\\bin\\tag-german.bat auxiliaryFile.txt")       
+    io = IO.popen("vendor\\TreeTagger\\bin\\tag-german.bat auxiliaryFile.txt")       
     line = io.gets #line for each tagged word
     while line != nil
       taggedWord = line.split(/\s+/)
@@ -152,49 +152,5 @@ module KorCrmMatching::NounPhraseAnalyser
       end
       i += 1
     end
-  end
-  
-  #-------------------------------TESTS-------------------------------
-  
-  def self.npaTest
-    loadMappingObjects
-    parsedElementsFile = File.new("NpsParsed", "w")
- 
-    for kind in @@kinds
-      nounPhraseConstituents = analyseNounPhrase kind.name
-      for nounPhraseConstituent in nounPhraseConstituents
-        parsedElementsFile.write "Label: #{kind.name}"
-        parsedElementsFile.write "\n"
-        parsedElementsFile.write "Head: #{nounPhraseConstituent.head}"
-        parsedElementsFile.write "\n"
-        parsedElementsFile.write "Modifiers: #{nounPhraseConstituent.modifiers.inspect}"
-        parsedElementsFile.write "\n"
-        parsedElementsFile.write "---------------------------"
-        parsedElementsFile.write "\n"
-      end
-    end
-    parsedElementsFile.close
-    return
   end  
-  
-  private
-  def self.loadMappingObjects
-    @@crmClasses = KorCrmSerializingDeserializing::CrmSerializerDeserializer.deserializeClassesInJason
-    for crmClass in @@crmClasses
-      crmClass.reestablishLinks @@crmClasses
-    end
-    @@crmProperties = KorCrmSerializingDeserializing::CrmSerializerDeserializer.deserializePropertiesInJason
-    for crmProperty in @@crmProperties
-      crmProperty.reestablishLinks @@crmProperties, @@crmClasses
-    end
-    @@kinds = KorCrmSerializingDeserializing::KorSerializerDeserializer.deserializeKindsInJason
-    for kind in @@kinds
-      kind.reestablishLinks @@crmClasses
-    end
-    @@relations = KorCrmSerializingDeserializing::KorSerializerDeserializer.deserializeRelationsInJason
-    for relation in @@relations
-      relation.reestablishLinks @@kinds, @@crmClasses, @@crmProperties
-    end
-  end
-  
 end

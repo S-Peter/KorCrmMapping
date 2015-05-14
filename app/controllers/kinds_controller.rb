@@ -8,11 +8,7 @@ class KindsController < ApplicationController
     loadMappingObjects  
     kindId = params[:id]
     @kind = findKind kindId, @kinds
-    
-    @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses
-    
-    #printOrderedClasses @crmClasses, @kind #for evaluation
-    
+    @crmClasses = orderCrmClassesByNameSimilarity @kind, @crmClasses 
   end
   
   def update
@@ -62,16 +58,6 @@ class KindsController < ApplicationController
         impactedActualRelation.chainLinks = Array.new
         KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason impactedActualRelation.relation
       end
-  end
-  
-  private 
-  def printOrderedClasses orderedCrmClasses, kind
-    classesFile = File.new("orderedCrmClasses" + kind.name, "w")
-    for crmClass in orderedCrmClasses#
-      classesFile.write crmClass.label
-      classesFile.write "\n"
-    end
-    classesFile.close
   end
  
 end

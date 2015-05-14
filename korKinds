@@ -1,26 +1,26 @@
-{"json_class":"Kind","data":{"id":1,"name":"Medium","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E73_Information_Object","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":2,"name":"Ort","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E53_Place","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":3,"name":"Institution","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E40_Legal_Body","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":4,"name":"Person","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E21_Person","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":5,"name":"Literatur","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E31_Document","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":6,"name":"Werk","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E24_Physical_Man-Made_Thing","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":7,"name":"Text","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E33_Linguistic_Object","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":8,"name":"Personengruppe","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E74_Group","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":9,"name":"Ausstellung","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E5_Event","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":10,"name":"Embedded Medium","description":"","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E73_Information_Object","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":11,"name":"Name","description":"Name der Entitaet","crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E41_Appellation","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":13,"name":"Aktiv","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E7_Activity","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":14,"name":"Baubeginn","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E63_Beginning_of_Existence","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":15,"name":"Bauzeit","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E11_Modification","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":16,"name":"Datierung","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E63_Beginning_of_Existence","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":17,"name":"Geburtsdatum","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E67_Birth","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":18,"name":"Geburtsjahr","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E67_Birth","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":19,"name":"Gründung","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E66_Formation","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":20,"name":"Lebensdaten","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E4_Period","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":21,"name":"Lebensdaten (DNB)","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E4_Period","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":22,"name":"Lebensdaten (ULAN)","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E4_Period","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":23,"name":"Sterbejahr","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E69_Death","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":24,"name":"Todesjahr","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E69_Death","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":25,"name":"Wirkungsdaten","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E7_Activity","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":26,"name":"Wirkungszeit","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E7_Activity","query":null,"fragment":null}}}
-{"json_class":"Kind","data":{"id":27,"name":"Zeitraum","description":null,"crmClassUri":{"scheme":"http","authority":"erlangen-crm.org","userinfo":null,"user":null,"password":null,"host":"erlangen-crm.org","port":null,"path":"/120111/E4_Period","query":null,"fragment":null}}}
+{"json_class":"Kind","data":{"id":1,"name":"Medium","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":2,"name":"Ort","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":3,"name":"Institution","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":4,"name":"Person","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":5,"name":"Literatur","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":6,"name":"Werk","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":7,"name":"Text","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":8,"name":"Personengruppe","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":9,"name":"Ausstellung","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":10,"name":"Embedded Medium","description":"","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":11,"name":"Name","description":"Name der Entitaet","crmClassUri":null}}
+{"json_class":"Kind","data":{"id":12,"name":"Aktiv","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":13,"name":"Baubeginn","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":14,"name":"Bauzeit","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":15,"name":"Datierung","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":16,"name":"Geburtsdatum","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":17,"name":"Geburtsjahr","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":18,"name":"Gründung","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":19,"name":"Lebensdaten","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":20,"name":"Lebensdaten (DNB)","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":21,"name":"Lebensdaten (ULAN)","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":22,"name":"Sterbejahr","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":23,"name":"Todesjahr","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":24,"name":"Wirkungsdaten","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":25,"name":"Wirkungszeit","description":null,"crmClassUri":null}}
+{"json_class":"Kind","data":{"id":26,"name":"Zeitraum","description":null,"crmClassUri":null}}

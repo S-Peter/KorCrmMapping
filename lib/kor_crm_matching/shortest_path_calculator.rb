@@ -4,59 +4,6 @@ module KorCrmMatching::ShortestPathCalculator
     attr_accessor :actualDomain, :actualRange, :property, :end
   end
   
-  def self.dijkstraTest
-    loadMappingObjects
-    
-    relationToMapName = "Herausgeber/in von"
-    for crmProperty in @@crmProperties
-      crmProperty.setSimilarity relationToMapName
-    end
-    
-    for crmClass in @@crmClasses
-      if crmClass.uri.path.eql? '/120111/E40_Legal_Body'
-        sourceClass = crmClass
-      end
-      if crmClass.uri.path.eql? '/120111/E73_Information_Object'
-        targetClass = crmClass
-      end
-    end
-    
-    puts relationToMapName
-    puts sourceClass.label
-    puts targetClass.label
-    
-    puts "---------------------Dijkstra------------------"
-    inheritanceFreePropertyGraph = deriveInheritanceFreePropertyGraph @@crmProperties
-    puts inheritanceFreePropertyGraph.size
-    shortestPathProperties = dijkstra inheritanceFreePropertyGraph, sourceClass, targetClass
-    
-    for shortestPathProperty in shortestPathProperties
-      if shortestPathProperty.end == true
-        targetClass = shortestPathProperty.actualDomain
-        break
-      end
-    end
-    shortestPathProperties.delete shortestPathProperty
-    
-    dFile = File.new("dijkstra", "w")
-    for property in shortestPathProperties #helpProperties!!!
-      dFile.write "Property: Path: #{property.property.uri.path}, Label: #{property.property.label}, Domain: #{property.actualDomain.label}, Range: #{property.actualRange.label}"
-      dFile.write "\n"
-    end
-    dFile.close
-  
-    
-    shortestPath = calculateShortestPathFromTargetToSource shortestPathProperties, sourceClass, targetClass
-    shortestPath.reverse!
-    puts "++++++++++++++++++++++++++++++++++++++++++++++"
-    puts "ShortestPath:"
-    for element in shortestPath
-      puts element.label
-    end
-
-    return
-  end
-  
   def self.deriveInheritanceFreePropertyGraph crmProperties
     inheritanceFreeCrmProperties = Array.new
     
@@ -175,24 +122,4 @@ module KorCrmMatching::ShortestPathCalculator
     end
     return shortestPathFromTargetToSource
   end  
-  
-  private
-  def self.loadMappingObjects
-    @@crmClasses = KorCrmSerializingDeserializing::CrmSerializerDeserializer.deserializeClassesInJason
-    for crmClass in @@crmClasses
-      crmClass.reestablishLinks @@crmClasses
-    end
-    @@crmProperties = KorCrmSerializingDeserializing::CrmSerializerDeserializer.deserializePropertiesInJason
-    for crmProperty in @@crmProperties
-      crmProperty.reestablishLinks @@crmProperties, @@crmClasses
-    end
-    @@kinds = KorCrmSerializingDeserializing::KorSerializerDeserializer.deserializeKindsInJason
-    for kind in @@kinds
-      kind.reestablishLinks @@crmClasses
-    end
-    @@relations = KorCrmSerializingDeserializing::KorSerializerDeserializer.deserializeRelationsInJason
-    for relation in @@relations
-      relation.reestablishLinks @@kinds, @@crmClasses, @@crmProperties
-    end
-  end 
 end

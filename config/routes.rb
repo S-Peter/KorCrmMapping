@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post 'relations/updateCompletePath', to: 'relations#updateCompletePath'
   post 'relations/updatePath', to: 'relations#updatePath'
   
-  get 'relations/destroy', to: 'relations#destroy' # delete not working! why?
+  get 'relations/destroy', to: 'relations#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

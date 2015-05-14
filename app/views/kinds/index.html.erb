@@ -1,9 +1,9 @@
-<h1>Entitätstypen</h1>
+<h1>Kor Entitätstypen</h1>
  
 <table>
   <tr>
-    <th>Entitaetstyp</th>
-    <th>Entsprechende CRM-Klasse</th>
+    <th>Kor Entitätstyp</th>
+    <th>Corresponding CRM Class</th>
     <th></th>
   </tr>
  
@@ -12,8 +12,8 @@
       <td><%= kind.name %></td>
       <td><% if kind.crmClass != nil %><%= kind.crmClass.label %><% end %></td>
       <td>
-      	<%= link_to 'Edit', edit_kind_path(kind) %>
-      	<%= link_to 'Destroy', kind_path(kind), method: :delete, data: { confirm: 'Are you sure?' } %>
+      	<%= link_to 'Map', edit_kind_path(kind) %>
+      	<%= link_to 'Dissolve Mapping', kind_path(kind), method: :delete %>
       </td>	
    	</tr>
   <% end %>

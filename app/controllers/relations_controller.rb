@@ -98,12 +98,6 @@ class RelationsController < ApplicationController
     possibleTargetClasses = @sessionChainLinks.last.getDirectOrIndirectSubClasses
     @targetPossiblyReached = false
     i = 0
-    #while i < possibleTargetClasses.size && !@targetPossiblyReached
-    #  if (possibleTargetClasses[i].isA? lastProperty.range)
-    #    @targetPossiblyReached = true
-    #  end
-    #  i += 1
-    #end
     
     if (@sessionChainLinks.last.isA? lastProperty.range)
       @targetPossiblyReached = true
@@ -128,14 +122,7 @@ class RelationsController < ApplicationController
     end   
     
     #redirect
-    #if !(sessionChainLinks.last.isA? crmProperty.range) #range not yet reached-> continue chain linking
-      redirect_to :action => "editPathClass", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
-    #else #range reached -> persist chainLinks for actual relation 
-    #  actualRelation = findActualRelation @relations, relationId, domainId, rangeId
-    #  actualRelation.chainLinks = sessionChainLinks
-    #  KorCrmSerializingDeserializing::KorSerializerDeserializer.serializeRelationInJason actualRelation.relation
-    #  redirect_to relations_path
-    #end
+    redirect_to :action => "editPathClass", :relationId => relationId, :domainId => domainId, :rangeId => rangeId
   end
   
   def updatePathClass

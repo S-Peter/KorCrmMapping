@@ -3,7 +3,6 @@ require 'json'
 module KorCrmLoading::KorLoader
   
   def self.loadKor
-    #puts ActiveRecord::Base.connection.current_database
     @@kinds = Kind.all
     @@relations = Relation.all
     deriveActualRelationsFromRelationships
@@ -93,35 +92,6 @@ module KorCrmLoading::KorLoader
     
     @@kinds.push name
     @@relations.push hasName
-
-=begin   
-    @@lastFieldKindID += 1
-    distinctName = Kind.new
-    distinctName.id = @@lastFieldKindID
-    distinctName.name = "Eindeutiger Name"
-    distinctName.description = "Eindeutiger Name der Entitaet"
-   
-    @@lastFieldRelationID += 1
-    hasDistinctName = Relation.new
-    hasDistinctName.id = @@lastFieldRelationID
-    hasDistinctName.name = "hat eindeutigen Namen"
-    hasDistinctName.reverse_name = "ist eindeutiger Name von"
-    hasDistinctName.description = "Entitaet - Eindeutiger Name"
-    hasDistinctName.actualRelations = Array.new
-    for kind in @@kinds
-      if kind.id <= @@maxKindID # i.e. original kind
-        actualRelation = ActualRelation.new
-        actualRelation.relation = hasDistinctName
-        actualRelation.domain = kind
-        actualRelation.range= distinctName
-        hasDistinctName.actualRelations.push actualRelation
-      end
-    end
-    
-    @@kinds.push distinctName
-    @@relations.push hasDistinctName
-=end 
-
   end
   
   private

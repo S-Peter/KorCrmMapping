@@ -5,7 +5,7 @@ module KorCrmMatching::CompoundDecomposer
       auxiliaryFile = File.new("auxiliaryFile.txt", "w")
       auxiliaryFile.write nounPhraseConstituent.head
       auxiliaryFile.close
-      io = IO.popen("java -jar jwordsplitter-3.4\\jwordsplitter-3.4.jar auxiliaryFile.txt")
+      io = IO.popen("java -jar vendor\\jwordsplitter-3.4\\jwordsplitter-3.4.jar auxiliaryFile.txt")
       line = io.gets
       compoundTokens = line.split(%r{,\s*})
       j = 0

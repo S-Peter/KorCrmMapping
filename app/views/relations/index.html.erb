@@ -1,11 +1,11 @@
-<h1>Relationen</h1>
+<h1>Kor Relationen</h1>
 
 <table>
   <tr>
     <th>Relation</th>
     <th>Domain</th>
     <th>Range</th>
-    <th>Entsprechender CRM-Eigenschafts-Pfad</th>
+    <th>Corresponding CRM-Property-Path</th>
     <th></th>
   </tr>
  
@@ -27,11 +27,11 @@
 	      	  <% end %>
 	      </td>
 	      <td>
-	      	<%= link_to "Edit", :controller => "relations", :action => "edit", :relationId => actualRelation.relation.id, :domainId => actualRelation.domain.id, :rangeId => actualRelation.range.id %>
-	      	<%= link_to "Destroy", :controller => "relations", :action => "destroy", :method => "delete", :relationId => actualRelation.relation.id, :domainId => actualRelation.domain.id, :rangeId => actualRelation.range.id, data: { confirm: 'Are you sure?' } %>	
+	      	<%= link_to "Map", :controller => "relations", :action => "edit", :relationId => actualRelation.relation.id, :domainId => actualRelation.domain.id, :rangeId => actualRelation.range.id %>
+	      	<%= link_to "Dissolve Mapping", :controller => "relations", :action => "destroy", :method => "delete", :relationId => actualRelation.relation.id, :domainId => actualRelation.domain.id, :rangeId => actualRelation.range.id, data: { confirm: 'Are you sure?' } %>	
 	      </td>
 	    </tr>
 	<% end %>
   <% end %>
 </table>
-<p><%= link_to 'Map Entitaetstypen', kinds_path %></p>
+<p><%= link_to 'Map Entitätstypen', kinds_path %></p>

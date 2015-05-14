@@ -16,7 +16,6 @@ module KorCrmLoading::CrmLoader
   
   def self.loadCRM
     #@@graph = RDF::Graph.load("http://erlangen-crm.org/140617/")
-    #@@graph = RDF::Graph.load("C:/Users/Sven/ECRM/ecrm_120111-dt.owl.rdf") # based on CIDOC CRM Version 5.1.2 (draft)
     @@graph = RDF::Graph.load("ecrm_120111-dt.owl.rdf") # german translation version
     loadCRMClasses
     loadCRMProperties

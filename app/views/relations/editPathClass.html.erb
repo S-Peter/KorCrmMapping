@@ -6,7 +6,7 @@
 			<%= hidden_field_tag :rangeId, @rangeId %>
 			<span><b>Is target reached?</b></span>
 			<br />
-			<%= submit_tag("Yes") %>
+			<%= submit_tag("Save Mapping") %>
 		<% end %>
 	<% end %>
 </p>
@@ -19,7 +19,7 @@
 <table>
 	<tr>
 		<th></th>
-		<th>Gemappte CRM-Klassen</th>
+		<th>Mapped CRM-classes</th>
 	</tr>
 	<tr>
 		<td>Relation: <%= @actualRelation.relation.name %></td>
@@ -38,7 +38,7 @@
 <br />
 <table>
 	<tr>
-		<td>Bisher gemappter Pfad</td>
+		<td>Already mapped path</td>
 		<td><% i = 0 %>
 			<% while i < (@sessionChainLinks.size - 1) %>
 				<%= @sessionChainLinks[i].label%>
@@ -50,19 +50,19 @@
 		</td>		
 	</tr>
 	<tr>
-		<td>Letzte Property</td>
+		<td>Last property</td>
 		<td><%= @sessionChainLinks[@sessionChainLinks.length-2].label %></td>
 	</tr>
 	<tr>
-		<td><%= label_tag(:class, "Spezifischste Range-Klasse") %></td>
+		<td><%= label_tag(:class, "Most specific range class") %></td>
 		<td><%= select_tag :class, options_from_collection_for_select(@fittingCRMClasses, :number, :fullLabel) %></td>
 	</tr>
 	<tr>
 		<td>
-			<%= submit_tag("OK") %>
+			<%= submit_tag("Add Class") %>
 		</td>
 	</tr>
 </table>
 <% end %>
 
-<%= link_to 'Abbruch', relations_path %>
+<%= link_to 'Back', relations_path %>

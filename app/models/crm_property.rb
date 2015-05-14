@@ -1,3 +1,5 @@
+require 'json'
+
 class CrmProperty < CrmRessource
   
   attr_accessor :domain, :range, :inverseOf, :superProperties, :subProperties, :domainUri, :rangeUri, :inverseOfUri, :superPropertyUris, :subPropertyUris

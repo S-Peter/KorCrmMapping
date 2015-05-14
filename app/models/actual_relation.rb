@@ -1,3 +1,5 @@
+require 'json'
+
 class ActualRelation
 	
 	attr_accessor :relation, :domain, :range, :chainLinks, :domainId, :rangeId, :chainLinkUris

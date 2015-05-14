@@ -5,7 +5,7 @@
 <table>
 	<tr>
 		<th></th>
-		<th>Gemappte CRM-Klassen</th>
+		<th>Mapped CRM-Classes</th>
 	</tr>
 	<tr>
 		<td>Relation: <%= @actualRelation.relation.name %></td>
@@ -24,7 +24,7 @@
 <br />
 <table>
 	<tr>
-		<td>Bisher gemappter Pfad</td>
+		<td>Already mapped path</td>
 		<td><% i = 0 %>
 			<% while i < (@sessionChainLinks.size - 1) %>
 				<%= @sessionChainLinks[i].label%>
@@ -36,16 +36,16 @@
 		</td>		
 	</tr>
 	<tr>
-		<td>Domain der naechsten Property</td>
+		<td>Domain of next property</td>
 		<td><%= @sessionChainLinks[@sessionChainLinks.length-2].label %></td>
 	</tr>
 	<tr>
-		<td><%= label_tag(:property, "Naechste Property") %></td>
+		<td><%= label_tag(:property, "Next property") %></td>
 		<td><%= select_tag :property, options_from_collection_for_select(@fittingCRMProperties, :number, :fullLabel) %></td>
 	</tr>
 	<tr>
 		<td>
-			<%= submit_tag("OK") %>
+			<%= submit_tag("Add Property") %>
 		</td>
 	</tr>
 </table>
@@ -62,7 +62,7 @@
 <%end%>
 <table>
 		<tr>
-		<td>Vorgeschlagener Pfad: </td>
+		<td>Suggested path:</td>
 		<td>
 			<% i = 0%>
 			<% while i < @shortestPath.size%>
@@ -74,10 +74,10 @@
 			<% end %>
 		</td>	
 		<td>
-			<%= submit_tag("OK") %>
+			<%= submit_tag("Save Mapping") %>
 		</td>
 	</tr>
 </table>
 <% end %>
 
-<%= link_to 'Abbruch', relations_path %>
+<%= link_to 'Back', relations_path %>

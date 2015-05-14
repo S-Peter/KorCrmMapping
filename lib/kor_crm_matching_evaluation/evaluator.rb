@@ -31,13 +31,6 @@ module KorCrmMatchingEvaluation::Evaluator
     for crmClass in @@crmClasses #precompute noun phrase analysis for crmClasses (performance)
       nounPhraseConstituents = KorCrmMatching::NounPhraseAnalyser.analyseNounPhrase crmClass.label
       crmClass.nounPhraseConstituents = nounPhraseConstituents     
-=begin      
-      puts crmClass.label
-      for nounPhraseConstituent in nounPhraseConstituents
-        puts "Head: #{nounPhraseConstituent.head}"
-        puts "Modifiers: #{nounPhraseConstituent.modifiers}"
-      end    
-=end 
     end
  
     for kind in @@kinds
@@ -136,13 +129,6 @@ module KorCrmMatchingEvaluation::Evaluator
         KorCrmMatching::CompoundDecomposer.decomposeHeadCompound! nounPhraseConstituent
       end
       crmClass.nounPhraseConstituents = nounPhraseConstituents     
-=begin      
-      puts crmClass.label
-      for nounPhraseConstituent in nounPhraseConstituents
-        puts "Head: #{nounPhraseConstituent.head}"
-        puts "Modifiers: #{nounPhraseConstituent.modifiers}"
-      end    
-=end
     end
  
     for kind in @@kinds
@@ -246,13 +232,6 @@ module KorCrmMatchingEvaluation::Evaluator
         KorCrmMatching::CompoundDecomposer.decomposeHeadCompound! nounPhraseConstituent
       end  
       crmClass.nounPhraseConstituents = nounPhraseConstituents     
-=begin      
-      puts crmClass.label
-      for nounPhraseConstituent in nounPhraseConstituents
-        puts "Head: #{nounPhraseConstituent.head}"
-        puts "Modifiers: #{nounPhraseConstituent.modifiers}"
-      end    
-=end 
     end
  
     for kind in @@kinds
@@ -348,20 +327,7 @@ module KorCrmMatchingEvaluation::Evaluator
     
     printOrderedClasses @@NP_ANALYSIS_AND_COMPOUND_DECOMPOSITION_AND_SYNONYMS_AND_EDIT_DISTANCE_TYPE, orderedCrmClasses, kind
     end # kinds  
-  end
-
-=begin  
-  def self.evaluateAll
-    loadMappingObjects
-    evaluateNoMatching
-    evaluateEditDistanceOnly
-    evaluateNPAnalysisEditDistance
-    evaluateNPAnalysisCompoundDecompositionEditDistance
-    evaluateNPAnalysisCompoundDecompositionSynonymsEditDistance
-    return
-  end
-=end  
-
+  end 
   
   private 
   def self.printOrderedClasses (type, orderedCrmClasses, kind)
